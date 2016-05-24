@@ -1,13 +1,9 @@
-//
-   Created by claudio on 24/05/16.
-
+- var pageTitle="index"
 doctype html
 html(lang="en")
-    head
-        title= pageTitle
-        script(type='text/javascript').
-            if (foo) bar(1 + 5)
+    include ./includes/head.jade
     body
+        include ./includes/header.jade
         h1 Pug - node template engine
         #container.col
             if youAreUsingPug
@@ -17,3 +13,4 @@ html(lang="en")
                 p.
                     Pug is a terse and simple templating language with a
                     strong focus on performance and powerful features.
+        include ./includes/footer.jade
