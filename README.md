@@ -12,4 +12,7 @@ type `gulp`
 type `gulp serve`
 
 ## TODO
-- [ ] 
+- [ ] config.php
+- [ ] installation guide
+- [ ] sql
+- [ ] check vue bootstrap

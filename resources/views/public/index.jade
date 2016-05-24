@@ -4,14 +4,15 @@ html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header.jade
-        h1 Pug - node template engine
-        #container.col
-            if youAreUsingPug
-                p You are amazing
-            else
-                p Get on it!
-                p(id="app").
-                    Pug is a terse and simple templating language with a
-                    strong focus on performance and powerful features.
-                    {{ message }}
+        index(inline-template)
+            h1 Pug - node template engine
+            #container.col
+                if youAreUsingPug
+                    p You are amazing
+                else
+                    p Get on it!
+                    p(id="app").
+                        Pug is a terse and simple templating language with a
+                        strong focus on performance and powerful features.
+                        {{ message }}
         include ../includes/footer.jade

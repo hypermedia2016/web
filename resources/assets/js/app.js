@@ -4,11 +4,14 @@
 
 var basicUrl = "localhost:8000";
 
-var Vue = require("vue");
+if (window.Vue === undefined) {
+    window.Vue = require('vue');
+}
 
-new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vue.js!'
-    }
-})
+Vue.use(require('vue-resource'));
+
+require("./components/bootstrap");
+
+var app = new Vue({
+    el: 'body',
+});
