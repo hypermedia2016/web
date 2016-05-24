@@ -7,5 +7,12 @@ Vue.component('index', {
         return {
             "message": "test",
         }
+    },
+    ready() {
+        this.$http({url: basicUrl + '/api/test.php', method: 'GET'}).then( (response) => {
+            console.log(response.data);
+        }, function (response) {
+            console.log('error');
+        });
     }
 });
