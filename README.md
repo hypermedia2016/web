@@ -16,3 +16,5 @@ type `gulp serve`
 - [ ] installation guide
 - [ ] sql
 - [ ] check vue bootstrap
+- [ ] apache config
+- [ ] npm install
