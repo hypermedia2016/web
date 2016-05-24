@@ -1,6 +1,6 @@
 var elixir = require('laravel-elixir');
-var pug = require('gulp-pug');
 var gulp = require('gulp');
+require('laravel-elixir-pug');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,9 +15,17 @@ var gulp = require('gulp');
 
 elixir(function (mix) {
     mix.less('app.less')
-        .browserify('app.js', null, null, {});
-    gulp.src('resources/views/*.jade')
-        .pipe(pug({
-            // Your options in here.
-        })).pipe(gulp.dest('public'));
+        .browserify('app.js', null, null, {})
+        .pug({
+            // Pretty output or uglified
+            pretty: true,
+            // Source of pug files
+            src: 'resources/views/',
+            // File names to look for, useful if you are still naming files .jade
+            search: '**/*.jade',
+            // If blade is true, output to resources/views, otherwise public/html
+            dest: 'public',
+            // Any additional watches
+            additional_watches: []
+        });
 });
