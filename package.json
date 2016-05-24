@@ -24,9 +24,11 @@
     "babel-preset-react": "^6.5.0",
     "bootstrap": "^3.0.0",
     "gulp-print": "^2.0.1",
+    "gulp-shell": "^0.5.2",
     "jquery": "^2.1.4",
     "laravel-elixir": "^4.0.0",
     "laravel-elixir-pug": "^1.0.1",
+    "pug": "^2.0.0-alpha8",
     "vue": "^1.0.13"
   }
 }

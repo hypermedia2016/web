@@ -1,6 +1,7 @@
 var elixir = require('laravel-elixir');
 var gulp = require('gulp');
 require('laravel-elixir-pug');
+var shell = require('gulp-shell')
 
 /*
  |--------------------------------------------------------------------------
@@ -29,3 +30,7 @@ elixir(function (mix) {
             additional_watches: []
         });
 });
+
+gulp.task('serve',  shell.task([
+    'php -S localhost:8000 -t public',
+]));
