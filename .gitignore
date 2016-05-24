@@ -102,12 +102,10 @@ crashlytics.properties
 crashlytics-build.properties
 
 
-
 ### Composer ###
 composer.phar
 composer.lock
 /vendor
-
 
 ### tests ###
 coverage.xml
@@ -117,7 +115,6 @@ coverage.clover
 ### gulp ###
 node_modules/
 npm-debug.log
-public/css
 
 ### laravel ide helper ###
 .phpstorm.meta.php
@@ -128,13 +125,6 @@ _ide_helper.php
 .git_utility
 
 
-###  LARAVEL ###
-/public/storage
-Homestead.yaml
-Homestead.json
-.env
+###  PUBLIC ###
 /public/js
 /public/css
-
-### BOWER ###
-/bower_components

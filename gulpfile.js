@@ -1,4 +1,6 @@
 var elixir = require('laravel-elixir');
+var pug = require('gulp-pug');
+var gulp = require('gulp');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,4 +16,8 @@ var elixir = require('laravel-elixir');
 elixir(function (mix) {
     mix.less('app.less')
         .browserify('app.js', null, null, {});
+    gulp.src('resources/views/*.jade')
+        .pipe(pug({
+            // Your options in here.
+        })).pipe(gulp.dest('public'));
 });
