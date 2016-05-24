@@ -10,7 +10,8 @@ html(lang="en")
                 p You are amazing
             else
                 p Get on it!
-                p.
+                p(id="app").
                     Pug is a terse and simple templating language with a
                     strong focus on performance and powerful features.
+                    {{ message }}
         include ../includes/footer.jade
