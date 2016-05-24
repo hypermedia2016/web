@@ -4,15 +4,22 @@ html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header.jade
-        index(inline-template)
-            h1 Pug - node template engine
-            #container.col
-                if youAreUsingPug
-                    p You are amazing
-                else
-                    p Get on it!
-                    p(id="app").
-                        Pug is a terse and simple templating language with a
-                        strong focus on performance and powerful features.
-                        {{ message }}
-        include ../includes/footer.jade
+        index(inline-template "v-bind:locations.sync"="locations")
+            //sub menu
+            mixin item(name, link)
+                li
+                    a(href=link) #{name}
+
+            ul#items
+                +item("Devices", basicUrl + "/devices.html")
+                +item("Smart life services", basicUrl + "/smart-life.html")
+                +item("Assistance", basicUrl + "/assistance.html")
+            h2 Devices in promotion
+            p images...
+            h2 Smart life services
+            p images...
+            h2 How can we help you
+            p images...
+
+
+include ../includes/footer.jade

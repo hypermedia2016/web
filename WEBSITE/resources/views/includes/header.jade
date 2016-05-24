@@ -1,0 +1,14 @@
+//main menu
+mixin main(name, link)
+    li
+        a(href=link) #{name}
+
+ul#mains
+    +main("Devices", basicUrl+"/devices.html")
+    +main("Smart life services", basicUrl+"/smart-life.html")
+    +main("Assistance", basicUrl+"/assistance.html")
+
+//location menu
+ul
+    li(v-for="location in locations")
+        a("v-bind:href"="location.url") {{ location.name }}

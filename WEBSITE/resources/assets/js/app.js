@@ -14,6 +14,9 @@ require('./components/bootstrap');
 
 var app = new Vue({
     el: 'body',
+    data:{
+        'locations': [{name: 'HOME', url: basicUrl+'/index.html'}],
+    },
     ready() {
         console.log('Application Ready.');
     }
