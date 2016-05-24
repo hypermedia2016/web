@@ -21,7 +21,7 @@ elixir(function (mix) {
             // Pretty output or uglified
             pretty: true,
             // Source of pug files
-            src: 'resources/views/',
+            src: 'resources/views/public/',
             // File names to look for, useful if you are still naming files .jade
             search: '**/*.jade',
             // If blade is true, output to resources/views, otherwise public/html
