@@ -15,7 +15,8 @@ var shell = require('gulp-shell')
  */
 
 elixir(function (mix) {
-    mix.less('app.less')
+    mix.less('app-less.less')
+        .sass('app-sass.sass')
         .browserify('app.js', null, null, {})
         .pug({
             // Pretty output or uglified
