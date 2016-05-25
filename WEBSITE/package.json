@@ -11,7 +11,7 @@
     "url": "git+https://github.com/hypermedia2016/web.git"
   },
   "author": "Claudio Cardinale, Giorgio Pea",
-  "license": "ISC",
+  "license": "GPL3",
   "bugs": {
     "url": "https://github.com/hypermedia2016/web/issues"
   },
@@ -26,6 +26,7 @@
     "gulp-print": "^2.0.1",
     "gulp-shell": "^0.5.2",
     "jquery": "^2.1.4",
+    "jquery-stickytabs": "^1.2.2",
     "laravel-elixir": "^4.0.0",
     "laravel-elixir-pug": "^1.0.1",
     "pug": "^2.0.0-alpha8",

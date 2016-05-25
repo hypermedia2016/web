@@ -1,0 +1,29 @@
+- var pageTitle="devices"
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header.jade
+        devices(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                //sub menu
+                mixin item(name, link)
+                    li&attributes(attributes)
+                        a(href=link data-toggle="tab") #{name}
+
+                ul(class="nav nav-tabs")#sub
+                    +item("Smartphones", '#smartphones')(class="active")
+                    +item("Tablets", '#tablets')
+                    +item("Wearables", '#wearables')
+                    +item("Outlet", '#outlet')
+                div(class="tab-content")
+                    div(class="tab-pane fade in active")#smartphones
+                        p smartphones
+                    div(class="tab-pane fade")#tablets
+                        p tablets
+                    div(class="tab-pane fade")#wearables
+                        p Wearables
+                    div(class="tab-pane fade")#outlet
+                        p Outlet
+
+include ../includes/footer.jade

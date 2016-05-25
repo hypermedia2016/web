@@ -3,3 +3,4 @@
  */
 
 require('./index');
+require('./devices');
