@@ -1,0 +1,18 @@
+{
+    "name": "hypermedia2016/web",
+    "type": "Project",
+    "require-dev": {
+        "fzaninotto/faker": "^1.6"
+    },
+    "license": "GPL3",
+    "authors": [
+        {
+            "name": "Claudio Cardinale",
+            "email": "cardi@thecsea.it"
+        },
+        {
+            "name": "Giorgio Pea",
+            "email": "giorgio.pea@gmail.com"
+        }
+    ]
+}
