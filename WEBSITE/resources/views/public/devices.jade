@@ -1,4 +1,15 @@
 - var pageTitle="devices"
+mixin devices()
+    div(class="devices")
+        ul
+            li(v-for="device in content.devices") {{device.name}}
+mixin filters()
+    div(class="filters")
+        ul
+            li(v-for="(filtersKey, filters) in content.filters")  Filter by {{filtersKey}}
+                ul
+                    li(v-for="filter in filters")
+                        a(href="#") {{filter.name}}
 doctype html
 html(lang="en")
     include ../includes/head.jade
@@ -12,17 +23,6 @@ html(lang="en")
                         a("v-bind:href"="type.url" data-toggle="tab") {{type.name}}
                 div(class="error") {{ error }}
                 div(class="tab-content")
-                    mixin filters()
-                        div(class="filters")
-                            ul
-                                li(v-for="(filtersKey, filters) in content.filters")  Filter by {{filtersKey}}
-                                    ul
-                                        li(v-for="filter in filters")
-                                            a(href="#") {{filter.name}}
-                    mixin devices()
-                        div(class="devices")
-                            ul
-                                li(v-for="device in content.devices") {{device.name}}
                     div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade" v-for="type in types")
                         p {{type.name}}
                         +filters()
