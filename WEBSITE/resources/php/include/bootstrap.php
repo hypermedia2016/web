@@ -22,6 +22,22 @@ require_once __DIR__ . '/../../../config/config.php';
 $connection = getConnection();
 
 
+function insertByArray($fields, $data, $table){
+    global $connection;
+    $query = "INSERT INTO $table (".implode(',', $fields).") VALUES (".implode('),(', implodeRows(',', $data)).")";
+    $results = $connection->query($query);
+    if (!$results) {
+        error("Mysql error ".$connection->error." on '".$query."''");
+    }
+}
+
+function implodeRows($separator, $array){
+    $ret = [];
+    foreach($array as $row)
+        $ret[] = implode($separator, $row);
+    return $ret;
+}
+
 /**
  * @return mysqli
  */
@@ -33,9 +49,12 @@ function getConnection(){
         $password,
         $db);
     if (!$connected || $mysqliRef->connect_error) {
-        die('Database connection error ('.$mysqliRef->connect_errno.') '.$mysqliRef->connect_error);
+        error('Database connection error ('.$mysqliRef->connect_errno.') '.$mysqliRef->connect_error);
     }
 
     return $mysqliRef;
 }
 
+function error($error){
+    die (json_encode(['error'=>$error]));
+}

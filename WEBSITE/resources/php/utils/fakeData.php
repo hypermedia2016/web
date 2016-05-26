@@ -17,3 +17,33 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 require_once __DIR__ . '/../include/bootstrap.php';
+$faker = Faker\Factory::create();
+
+createBrands();
+createOs();
+createTypes();
+createDevices();
+
+function createBrands(){
+    $data = [['\'Samsung\''], ['\'Apple\''], ['\'Sony\'']];
+    insertByArray(['name'], $data, 'brands');
+}
+
+function createOs(){
+    $data = [['\'Android\''], ['\'iOS\'']];
+    insertByArray(['name'], $data, 'os');
+}
+
+function createTypes(){
+    $data = [['\'Smartphones\''], ['\'Tablets\''], ['\'Wearable\''], ['\'Outlet\'']];
+    insertByArray(['name'], $data, 'devices_types');
+}
+
+function createDevices(){
+    $data = [
+        ['\'Samsung galaxy S7\'', '200', '1', '1', '1'],
+        ['\'Apple iPad pro\'', '300', '2', '2', '2'],
+        ['\'Apple watch\'', '250', '3','2', '2'],
+        ['\'Sony smart band\'', '150', '4', '1', '3']];
+    insertByArray(['name', 'price', 'type_id', 'os_id', 'brand_id'], $data, 'devices');
+}
