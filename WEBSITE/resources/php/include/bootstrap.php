@@ -18,3 +18,24 @@
  */
 require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../../config/config.php';
+
+$connection = getConnection();
+
+
+/**
+ * @return mysqli
+ */
+function getConnection(){
+    global $server, $user, $password, $db;
+    $mysqliRef = mysqli_init();
+    $connected = @$mysqliRef->real_connect($server,
+        $user,
+        $password,
+        $db);
+    if (!$connected || $mysqliRef->connect_error) {
+        die('Database connection error ('.$mysqliRef->connect_errno.') '.$mysqliRef->connect_error);
+    }
+
+    return $mysqliRef;
+}
+
