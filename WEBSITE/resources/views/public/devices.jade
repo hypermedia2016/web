@@ -7,15 +7,9 @@ html(lang="en")
         devices(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
                 //sub menu
-                mixin sub-menu(name, link)
-                    li&attributes(attributes)
-                        a(href=link data-toggle="tab") #{name}
-
                 ul(class="nav nav-tabs")#sub
-                    +sub-menu("Smartphones", '#smartphones')(class="active")
-                    +sub-menu("Tablets", '#tablets')
-                    +sub-menu("Wearables", '#wearables')
-                    +sub-menu("Outlet", '#outlet')
+                    li(v-for="type in types")
+                        a("v-bind:href"="type.url" data-toggle="tab") {{type.name}}
                 div(class="error") {{ error }}
                 div(class="tab-content")
                     mixin filters()
@@ -26,20 +20,8 @@ html(lang="en")
                         div(class="devices")
                             ul
                                 li(v-for="device in content.devices") {{device.name}}
-                    div(class="tab-pane fade in active")#smartphones
-                        p smartphones
-                        +filters()
-                        +devices()
-                    div(class="tab-pane fade")#tablets
-                        p tablets
-                        +filters()
-                        +devices()
-                    div(class="tab-pane fade")#wearables
-                        p Wearables
-                        +filters()
-                        +devices()
-                    div(class="tab-pane fade")#outlet
-                        p Outlet
+                    div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade" v-for="type in types")
+                        p {{type.name}}
                         +filters()
                         +devices()
 

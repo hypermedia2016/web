@@ -22,6 +22,43 @@ require_once __DIR__ . '/../../../config/config.php';
 $connection = getConnection();
 
 
+/**
+ * @param string $table
+ * @param string $where
+ * @return array
+ */
+function getData($table, $where = ''){
+    if($where == '')
+        $query = "SELECT * FROM $table";
+    else
+        $query = "SELECT * FROM $table WHERE $where";
+
+    return getDataByQuery($query);
+}
+
+/**
+ * @param string $query
+ * @return array
+ */
+function getDataByQuery($query){
+    global $connection;
+    $results = $connection->query($query);
+    if (!$results) {
+        error("Mysql error ".$connection->error." on '".$query."''");
+    }
+    $ret = [];
+    while($row = $results->fetch_array()) {
+        $ret[] = array_map('utf8_encode', $row);
+    }
+
+    return $ret;
+}
+
+/**
+ * @param string $fields
+ * @param array $data
+ * @param string $table
+ */
 function insertByArray($fields, $data, $table){
     global $connection;
     $query = "INSERT INTO $table (".implode(',', $fields).") VALUES (".implode('),(', implodeRows(',', $data)).")";
@@ -31,6 +68,11 @@ function insertByArray($fields, $data, $table){
     }
 }
 
+/**
+ * @param string $separator
+ * @param array $array
+ * @return array
+ */
 function implodeRows($separator, $array){
     $ret = [];
     foreach($array as $row)
@@ -55,6 +97,9 @@ function getConnection(){
     return $mysqliRef;
 }
 
+/**
+ * @param string $error
+ */
 function error($error){
     die (json_encode(['error'=>$error]));
 }

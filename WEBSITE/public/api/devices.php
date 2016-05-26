@@ -6,7 +6,11 @@
  * Time: 13.25
  */
 
+require_once __DIR__ . '/../../resources/php/include/bootstrap.php';
 
-$type = isset($_GET['type'])?$_GET['type']:'';
+$type = $connection->real_escape_string(isset($_GET['type'])?$_GET['type']:'');
 
-print json_encode(['filters'=>[['name'=>'popular'], ['name'=>'other']],'devices'=>[['name'=>'test11', 'img'=>'src...'], ['name'=>'test11', 'img'=>'src...']]]);
+
+$query = 'SELECT D.*, O.name as os, B.name as brand FROM devices D JOIN os O ON D.os_id = O.id JOIN brands B ON D.brand_id = B.id JOIN devices_types T ON D.type_id = T.id WHERE T.name = \''.$type.'\'';
+
+print json_encode(['filters'=>[['name'=>'popular'], ['name'=>'other']],'devices'=>getDataByQuery($query)]);
