@@ -15,7 +15,10 @@ html(lang="en")
                     mixin filters()
                         div(class="filters")
                             ul
-                                li(v-for="filter in content.filters") {{filter.name}}
+                                li(v-for="(filtersKey, filters) in content.filters")  Filter by {{filtersKey}}
+                                    ul
+                                        li(v-for="filter in filters")
+                                            a(href="#") {{filter.name}}
                     mixin devices()
                         div(class="devices")
                             ul
