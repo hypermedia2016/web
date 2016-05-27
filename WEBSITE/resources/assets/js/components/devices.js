@@ -8,6 +8,7 @@ Vue.component('devices', {
     data() {
         return {
             content: {filters: [], devices: []},
+            devicesFiltered: [],
             error: '',
             types: []
         }
@@ -16,7 +17,7 @@ Vue.component('devices', {
     ready() {
         //add current location
         this.locations.push({name: 'devices', url: basicUrl + '/devices.html'});
-        this.locations.push({name: 'devices', url: basicUrl + '/devices.html'});
+        this.locations.push({name: 'devices', url: basicUrl + '/devices.html'}); //this will be removed by loadTab called by loadTypes
 
         //load types
         this.loadTypes();
@@ -31,6 +32,7 @@ Vue.component('devices', {
                     this.error = response.data.error;
                 }else {
                     this.content = response.data;
+                    this.devicesFiltered = this.content.devices;
                     this.error = '';
                 }
             }, function (response) {
@@ -65,6 +67,45 @@ Vue.component('devices', {
             }, function (response) {
                 this.error = 'Loading error...';
             });
+        },
+
+        //------------FILTERS----------------
+
+        filterText(filter, type){
+            if(type=='price')
+                return this.priceFilterText(filter);
+            return filter.name;
+        },
+
+        priceFilterText(price){
+            if(price[0]==0)
+                return 'Less than '+ price[1] + '€';
+            else if(price[1]==-1)
+                return 'Greater than '+ price[0] + '€';
+            else
+                return 'Between '+ price[0] + '€ and ' + price[1] + '€';
+        },
+
+        filterPrice(price){
+            if(price[1]==-1)
+                this.devicesFiltered = this.content.devices.filter((item) =>{
+                    return (item['price'] >= price[0]);
+                });
+            //This case cover also the case "less than"
+            else
+                this.devicesFiltered = this.content.devices.filter((item) =>{
+                    return (item['price'] >= price[0] && item['price'] <= price[1]);
+                });
+        },
+
+        filterClicked(filter, type, event){
+            event.preventDefault();
+            if(type=='price')
+                this.filterPrice(filter);
+            else
+                this.devicesFiltered = this.content.devices.filter((item) =>{
+                   return (item[type] == filter.name);
+                });
         }
     }
 });

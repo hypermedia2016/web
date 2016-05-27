@@ -2,14 +2,14 @@
 mixin devices()
     div(class="devices")
         ul
-            li(v-for="device in content.devices") {{device.name}}
+            li(v-for="device in devicesFiltered") {{device.name}} {{device.price}}
 mixin filters()
     div(class="filters")
         ul
             li(v-for="(filtersKey, filters) in content.filters")  Filter by {{filtersKey}}
                 ul
                     li(v-for="filter in filters")
-                        a(href="#") {{filter.name}}
+                        a("v-on:click"="filterClicked(filter, filtersKey, $event)" href="#") {{filterText(filter, filtersKey)}}
 doctype html
 html(lang="en")
     include ../includes/head.jade

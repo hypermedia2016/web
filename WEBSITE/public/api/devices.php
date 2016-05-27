@@ -16,5 +16,5 @@ $devices = getDataByQuery($query);
 $filters = [];
 $filters['brand'] = getData('brands');
 $filters['os'] = getData('os');
-$filters['price'] = [];
+$filters['price'] = [[0,100],[100,500],[500,-1]];
 print json_encode(['filters'=>$filters,'devices'=>$devices]);
