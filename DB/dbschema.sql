@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.1
+-- version 4.4.8
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 26, 2016 at 04:16 PM
+-- Generation Time: May 27, 2016 at 07:14 PM
 -- Server version: 5.7.12-0ubuntu1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `brands`
 --
 
-CREATE TABLE `brands` (
+CREATE TABLE IF NOT EXISTS `brands` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -31,13 +31,15 @@ CREATE TABLE `brands` (
 -- Table structure for table `devices`
 --
 
-CREATE TABLE `devices` (
+CREATE TABLE IF NOT EXISTS `devices` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` double NOT NULL,
   `brand_id` int(11) NOT NULL,
   `os_id` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL
+  `type_id` int(11) NOT NULL,
+  `popular` tinyint(1) NOT NULL DEFAULT '0',
+  `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -46,7 +48,7 @@ CREATE TABLE `devices` (
 -- Table structure for table `devices_types`
 --
 
-CREATE TABLE `devices_types` (
+CREATE TABLE IF NOT EXISTS `devices_types` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -57,7 +59,7 @@ CREATE TABLE `devices_types` (
 -- Table structure for table `os`
 --
 
-CREATE TABLE `os` (
+CREATE TABLE IF NOT EXISTS `os` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -105,22 +107,22 @@ ALTER TABLE `os`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `devices`
 --
 ALTER TABLE `devices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `devices_types`
 --
 ALTER TABLE `devices_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `os`
 --
 ALTER TABLE `os`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --

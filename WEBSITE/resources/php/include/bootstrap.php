@@ -47,7 +47,7 @@ function getDataByQuery($query){
         error("Mysql error ".$connection->error." on '".$query."''");
     }
     $ret = [];
-    while($row = $results->fetch_array()) {
+    while($row = $results->fetch_array(MYSQLI_ASSOC)) {
         $ret[] = array_map('utf8_encode', $row);
     }
 

@@ -6,10 +6,13 @@ mixin devices()
 mixin filters()
     div(class="filters")
         ul
-            li(v-for="(filtersKey, filters) in content.filters")  Filter by {{filtersKey}}
-                ul
-                    li(v-for="filter in filters")
-                        a("v-on:click"="filterClicked(filter, filtersKey, $event)" href="#") {{filterText(filter, filtersKey)}}
+            li(v-for="(filtersKey, filters) in content.filters")
+                div(v-if="filters != null") Filter by {{filtersKey}}
+                    ul
+                        li(v-for="filter in filters")
+                            a("v-on:click"="filterClicked(filter, filtersKey, $event)" href="#") {{filterText(filter, filtersKey)}}
+                div(v-else)
+                    a("v-on:click"="specialFilterClicked(filtersKey, $event)" href="#") {{filtersKey}}
 doctype html
 html(lang="en")
     include ../includes/head.jade

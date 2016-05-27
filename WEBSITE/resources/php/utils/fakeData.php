@@ -41,9 +41,9 @@ function createTypes(){
 
 function createDevices(){
     $data = [
-        ['\'Samsung galaxy S7\'', '200', '1', '1', '1'],
-        ['\'Apple iPad pro\'', '300', '2', '2', '2'],
-        ['\'Apple watch\'', '250', '3','2', '2'],
-        ['\'Sony smart band\'', '150', '4', '1', '3']];
-    insertByArray(['name', 'price', 'type_id', 'os_id', 'brand_id'], $data, 'devices');
+        ['\'Samsung galaxy S7\'', '200', '1', '1', '1', '1'],
+        ['\'Apple iPad pro\'', '300', '2', '2', '2', '1'],
+        ['\'Apple watch\'', '250', '3','2', '2', '0'],
+        ['\'Sony smart band\'', '150', '4', '1', '3', '0']];
+    insertByArray(['name', 'price', 'type_id', 'os_id', 'brand_id', 'popular'], $data, 'devices');
 }

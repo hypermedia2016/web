@@ -106,6 +106,17 @@ Vue.component('devices', {
                 this.devicesFiltered = this.content.devices.filter((item) =>{
                    return (item[type] == filter.name);
                 });
+        },
+
+        specialFilterClicked(filter,  event){
+            event.preventDefault();
+            if(filter == 'All')
+                this.devicesFiltered = this.content.devices;
+            else
+                this.devicesFiltered = this.content.devices.filter((item) =>{
+                    console.log(item);
+                    return item.characteristics.includes(filter);
+                });
         }
     }
 });
