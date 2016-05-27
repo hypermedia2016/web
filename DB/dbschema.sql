@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 27, 2016 at 07:14 PM
+-- Generation Time: May 27, 2016 at 10:03 PM
 -- Server version: 5.7.12-0ubuntu1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -39,7 +39,9 @@ CREATE TABLE IF NOT EXISTS `devices` (
   `os_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
   `popular` tinyint(1) NOT NULL DEFAULT '0',
-  `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `description` text NOT NULL,
+  `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

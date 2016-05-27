@@ -11,6 +11,8 @@ type `gulp`
 ## How to test locally
 type `gulp serve`
 
+**Note:** all actions must be executed in the `WEBSITE` directory
+
 ## TODO
 - [ ] config.php
 - [ ] installation guide
