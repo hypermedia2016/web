@@ -16,8 +16,8 @@ Vue.component('devices', {
     },
     ready() {
         //add current location
-        this.locations.push({name: 'devices', url: '/devices.html'});
-        this.locations.push({name: 'devices', url: '/devices.html'}); //this will be removed by loadTab called by loadTypes
+        this.locations.push({name: 'devices', url: 'devices.html'});
+        this.locations.push({name: 'devices', url: 'devices.html'}); //this will be removed by loadTab called by loadTypes
 
         //load types
         this.loadTypes();
