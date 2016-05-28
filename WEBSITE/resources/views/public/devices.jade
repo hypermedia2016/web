@@ -2,7 +2,8 @@
 mixin devices()
     div(class="devices")
         ul
-            li(v-for="device in devicesFiltered") {{device.name}} {{device.price}}
+            li(v-for="device in devicesFiltered")
+                a("v-bind:href"="'device.html#'+device.id") {{device.name}} {{device.price}}
 mixin filters()
     div(class="filters")
         ul

@@ -1,0 +1,12 @@
+- var pageTitle="Device details"
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header.jade
+        device(inline-template "v-bind:locations.sync"="locations")
+            div(class="error") {{ error }}
+            p device info {{parsedData.name}}
+
+include ../includes/footer.jade
