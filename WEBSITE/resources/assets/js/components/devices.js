@@ -25,25 +25,27 @@ Vue.component('devices', {
 
     methods:{
         loadTab(name){
+            var _this = this;
             this.locations.pop();
             this.locations.push({name: name, url: '#'+name.toLowerCase()});
             this.$http({url: basicUrl + '/api/devices.php?type='+ name.toLowerCase(), method: 'GET'}).then( (response) => {
                 if(response.data.error != undefined){
-                    this.error = response.data.error;
+                    _this.error = response.data.error;
                 }else {
-                    this.content = response.data;
-                    this.devicesFiltered = this.content.devices;
-                    this.error = '';
+                    _this.content = response.data;
+                    _this.devicesFiltered = _this.content.devices;
+                    _this.error = '';
                 }
             }, function (response) {
-                this.error = 'Loading error...';
+                _this.error = 'Loading error...';
             });
         },
 
         loadTypes(){
+            var _this = this;
             this.$http({url: basicUrl + '/api/devices-types.php', method: 'GET'}).then( (response) => {
                 if(response.data.error != undefined){
-                    this.error = response.data.error;
+                    _this.error = response.data.error;
                 }else {
                     var data = response.data;
                     data.forEach((type, key)=>{
@@ -51,9 +53,8 @@ Vue.component('devices', {
                         tmp.url = '#'+tmp.name.toLowerCase();
                         data[key] = tmp;
                     });
-                    this.types = data;
-                    var _this = this;
-                    this.$nextTick(function () {
+                    _this.types = data;
+                    _this.$nextTick(function () {
                         _this.loadTab(_this.types[0].name);
                         $($('.nav-tabs li')[0]).addClass('active');
                         $($('.tab-content div')[0]).addClass('in').addClass('active');
@@ -65,7 +66,7 @@ Vue.component('devices', {
                     });
                 }
             }, function (response) {
-                this.error = 'Loading error...';
+                _this.error = 'Loading error...';
             });
         },
 
