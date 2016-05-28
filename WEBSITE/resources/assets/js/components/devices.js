@@ -2,6 +2,7 @@
  * Created by claudio on 24/05/16.
  */
 require('jquery-stickytabs');
+const queryString = require('query-string');
 
 Vue.component('devices', {
     props: ['locations'],
@@ -10,7 +11,9 @@ Vue.component('devices', {
             content: {filters: [], devices: []},
             devicesFiltered: [],
             error: '',
-            types: []
+            types: [],
+            activeFilter: {},
+            keepActiveFilter: false,
         }
 
     },
@@ -19,6 +22,9 @@ Vue.component('devices', {
         this.locations.push({name: 'devices', url: 'devices.html'});
         this.locations.push({name: 'devices', url: 'devices.html'}); //this will be removed by loadTab called by loadTypes
 
+        //filter passed
+        this.getFilter();
+        
         //load types
         this.loadTypes();
     },
@@ -33,7 +39,7 @@ Vue.component('devices', {
                     _this.error = response.data.error;
                 }else {
                     _this.content = response.data;
-                    _this.devicesFiltered = _this.content.devices;
+                    _this.setData();
                     _this.error = '';
                 }
             }, function (response) {
@@ -54,15 +60,33 @@ Vue.component('devices', {
                         data[key] = tmp;
                     });
                     _this.types = data;
+
+                    //data loaded
                     _this.$nextTick(function () {
+                        //load default
                         _this.loadTab(_this.types[0].name);
                         $($('.nav-tabs li')[0]).addClass('active');
                         $($('.tab-content div')[0]).addClass('in').addClass('active');
+
+                        //listener
                         $('.nav-tabs a').on('shown.bs.tab', function(event){
                             var name = $(event.target).text();
+                            //this is not executed the first time if a query was passed
+                            if(!_this.keepActiveFilter) {
+                                history.pushState(null, null, location.origin + location.pathname + '#' + name.toLowerCase());
+                                _this.activeFilter = {};
+                            }
+                            _this.keepActiveFilter = false;
                             _this.loadTab(name);
                         });
                         $('.nav-tabs').stickyTabs();
+
+                        //back and forward support for filters
+                        //TODO
+                       /* window.addEventListener('popstate', (href) => {
+                            _this.getFilter();
+                            _this.setData();
+                        });*/
                     });
                 }
             }, function (response) {
@@ -71,6 +95,25 @@ Vue.component('devices', {
         },
 
         //------------FILTERS----------------
+        setData(){
+            var keys = Object.keys(this.activeFilter);
+            if(keys.length==0) {
+                this.devicesFiltered = this.content.devices;
+                return;
+            }
+            //at the moment we consider only one active element per time
+            if(this.activeFilter[keys[0]] == undefined){
+                this.specialFilterClicked({name: keys[0]}, null);
+                return ;
+            }
+            this.filterClicked({name: this.activeFilter[keys[0]]}, keys[0], null);
+        },
+
+        getFilter(){
+            this.activeFilter = queryString.parse(location.search);
+            if(Object.keys(this.activeFilter).length!=0)
+                this.keepActiveFilter = true;
+        },
 
         filterText(filter, type){
             if(type=='price')
@@ -92,7 +135,7 @@ Vue.component('devices', {
                 this.devicesFiltered = this.content.devices.filter((item) =>{
                     return (item['price'] >= price[0]);
                 });
-            //This case cover also the case "less than"
+            //This case covers also the case "less than"
             else
                 this.devicesFiltered = this.content.devices.filter((item) =>{
                     return (item['price'] >= price[0] && item['price'] <= price[1]);
@@ -100,7 +143,9 @@ Vue.component('devices', {
         },
 
         filterClicked(filter, type, event){
-            event.preventDefault();
+            if(event != null)
+                event.preventDefault();
+            this.setCurrentFilter(type, filter.name);
             if(type=='price')
                 this.filterPrice(filter);
             else
@@ -110,14 +155,22 @@ Vue.component('devices', {
         },
 
         specialFilterClicked(filter,  event){
-            event.preventDefault();
+            if(event != null)
+                event.preventDefault();
+            this.setCurrentFilter(filter, undefined);
             if(filter == 'All')
                 this.devicesFiltered = this.content.devices;
             else
                 this.devicesFiltered = this.content.devices.filter((item) =>{
-                    console.log(item);
                     return item.characteristics.includes(filter);
                 });
+        },
+
+        setCurrentFilter(name, value){
+            this.activeFilter = {};
+            this.activeFilter[name] = value;
+            history.pushState(null, null, location.origin + location.pathname + '?'+encodeURIComponent(name)+'='+encodeURIComponent(value) + window.location.hash);
         }
+
     }
 });

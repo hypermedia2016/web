@@ -65,8 +65,10 @@ Vue.component('device', {
             
             //push states
             this.locations.push({name: this.parsedData.type, url: 'devices.html#'+this.parsedData.type.toLowerCase()});
-            this.locations.push({name: this.parsedData.brand, url: 'devices.html#TODO'}); //TODO
+            this.locations.push({name: this.parsedData.brand, url: 'devices.html?brand='+ encodeURIComponent(this.parsedData.brand) +'#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.name, url: 'device.html#'+this.parsedData.id});
+
+            //TODO hash listen
         }
     }
 });
