@@ -64,7 +64,7 @@ Vue.component('device', {
             this.parsedData = this.data[0];
             
             //push states
-            this.locations.push({name: this.parsedData.type, url: 'devices.html#'+this.parsedData.type});
+            this.locations.push({name: this.parsedData.type, url: 'devices.html#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.brand, url: 'devices.html#TODO'}); //TODO
             this.locations.push({name: this.parsedData.name, url: 'device.html#'+this.parsedData.id});
         }
