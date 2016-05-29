@@ -1,4 +1,4 @@
-- var pageTitle="smart life services"
+- var pageTitle="Smart life services"
 mixin services()
     div(class="services")
         ul
@@ -20,5 +20,4 @@ html(lang="en")
                     div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
                         p {{type.name}}
                         +services()
-
-include ../includes/footer.jade
+        include ../includes/footer.jade
