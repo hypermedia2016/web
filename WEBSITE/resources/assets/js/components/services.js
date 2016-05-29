@@ -2,7 +2,6 @@
  * Created by claudio on 24/05/16.
  */
 require('jquery-stickytabs');
-const queryString = require('query-string');
 
 Vue.component('services', {
     props: ['locations'],
