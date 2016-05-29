@@ -18,6 +18,10 @@ Vue.component('device', {
 
         //load device
         this.loadDevice();
+
+        //id changed
+        var _this = this;
+        $(window).on('hashchange', ()=>{_this.locations.pop();_this.locations.pop();_this.locations.pop();_this.loadDevice();});
     },
 
     methods:{
@@ -67,8 +71,6 @@ Vue.component('device', {
             this.locations.push({name: this.parsedData.type, url: 'devices.html#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.brand, url: 'devices.html?brand='+ encodeURIComponent(this.parsedData.brand) +'#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.name, url: 'device.html#'+this.parsedData.id});
-
-            //TODO hash listen
         }
     }
 });
