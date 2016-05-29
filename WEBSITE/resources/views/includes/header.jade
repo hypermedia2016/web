@@ -1,12 +1,28 @@
+-
+    headMenu = [{name: 'Who we are', link: 'who-we-are.html'},
+    {name: 'The group', link: 'the-group.html'}]
+-
+    mainMenu = [{name: 'Devices', link: 'devices.html'},
+    {name: 'Smart life services', link: 'services.html'},
+    {name: 'Assistance', link: 'assistance.html'}]
 //main menu
-mixin main(name, link)
-    li
+mixin menu-item(name, link)
+    li&attributes(attributes)
         a(href=link) #{name}
 
-ul#main
-    +main("Devices", "devices.html")
-    +main("Smart life services", "services.html")
-    +main("Assistance", "assistance.html")
+ul#head-menu
+    each item, i in headMenu
+        if headMenuSelected == item.name
+            +menu-item(item.name, item.link)(class='selected')
+        else
+            +menu-item(item.name, item.link)
+
+ul#main-menu
+    each item, i in mainMenu
+        if mainMenuSelected == item.name
+            +menu-item(item.name, item.link)(class='selected')
+        else
+            +menu-item(item.name, item.link)
 
 //location menu
 ul
