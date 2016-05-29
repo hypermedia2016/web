@@ -1,0 +1,25 @@
+- var pageTitle="Assistance & support"
+- var mainMenuSelected='Assistance'
+
+mixin assistance()
+    div(class="assistance")
+        ul
+            li(v-for="assistanceItem in assistance")
+                a("v-bind:href"="'assistance-detail.html#'+assistanceItem.id") {{assistanceItem.name}}
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header.jade
+        assistance(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                //sub menu
+                ul(class="nav nav-tabs")#sub
+                    li(v-for="type in types")
+                        a("v-bind:href"="type.url" data-toggle="tab") {{type.name}}
+                div(class="error") {{ error }}
+                div(class="tab-content")
+                    div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
+                        p {{type.name}}
+                        +assistance()
+        include ../includes/footer.jade

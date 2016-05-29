@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2016 at 03:58 PM
+-- Generation Time: May 29, 2016 at 06:24 PM
 -- Server version: 5.7.12-0ubuntu1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -13,6 +13,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `hypermedia`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assistance`
+--
+
+CREATE TABLE IF NOT EXISTS `assistance` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `type_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assistance_types`
+--
+
+CREATE TABLE IF NOT EXISTS `assistance_types` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -97,6 +121,20 @@ CREATE TABLE IF NOT EXISTS `services_types` (
 --
 
 --
+-- Indexes for table `assistance`
+--
+ALTER TABLE `assistance`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`,`type_id`),
+  ADD KEY `type_id` (`type_id`);
+
+--
+-- Indexes for table `assistance_types`
+--
+ALTER TABLE `assistance_types`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `brands`
 --
 ALTER TABLE `brands`
@@ -146,6 +184,16 @@ ALTER TABLE `services_types`
 --
 
 --
+-- AUTO_INCREMENT for table `assistance`
+--
+ALTER TABLE `assistance`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `assistance_types`
+--
+ALTER TABLE `assistance_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
@@ -178,6 +226,12 @@ ALTER TABLE `services_types`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `assistance`
+--
+ALTER TABLE `assistance`
+  ADD CONSTRAINT `assistance-type` FOREIGN KEY (`type_id`) REFERENCES `assistance_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `devices`

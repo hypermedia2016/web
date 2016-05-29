@@ -9,3 +9,4 @@ require('./services');
 require('./service');
 require('./who-we-are');
 require('./the-group');
+require('./assistance');

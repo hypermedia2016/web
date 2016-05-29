@@ -29,6 +29,9 @@ createDevices();
 createServicesTypes();
 createServices();
 
+//----------------assistance------------
+createAssistanceTypes();
+createAssistance();
 
 //-------------devices-------------------
 function createBrands(){
@@ -68,4 +71,19 @@ function createServices(){
         ['\'Verizon music\'', '300', '2', '\'The best service in the world\'', '\'\''],
         ['\'verizon beSafe\'', '250', '3', '\'The best service in the world\'', '\'\'']];
     insertByArray(['name', 'price', 'type_id', 'description', 'img'], $data, 'services');
+}
+
+//----------------assistance------------
+function createAssistanceTypes(){
+    $data = [['\'Configurations\''], ['\'Monitoring costs and payments\''], ['\'Technical support\''], ['\'Smart life services\'']];
+    insertByArray(['name'], $data, 'assistance_types');
+}
+
+function createAssistance(){
+    $data = [
+        ['\'iOS configuration\'', '1', '\'The best assistance in the world\''],
+        ['\'Refund\'', '2', '\'The best assistance in the world\''],
+        ['\'Device specific support\'', '3', '\'The best assistance in the world\''],
+        ['\'Unsubscribe\'', '4', '\'The best assistance in the world\'']];
+    insertByArray(['name', 'type_id', 'description'], $data, 'assistance');
 }
