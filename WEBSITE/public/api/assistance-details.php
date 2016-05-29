@@ -11,7 +11,7 @@ require_once __DIR__ . '/../../resources/php/include/bootstrap.php';
 $id = $connection->real_escape_string(isset($_GET['id'])?$_GET['id']:'');
 
 
-$query = 'SELECT S.*, T.name as type FROM services S  JOIN services_types T ON S.type_id = T.id WHERE S.id = \''.$id.'\'';
-$service = getDataByQuery($query);
+$query = 'SELECT A.*, T.name as type FROM assistance A  JOIN assistance_types T ON A.type_id = T.id WHERE A.id = \''.$id.'\'';
+$devices = getDataByQuery($query);
 
-print json_encode($service);
+print json_encode($devices);

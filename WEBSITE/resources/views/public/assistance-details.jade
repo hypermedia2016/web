@@ -1,0 +1,12 @@
+- var pageTitle="Assistance details"
+- var mainMenuSelected='Assistance'
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header.jade
+        assistance-details(inline-template "v-bind:locations.sync"="locations")
+            div(class="error") {{ error }}
+            p assistance info {{parsedData.name}}
+        include ../includes/footer.jade

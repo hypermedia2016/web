@@ -5,7 +5,7 @@ mixin assistance()
     div(class="assistance")
         ul
             li(v-for="assistanceItem in assistance")
-                a("v-bind:href"="'assistance-detail.html#'+assistanceItem.id") {{assistanceItem.name}}
+                a("v-bind:href"="'assistance-details.html#'+assistanceItem.id") {{assistanceItem.name}}
 doctype html
 html(lang="en")
     include ../includes/head.jade
