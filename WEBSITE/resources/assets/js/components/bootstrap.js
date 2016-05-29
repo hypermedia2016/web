@@ -5,3 +5,4 @@
 require('./index');
 require('./devices');
 require('./device');
+require('./services');

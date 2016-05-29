@@ -19,11 +19,18 @@
 require_once __DIR__ . '/../include/bootstrap.php';
 $faker = Faker\Factory::create();
 
+//-------------devices-------------------
 createBrands();
 createOs();
-createTypes();
+createDevicesTypes();
 createDevices();
 
+//----------------services------------
+createServicesTypes();
+createServices();
+
+
+//-------------devices-------------------
 function createBrands(){
     $data = [['\'Samsung\''], ['\'Apple\''], ['\'Sony\'']];
     insertByArray(['name'], $data, 'brands');
@@ -34,16 +41,31 @@ function createOs(){
     insertByArray(['name'], $data, 'os');
 }
 
-function createTypes(){
+function createDevicesTypes(){
     $data = [['\'Smartphones\''], ['\'Tablets\''], ['\'Wearable\''], ['\'Outlet\'']];
     insertByArray(['name'], $data, 'devices_types');
 }
 
 function createDevices(){
     $data = [
-        ['\'Samsung galaxy S7\'', '200', '1', '1', '1', '1', 'The best device in the world', ''],
-        ['\'Apple iPad pro\'', '300', '2', '2', '2', '1', 'The best device in the world', ''],
-        ['\'Apple watch\'', '250', '3','2', '2', '0', 'The best device in the world', ''],
-        ['\'Sony smart band\'', '150', '4', '1', '3', '0', 'The best device in the world', '']];
+        ['\'Samsung galaxy S7\'', '200', '1', '1', '1', '1', '\'The best device in the world\'', '\'\''],
+        ['\'Apple iPad pro\'', '300', '2', '2', '2', '1', '\'The best device in the world\'', '\'\''],
+        ['\'Apple watch\'', '250', '3','2', '2', '0', '\'The best device in the world\'', '\'\''],
+        ['\'Sony smart band\'', '150', '4', '1', '3', '0', '\'The best device in the world\'', '\'\'']];
     insertByArray(['name', 'price', 'type_id', 'os_id', 'brand_id', 'popular', 'description', 'img'], $data, 'devices');
+}
+
+
+//----------------services------------
+function createServicesTypes(){
+    $data = [['\'Stay connected\''], ['\'Stay amused\''], ['\'Stay secure\'']];
+    insertByArray(['name'], $data, 'services_types');
+}
+
+function createServices(){
+    $data = [
+        ['\'Verizon next\'', '200', '1', '\'The best service in the world\'', '\'\''],
+        ['\'Verizon music\'', '300', '2', '\'The best service in the world\'', '\'\''],
+        ['\'verizon beSafe\'', '250', '3', '\'The best service in the world\'', '\'\'']];
+    insertByArray(['name', 'price', 'type_id', 'description', 'img'], $data, 'services');
 }

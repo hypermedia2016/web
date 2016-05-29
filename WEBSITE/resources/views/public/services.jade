@@ -1,0 +1,24 @@
+- var pageTitle="smart life services"
+mixin services()
+    div(class="services")
+        ul
+            li(v-for="service in services")
+                a("v-bind:href"="'service.html#'+service.id") {{service.name}}
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header.jade
+        services(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                //sub menu
+                ul(class="nav nav-tabs")#sub
+                    li(v-for="type in types")
+                        a("v-bind:href"="type.url" data-toggle="tab") {{type.name}}
+                div(class="error") {{ error }}
+                div(class="tab-content")
+                    div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
+                        p {{type.name}}
+                        +services()
+
+include ../includes/footer.jade

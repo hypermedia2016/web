@@ -34,7 +34,7 @@ Vue.component('devices', {
             var _this = this;
             this.locations.pop();
             this.locations.push({name: name, url: '#'+name.toLowerCase()});
-            this.$http({url: basicUrl + '/api/devices.php?type='+ name.toLowerCase(), method: 'GET'}).then( (response) => {
+            this.$http({url: basicUrl + '/api/devices.php?type='+ encodeURIComponent(name), method: 'GET'}).then( (response) => {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
@@ -53,6 +53,7 @@ Vue.component('devices', {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
+                    //parse and store result
                     var data = response.data;
                     data.forEach((type, key)=>{
                         var tmp = type;
@@ -61,7 +62,7 @@ Vue.component('devices', {
                     });
                     _this.types = data;
 
-                    //data loaded
+                    //data loaded and displayed
                     _this.$nextTick(function () {
                         //load default
                         _this.loadTab(_this.types[0].name);
