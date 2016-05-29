@@ -5,11 +5,12 @@
     mainMenu = [{name: 'Devices', link: 'devices.html'},
     {name: 'Smart life services', link: 'services.html'},
     {name: 'Assistance', link: 'assistance.html'}]
-//main menu
+
 mixin menu-item(name, link)
     li&attributes(attributes)
         a(href=link) #{name}
 
+//head menu
 ul#head-menu
     each item, i in headMenu
         if headMenuSelected == item.name
@@ -17,6 +18,7 @@ ul#head-menu
         else
             +menu-item(item.name, item.link)
 
+//main menu
 ul#main-menu
     each item, i in mainMenu
         if mainMenuSelected == item.name

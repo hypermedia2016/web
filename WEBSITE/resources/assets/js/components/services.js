@@ -68,7 +68,6 @@ Vue.component('services', {
                         //listener
                         $('.nav-tabs a').on('shown.bs.tab', function(event){
                             var name = $(event.target).text();
-                            //this is not executed the first time if a query was passed
                             _this.loadTab(name);
                         });
                         $('.nav-tabs').stickyTabs();

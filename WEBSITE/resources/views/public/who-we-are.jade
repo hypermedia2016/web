@@ -1,0 +1,28 @@
+- var pageTitle="Who we are"
+- var headMenuSelected='Who we are'
+
+mixin sub-item(name, link)
+    li&attributes(attributes)
+        a(href=link data-toggle="tab") #{name}
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header.jade
+        who-we-are(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                //sub menu
+                ul(class="nav nav-tabs")#sub
+                    +sub-item('Innovation', '#innovation')(class='active')
+                    +sub-item('Testimonials', '#testimonials')
+                    +sub-item('Projects', '#projects')
+                div(class="tab-content")
+                    #innovation.tab-pane.fade.active.in
+                        p Innovation content
+                    #testimonials.tab-pane.fade
+                        p testimonials content
+                    #projects.tab-pane.fade
+                        p projects content
+
+        include ../includes/footer.jade

@@ -1,0 +1,28 @@
+- var pageTitle="The group"
+- var headMenuSelected='The group'
+
+mixin sub-item(name, link)
+    li&attributes(attributes)
+        a(href=link data-toggle="tab") #{name}
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header.jade
+        the-group(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                //sub menu
+                ul(class="nav nav-tabs")#sub
+                    +sub-item('For investors', '#investors')(class='active')
+                    +sub-item('Business & Markets', '#business-markets')
+                    +sub-item('Governance', '#governance')
+                div(class="tab-content")
+                    #investors.tab-pane.fade.active.in
+                        p For investors content
+                    #business-markets.tab-pane.fade
+                        p Business & Markets content
+                    #governance.tab-pane.fade
+                        p Governance content
+
+        include ../includes/footer.jade

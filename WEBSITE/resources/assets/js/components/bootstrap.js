@@ -7,3 +7,5 @@ require('./devices');
 require('./device');
 require('./services');
 require('./service');
+require('./who-we-are');
+require('./the-group');
