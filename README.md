@@ -22,3 +22,4 @@ type `gulp serve`
 - [ ] npm install
 - [ ] complete schema
 - [ ] guide to populate
+- [ ] compiled files
