@@ -23,3 +23,4 @@ type `gulp serve`
 - [ ] complete schema
 - [ ] guide to populate
 - [ ] compiled files
+- [ ] concat of js, just to show them
