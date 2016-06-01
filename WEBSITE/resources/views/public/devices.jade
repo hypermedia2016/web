@@ -24,7 +24,7 @@ html(lang="en")
         devices(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
                 //sub menu
-                ul(class="nav nav-tabs")#sub
+                ul(class="nav nav-tabs app-devices-nav")#sub
                     li(v-for="type in types")
                         a("v-bind:href"="type.url" data-toggle="tab") {{type.name}}
                 div(class="error") {{ error }}

@@ -17,6 +17,15 @@ SET time_zone = "+00:00";
 --
 -- Dumping data for table `brands`
 --
+INSERT INTO `os` (`id`, `name`) VALUES
+(1, 'Android'),
+(2, 'iOS');
+
+INSERT INTO `devices_types` (`id`, `name`) VALUES
+(1, 'Smartphones'),
+(2, 'Tablets'),
+(3, 'Wearable'),
+(4, 'Outlet');
 
 INSERT INTO `brands` (`id`, `name`) VALUES
 (2, 'Apple'),
@@ -37,16 +46,10 @@ INSERT INTO `devices` (`id`, `name`, `price`, `brand_id`, `os_id`, `type_id`) VA
 -- Dumping data for table `devices_types`
 --
 
-INSERT INTO `devices_types` (`id`, `name`) VALUES
-(1, 'Smartphones'),
-(2, 'Tablets'),
-(3, 'Wearable'),
-(4, 'Outlet');
+
 
 --
 -- Dumping data for table `os`
 --
 
-INSERT INTO `os` (`id`, `name`) VALUES
-(1, 'Android'),
-(2, 'iOS');
+
