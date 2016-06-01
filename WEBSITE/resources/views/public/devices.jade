@@ -24,9 +24,14 @@ html(lang="en")
         devices(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
                 //sub menu
-                ul(class="nav nav-tabs app-devices-nav")#sub
-                    li(v-for="type in types")
-                        a("v-bind:href"="type.url" data-toggle="tab") {{type.name}}
+                .row
+                    .col-md-12
+                        ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
+                            li(v-for="type in types", class="app-home__principal-link")
+                                a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link")
+                                    img(src="img/{{type.name}}-icon.png", class="app-home__principal-link--img")
+
+                                a(class="app-home__principal-link--text") {{type.name}}
                 div(class="error") {{ error }}
                 div(class="tab-content")
                     div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade" v-for="type in types")

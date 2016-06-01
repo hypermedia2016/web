@@ -6,18 +6,70 @@ html(lang="en")
         include ../includes/header.jade
         index(inline-template "v-bind:locations.sync"="locations")
             //sub menu
-            mixin item(name, link)
-                li
-                    a(href=link) #{name}
+            mixin item(name, link, img)
+                li(class="app-home__principal-link")
+                    a(href=link, class="app-home__principal-link--img-link")
+                        img(src=img, class="app-home__principal-link--img")
 
-            ul#sub
-                +item("Devices", "devices.html")
-                +item("Smart life services", "services.html")
-                +item("Assistance", "assistance.html")
-            h2 Devices in promotion
-            p images...
-            h2 Smart life services
-            p images...
-            h2 How can we help you
-            p images...
+                    a(href=link, class="app-home__principal-link--text") #{name}
+            .container
+                .row
+                    .col-md-12
+                        ul(class="app-home__principal-links list-unstyled")
+                            +item("Devices", "devices.html","img/devices-icon.jpg")
+                            +item("Smart life services", "services.html","img/services-icon.jpg")
+                            +item("Assistance", "assistance.html","img/assistance-icon.jpg")
+
+
+                .row
+                    .col-md-12
+                        h2 Devices in promotion
+                        p Content
+
+                        .row
+                            .col-md-4
+                                p Content
+
+                            .col-md-4
+                                p Content
+
+                            .col-md-4
+                                p Content
+
+                .row
+                    h2 Services in promotions
+                    .col-md-4
+                        p Content
+
+                    .col-md-4
+                        p Content
+
+                    .col-md-4
+                        p Content
+
+
+                .row
+                    h2 How can we help
+                    .col-md-4
+                        p Content
+
+                    .col-md-4
+                        p Content
+
+                    .col-md-4
+                        p Content
+
+                .row
+                    .col-md-4
+                        p Content
+
+                    .col-md-4
+                        p Content
+
+                    .col-md-4
+                        p Content
+
+
+
+
         include ../includes/footer.jade
