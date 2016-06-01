@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2016 at 06:24 PM
+-- Generation Time: Jun 01, 2016 at 06:30 PM
 -- Server version: 5.7.12-0ubuntu1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -24,7 +24,8 @@ CREATE TABLE IF NOT EXISTS `assistance` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `type_id` int(11) NOT NULL
+  `type_id` int(11) NOT NULL,
+  `promotion` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -65,7 +66,8 @@ CREATE TABLE IF NOT EXISTS `devices` (
   `popular` tinyint(1) NOT NULL DEFAULT '0',
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `description` text NOT NULL,
-  `img` varchar(255) NOT NULL
+  `img` varchar(255) NOT NULL,
+  `promotion` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -102,7 +104,8 @@ CREATE TABLE IF NOT EXISTS `services` (
   `description` text NOT NULL,
   `price` double NOT NULL,
   `type_id` int(11) NOT NULL,
-  `img` varchar(255) NOT NULL
+  `img` varchar(255) NOT NULL,
+  `promotion` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
