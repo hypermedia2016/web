@@ -49,12 +49,7 @@ nav.navbar
             +menu-item(item.name, item.link)
 
 //location menu
-nav.container
-    .row
-        .col-md-12
-            ul.list-unstyled.list-inline
-                li(v-for="location in locations")
-                    a("v-bind:href"="location.url") {{ location.name }}
+
 
 
 

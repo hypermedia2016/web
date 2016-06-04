@@ -1,0 +1,83 @@
+.app-device
+  &__head
+    &__img
+      max-width: 300px
+      margin-right: 30px
+    &__title
+      font-weight: bold
+
+    &__desc
+      font-size: 1.2rem
+
+    &__price
+      color: $app-red
+      font-weight: bold
+
+    &__services
+      &__headline
+        margin-bottom: 30px
+        font-weight: bold
+
+      &__link
+        padding: 10px 70px
+        color: $app-red
+        font-size: 1.2rem
+        font-weight: bold
+        border: 2px solid $app-red
+
+        &:hover
+          color: white
+          background-color: $app-red
+
+
+    &__btn
+      padding: 10px 30px
+      color: white
+      font-size: 1.2rem
+      font-weight: bold
+      background: $app-red
+      border: none
+      box-shadow: none
+
+      &:hover
+        background: lighten($app-red, 2%)
+
+  &__content-nav
+    padding: 15px 0
+    color: $app-gray
+    font-size: 1.2rem
+    font-weight: bold
+    border-top: 1px solid #ddd
+    border-bottom: 1px solid #ddd
+
+    li.selected
+      color: $app-black
+
+  &__content
+    &__section
+      padding: 40px 0
+      border-bottom: 1px solid #ddd
+
+      &__title
+        margin-bottom: 15px
+        font-weight: bold
+
+      &__text
+        font-size: 1.2rem
+        line-height: 1.7
+
+      &:last-child
+        border-bottom: none
+      &__img
+        max-width: 300px
+
+    &__specs
+      &__heading
+        font-weight: bold
+        margin-bottom: 30px
+
+
+      &__table
+        td
+          width: 50%
+          padding: 20px 0 !important

@@ -2,3 +2,57 @@ html
   font-size: 14px
 
 
+a
+  color: #333
+  text-decoration: none
+
+  &:hover
+    color: #333
+    text-decoration: none
+
+.material-icons
+  vertical-align: middle
+
+
+.app-breadcrumb
+  padding: 10px
+  background-color: rgba(215, 215, 215, 0.22)
+
+  &__text
+    color: $app-gray
+
+    &:hover
+      color: $app-black
+
+
+  &__separator
+    margin-left: 10px
+    color: $app-gray
+
+
+.nav-tabs
+  border: none
+
+.nav-tabs > li > a
+  border-radius: 0
+  border: none
+
+  &:hover
+    border-color: transparent
+    background-color: transparent
+    cursor: pointer
+
+.nav-tabs > li.active > a
+  font-weight: bold
+  border: none
+  cursor: pointer
+  color: $app-black
+
+  &:hover
+    color: inherit
+    background-color: transparent
+    border: none
+    cursor: pointer
+
+  &:focus, &:visited
+    border: none

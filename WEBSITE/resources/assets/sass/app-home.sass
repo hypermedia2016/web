@@ -9,10 +9,17 @@
     &--img-link
       display: block
       margin-bottom: 15px
+      transition: trasform 200ms ease-in-out
+
+      &:hover
+        transform: translateY(-5px)
+
+      &:hover+a
+          font-weight: bold
 
     &--img
       width: 100px
 
     &--text
       display: block
-      font-size: 1.1rem
+      font-size: 1.2rem

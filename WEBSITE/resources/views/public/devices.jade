@@ -1,17 +1,18 @@
-- var pageTitle="devices"
+- var pageTitle="Devices"
 - var mainMenuSelected='Devices'
 
 mixin devices()
     div(class="devices")
-        ul
+        ul.list-unstyled
             li(v-for="device in devicesFiltered")
                 a("v-bind:href"="'device.html#'+device.id") {{device.name}} {{device.price}}
 mixin filters()
-    div(class="filters")
-        ul
-            li(v-for="(filtersKey, filters) in content.filters")
-                div(v-if="filters != null") Filter by {{filtersKey}}
-                    ul
+    div(class="filters app-devices-filters")
+        ul.list-unstyled
+            li(class="app-devices-filters__section" v-for="(filtersKey, filters) in content.filters")
+                div(v-if="filters != null")
+                    h5.app-devices-filters__section-title Filter by {{filtersKey}}
+                    ul.list-unstyled.app-devices-filters__section-content
                         li(v-for="filter in filters")
                             a("v-on:click"="filterClicked(filter, filtersKey, $event)" href="#") {{filterText(filter, filtersKey)}}
                 div(v-else)
@@ -21,6 +22,8 @@ html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header.jade
+        include ../includes/breadcrumb.jade
+        br
         devices(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
                 //sub menu
@@ -29,13 +32,19 @@ html(lang="en")
                         ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
                             li(v-for="type in types", class="app-home__principal-link")
                                 a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link")
-                                    img(src="img/{{type.name}}-icon.png", class="app-home__principal-link--img")
+                                    img("v-bind:src"="'img/'+type.name+'-icon.jpg'", class="app-home__principal-link--img")
 
                                 a(class="app-home__principal-link--text") {{type.name}}
-                div(class="error") {{ error }}
-                div(class="tab-content")
-                    div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade" v-for="type in types")
-                        p {{type.name}}
-                        +filters()
-                        +devices()
+                //div(class="error") {{ error }}
+                br
+                br
+                .row
+                    .col-md-12
+                        div(class="tab-content")
+                            div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade row" v-for="type in types")
+                                //p {{type.name}}
+                                .col-md-3
+                                    +filters()
+                                .col-md-9
+                                    +devices()
         include ../includes/footer.jade

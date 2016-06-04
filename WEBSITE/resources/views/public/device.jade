@@ -6,7 +6,59 @@ html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header.jade
+        include ../includes/breadcrumb.jade
+        br
+        br
         device(inline-template "v-bind:locations.sync"="locations")
             div(class="error") {{ error }}
-            p device info {{parsedData.name}}
+            .container
+                .row
+                    .col-md-6.text-right
+                        img(src="img/samsung1-hero.png", class="app-device__head__img")
+                    .col-md-6
+                        h2.app-device__head__title {{parsedData.name}}
+                        p.app-device__head__desc {{parsedData.short_description}}
+                        h3.app-device__head__price {{parsedData.price}} &euro;
+                        br
+                        div.app-device__head__services
+                            h3.app-device__head__services__headline Associated services
+                            ul.list-unstyled
+                                li
+                                    a(href="/dfdf", class="app-device__head__services__link") Verizon next
+                                        i.material-icons chevron_right
+                        br
+                        div
+                            button.app-device__head__btn BUY
+                br
+                br
+                .row
+                    .col-md-12
+                        ul.list-unstyled.list-inline.app-device__content-nav
+                            li.selected Presentation
+                            li Specifications
+                            li Assistance
+
+                br
+                br
+                .row#presentation
+                    .col-md-12.app-device__content
+                        .row(v-for="(index,section) in presentationSections", class="app-device__content__section")
+                            .col-md-6.text-center
+                                img("v-bind:src"="'img/samsung1-pres-'+(index+1)+'.jpeg'", class="app-device__content__section__img")
+                            .col-md-6
+                                h2.app-device__content__section__title {{section.title}}
+                                p.app-device__content__section__text {{section.content}}
+
+
+                .row#specs
+                    .col-md-12
+                        h2.app-device__content__specs__heading  Specifications
+                        table.table.app-device__content__specs__table
+                            thead
+                            tbody
+                                tr(v-for="spec in specs")
+                                    td {{spec.title}}
+                                    td {{spec.content}}
+
+
         include ../includes/footer.jade

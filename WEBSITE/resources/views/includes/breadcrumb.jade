@@ -1,0 +1,9 @@
+nav.container
+    .row
+        .col-md-12
+            ul.list-unstyled.list-inline.app-breadcrumb
+                li(class="app-breadcrumb__item",v-for="(index,location) in locations")
+                    a("v-bind:href"="location.url", "v-if:"="location.name === 'HOME'", class="app-breadcrumb__text")
+                        i.material-icons.app-breadcrumb__separator home
+                    a("v-bind:href"="location.url", "v-if:"="location.name !== 'HOME'", class="app-breadcrumb__text") {{location.name}}
+                    i("v-show"="index !== locations.length - 1", class="material-icons app-breadcrumb__separator") chevron_right

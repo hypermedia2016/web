@@ -19,8 +19,8 @@ Vue.component('devices', {
     },
     ready() {
         //add current location
-        this.locations.push({name: 'devices', url: 'devices.html'});
-        this.locations.push({name: 'devices', url: 'devices.html'}); //this will be removed by loadTab called by loadTypes
+        this.locations.push({name: 'Devices', url: 'devices.html'});
+        this.locations.push({name: 'Devices', url: 'devices.html'}); //this will be removed by loadTab called by loadTypes
 
         //filter passed
         this.getFilter();

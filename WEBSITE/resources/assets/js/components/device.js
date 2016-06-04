@@ -9,12 +9,14 @@ Vue.component('device', {
             error: '',
             data: [],
             parsedData: {},
+            presentationSections: [],
+            specs : []
         }
 
     },
     ready() {
         //add basic location
-        this.locations.push({name: 'devices', url: 'devices.html'});
+        this.locations.push({name: 'Devices', url: 'devices.html'});
 
         //load device
         this.loadDevice();
@@ -71,6 +73,30 @@ Vue.component('device', {
             this.locations.push({name: this.parsedData.type, url: 'devices.html#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.brand, url: 'devices.html?brand='+ encodeURIComponent(this.parsedData.brand) +'#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.name, url: 'device.html#'+this.parsedData.id});
+            this.createPresentationSections();
+            this.createSpecItems();
+
+        },
+
+        createPresentationSections(){
+            var titles = this.parsedData.titles.split('||');
+            var full_description = this.parsedData.full_description.split('||');
+            for(let i=0; i<titles.length; i++){
+                this.presentationSections.push({
+                    title : titles[i],
+                    content : full_description[i]
+                })
+            }
+        },
+        createSpecItems(){
+            var rawSpecs = this.parsedData.specs.split('||');
+            for(let chunk of rawSpecs){
+                let splittedChunk = chunk.split(':');
+                this.specs.push({
+                    title: splittedChunk[0],
+                    content: splittedChunk[1]
+                })
+            }
         }
     }
 });
