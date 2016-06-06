@@ -2,28 +2,38 @@
 - var mainMenuSelected='Smart life services'
 
 mixin services()
-    div(class="services")
-        ul
-            li(v-for="service in services")
-                a("v-bind:href"="'service.html#'+service.id") {{service.name}}
+    div(v-for="service in services", class="services row", style="background:url('../img/service_{{service.id}}.jpg') left center")
+        .col-md-6
+
+        .col-md-6
+            h2 {{service.name}}
+            p {{service.short_description}}
+            a("v-bind:href"="'service.html#'+service.id") DISCOVER
+
 doctype html
 html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header.jade
         include ../includes/breadcrumb.jade
+        br
         services(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
-                //sub menu
-                ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
-                    li(v-for="type in types" class="app-home__principal-link")
-                        a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link")
-                            img(src="img/devices.jpg" class="app-home__principal-link--img")
+                .row
+                    .col-md-12
+                    //sub menu
+                    ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
+                        li(v-for="(index,type) in types" class="app-home__principal-link")
+                            a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link")
+                                img("v-bind:src"="'img/service_type_'+(index+1)+'.jpg'" class="app-home__principal-link--img")
 
-                        a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--text") {{type.name}}
-                div(class="error") {{ error }}
-                div(class="tab-content")
-                    div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
-                        p {{type.name}}
-                        +services()
+                            a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--text") {{type.name}}
+                    div(class="error") {{ error }}
+                br
+                br
+                .row
+                    .col-md-12
+                        div(class="tab-content")
+                            div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
+                                +services()
         include ../includes/footer.jade

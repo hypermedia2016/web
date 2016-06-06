@@ -42,12 +42,12 @@ html(lang="en")
                 br
                 .row#presentation
                     .col-md-12.app-device__content
-                        .row(v-for="(index,section) in presentationSections", class="app-device__content__section")
+                        .row(v-for="(index,section) in presentationSections", class="app-big-feature__section")
                             .col-md-6.text-center
-                                img("v-bind:src"="'img/samsung1-pres-'+(index+1)+'.jpeg'", class="app-device__content__section__img")
+                                img("v-bind:src"="'img/samsung1-pres-'+(index+1)+'.jpeg'", class="app-big-feature__section__img")
                             .col-md-6
-                                h2.app-device__content__section__title {{section.title}}
-                                p.app-device__content__section__text {{section.content}}
+                                h2.app-big-feature__section__title {{section.title}}
+                                p.app-big-feature__section__text {{section.content}}
 
 
                 .row#specs

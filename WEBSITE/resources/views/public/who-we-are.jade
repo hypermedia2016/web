@@ -9,20 +9,43 @@ doctype html
 html(lang="en")
     include ../includes/head.jade
     body
-        include ../includes/header.jade
+        include ../includes/header_w.jade
+        br
+        br
         who-we-are(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
-                //sub menu
-                ul(class="nav nav-tabs")#sub
-                    +sub-item('Innovation', '#innovation')(class='active')
-                    +sub-item('Testimonials', '#testimonials')
-                    +sub-item('Projects', '#projects')
-                div(class="tab-content")
-                    #innovation.tab-pane.fade.active.in
-                        p Innovation content
-                    #testimonials.tab-pane.fade
-                        p testimonials content
-                    #projects.tab-pane.fade
-                        p projects content
+                .row
+                    .col-md-12.text-center
+                        h2.app-innovation__head__title Manifesto
+                        p.app-innovation__head__text We design, build and operate global networks, information systems and mobile technologies that connect people, grow businesses and economies, and improve communities.Technology inspires us. We believe that through our powerful technology, we can help transform any industry, leave a positive impact on any issue and create new possibilities for our customers and our world.
+                        div.app-innovation__head__divider
+
+                .row
+                    .col-md-12
+                        h2.text-center How we innovate
+
+                br
+                .row.app-big-feature__section
+                    .col-md-6.text-center
+                        img(src="img/in_1.jpg").app-big-feature__section__img
+                    .col-md-6
+                        h2.app-big-feature__section__title Attention to the customer
+                        p.app-big-feature__section__text Our mission is to make people communicate with each other, is to enrich their lives and their relationships. We accomplish that by an extreme care to the customer since the customer is a precious value that let us innovate and contribute to the wealth of everyone
+                br
+                .row.app-innovation__section
+                    .col-md-6
+                        h2.app-big-feature__section__title.text-right Continuos research and investments
+                        p.app-big-feature__section__text.text-right We invest in research and development more than anyone else in the telecommunication sector. We think that new and better technology can improve everyone and the value that we bring to the society
+
+                    .col-md-6.text-center
+                        img(src="img/in_2.jpg").app-big-feature__section__img
+
+                br
+                .row.app-big-feature__section
+                    .col-md-6
+                        img(src="img/in_3.jpg").app-big-feature__section__img
+                    .col-md-6
+                        h2.app-big-feature__section__title Quality of work
+                        p.app-big-feature__section__text We look to tomorrow every day. That’s why we’re committed to engaging the sharpest minds, empowering our team, and making a difference with what we do, what we create and how we impact people’s lives and communities. We equip our employees with valuable training and resources that help them make dreams come to life. There’s limitless creativity and opportunity to drive the next generation of technology.
 
         include ../includes/footer.jade
