@@ -1,0 +1,80 @@
+- var pageTitle="Projects"
+- var headMenuSelected='Projects'
+
+mixin sub-item(name, link)
+    li&attributes(attributes)
+        a(href=link data-toggle="tab") #{name}
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header_w.jade
+        br
+        br
+        who-we-are(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                .row
+                    .col-md-12
+                        div.app-testimonials__video
+                            video.app-testimonials__video__video
+                                source(src="img/spot.mp4", type="video/mp4")
+
+                            div.app-testimonials__video__overlay
+                                h1.app-testimonials__video__overlay__title.text-center Understand the future
+                                div.text-center
+                                    button.app-testimonials__video__overlay__btn Watch the spot
+
+                .row
+                    .col-md-12
+                        div.app-testimonials__quote-section.text-center
+                            img(src="img/fabio-fazio.jpg").app-testimonials__quote-section__img
+                            p.app-testimonials__quote-section__text "You can be everywhere with a click. You can explore entire new worlds and live neverending adventures!"
+                br
+                .row
+                    .col-md-12
+                        div.app-testimonials__video
+                            video.app-testimonials__video__video
+                                source(src="img/fazio.mp4", type="video/mp4")
+
+                            div.app-testimonials__video__overlay
+                                h1.app-testimonials__video__overlay__title.text-center Fabio Fazio interview
+                                div.text-center
+                                    button.app-testimonials__video__overlay__btn Watch the spot
+                br
+                .row
+                    .col-md-12
+                        div.app-testimonials__quote-section.text-center
+                            img(src="img/tim-berners-lee.jpg").app-testimonials__quote-section__img
+                            p.app-testimonials__quote-section__text "You can be everywhere with a click. You can explore entire new worlds and live neverending adventures!"
+
+                br
+                .row
+                    .col-md-12
+                        div.app-testimonials__video
+                            video.app-testimonials__video__video
+                                source(src="img/lee.mp4", type="video/mp4")
+
+                            div.app-testimonials__video__overlay
+                                h2.app-testimonials__video__overlay__title.text-center Tim Berners Lee interview
+                                div.text-center
+                                    button.app-testimonials__video__overlay__btn Watch the spot
+                br
+                .row
+                    .col-md-12
+                        div.app-testimonials__quote-section.text-center
+                            img(src="img/pif.png").app-testimonials__quote-section__img
+                            p.app-testimonials__quote-section__text "You can be everywhere with a click. You can explore entire new worlds and live neverending adventures!"
+
+                br
+                .row
+                    .col-md-12
+                        div.app-testimonials__video
+                            video.app-testimonials__video__video
+                                source(src="img/pif.mp4", type="video/mp4")
+
+                            div.app-testimonials__video__overlay
+                                h2.app-testimonials__video__overlay__title.text-center Pif interview
+                                div.text-center
+                                    button.app-testimonials__video__overlay__btn Watch the spot
+        include ../includes/footer.jade

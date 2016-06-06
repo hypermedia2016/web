@@ -1,0 +1,52 @@
+- var pageTitle="Projects"
+- var headMenuSelected='Projects'
+
+mixin sub-item(name, link)
+    li&attributes(attributes)
+        a(href=link data-toggle="tab") #{name}
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header_w.jade
+        br
+        br
+        who-we-are(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                .row
+                    .col-md-12.text-center
+                        h2.app-innovation__head__title Projects
+                        p.app-innovation__head__text Our projects are big and futuristic ideas that can radically change the way we consume technology and we develop relationships. We also creates simple but powerful initiatives that can benefit the community and boost innovation
+                        p.app-innovation__head__text Discover what we're working on
+                        div.app-innovation__head__divider
+
+                .row
+                    .col-md-12
+                        h2.text-center Discover
+
+                br
+                .row.app-big-feature__section
+                    .col-md-6.text-center
+                        img(src="img/projects_1.jpg").app-big-feature__section__img
+                    .col-md-6
+                        h2.app-big-feature__section__title 5G - A big leap forward
+                        p.app-big-feature__section__text 5G is coming, bringing speeds over 50 times faster than 4G LTE. We’re setting the stage for the next evolution in wireless networking, from ultra-high definition video streaming to smartphones to download speeds measured in gigabits per second to apps that could only be conceived of a few years ago. We’re helping innovators prepare for even greater innovation for a connected world.
+                br
+                .row.app-innovation__section
+                    .col-md-6
+                        h2.app-big-feature__section__title.text-right Project mango
+                        p.app-big-feature__section__text.text-right We're trying to create the first modular smartphone in the planet so that users can update their communication experience without changing completely device.
+
+                    .col-md-6.text-center
+                        img(src="img/projects_2.jpg").app-big-feature__section__img
+
+                br
+                .row.app-big-feature__section
+                    .col-md-6
+                        img(src="img/projects_3.jpg").app-big-feature__section__img
+                    .col-md-6
+                        h2.app-big-feature__section__title Verizon annual hackaton
+                        p.app-big-feature__section__text Our annual hackaton brings young innovators and future engineerers toghether to empower great ideas and share knowledge and competencies. The winners of the competition will receive a prize and the change to be hired at Verizon
+
+        include ../includes/footer.jade
