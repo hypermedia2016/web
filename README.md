@@ -4,6 +4,7 @@
 * Set server address on
     * resources/views/includes/config.jade
     * resources/assets/js/app.js
+* Create `config.php` file using example on `config` directory
 
 ## How to compile
 type `gulp`
