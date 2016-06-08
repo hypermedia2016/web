@@ -14,6 +14,9 @@ type `gulp serve`
 
 **Note:** all actions must be executed in the `WEBSITE` directory
 
+## Notes
+* import `data.sql`, at the moment it is the last version
+
 ## TODO
 - [ ] config.php
 - [ ] installation guide
