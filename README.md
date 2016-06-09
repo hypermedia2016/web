@@ -16,6 +16,7 @@ type `gulp serve`
 
 ## Notes
 * import `data.sql`, at the moment it is the last version
+* In the realease version we will add the compiled files
 
 ## TODO
 - [ ] config.php
