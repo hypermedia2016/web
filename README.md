@@ -1,10 +1,12 @@
 # web
 
 ## How to configure
-* Set server address on
+1. Create a mysql database and an user with write acces to it
+2. Import `database/data.sql`
+3. Set server address on
     * resources/views/includes/config.jade
     * resources/assets/js/app.js
-* Create `config.php` file using example on `config` directory
+4. Create `config.php` file using example on `config` directory
 
 ## How to compile
 type `gulp`
