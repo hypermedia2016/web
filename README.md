@@ -16,6 +16,10 @@ type `gulp serve`
 
 **Note:** all actions must be executed in the `WEBSITE` directory
 
+## External reosurces
+### Frameworks
+### Libraries
+
 ## Notes
 * import `data.sql`, at the moment it is the last version
 * In the realease version we will add the compiled files
