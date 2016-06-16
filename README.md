@@ -4,8 +4,8 @@
 1. Create a mysql database and an user with write acces to it
 2. Import `DB/data.sql`
 3. Set server address on
-    * resources/views/includes/config.jade
-    * resources/assets/js/app.js
+    * WEBSITE/resources/views/includes/config.jade
+    * WEBSITE/resources/assets/js/app.js
 4. Create `config.php` file using example on `config` directory
 
 ## How to compile
