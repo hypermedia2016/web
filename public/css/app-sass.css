@@ -1,0 +1,184 @@
+html {
+  font-size: 14px; }
+
+a {
+  color: #333;
+  text-decoration: none; }
+  a:hover {
+    color: #333;
+    text-decoration: none; }
+
+.material-icons {
+  vertical-align: middle; }
+
+.app-breadcrumb {
+  padding: 10px;
+  background-color: rgba(215, 215, 215, 0.22); }
+  .app-breadcrumb__text {
+    color: #888; }
+    .app-breadcrumb__text:hover {
+      color: #333; }
+  .app-breadcrumb__separator {
+    margin-left: 10px;
+    color: #888; }
+
+.nav-tabs {
+  border: none; }
+
+.nav-tabs > li > a {
+  border-radius: 0;
+  border: none; }
+  .nav-tabs > li > a:hover {
+    border-color: transparent;
+    background-color: transparent;
+    cursor: pointer; }
+
+.nav-tabs > li.active > a {
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: #333; }
+  .nav-tabs > li.active > a:hover {
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    cursor: pointer; }
+  .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:visited {
+    border: none; }
+
+.navbar-brand {
+  height: inherit; }
+  .navbar-brand img {
+    width: 200px; }
+
+.navbar-nav {
+  margin-top: 20px;
+  margin-left: 15px;
+  font-size: 1.1rem; }
+  .navbar-nav > li {
+    margin: 0 15px; }
+    .navbar-nav > li > a {
+      font-size: 1.3rem; }
+      .navbar-nav > li > a:hover {
+        background: transparent; }
+    .navbar-nav > li.selected a {
+      font-weight: bold; }
+
+.app-nav__top-nav {
+  margin-top: 30px; }
+
+.app-devices-nav {
+  text-align: center; }
+  .app-devices-nav li {
+    display: inline-block;
+    float: none; }
+
+.app-home__principal-links {
+  text-align: center; }
+
+.app-home__principal-link {
+  display: inline-block;
+  margin: 0 30px; }
+  .app-home__principal-link--img-link {
+    display: block;
+    margin-bottom: 15px;
+    transition: trasform 200ms ease-in-out; }
+    .app-home__principal-link--img-link:hover {
+      transform: translateY(-5px); }
+    .app-home__principal-link--img-link:hover + a {
+      font-weight: bold; }
+  .app-home__principal-link--img {
+    width: 100px; }
+  .app-home__principal-link--text {
+    display: block;
+    font-size: 1.2rem; }
+
+.app-device__head__img {
+  max-width: 300px;
+  margin-right: 30px; }
+
+.app-device__head__title {
+  font-weight: bold; }
+
+.app-device__head__desc {
+  font-size: 1.2rem; }
+
+.app-device__head__price {
+  color: #C40511;
+  font-weight: bold; }
+
+.app-device__head__services__headline {
+  margin-bottom: 30px;
+  font-weight: bold; }
+
+.app-device__head__services__link {
+  padding: 10px 70px;
+  color: #C40511;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid #C40511; }
+  .app-device__head__services__link:hover {
+    color: white;
+    background-color: #C40511; }
+
+.app-device__head__btn {
+  padding: 10px 30px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #C40511;
+  border: none;
+  box-shadow: none; }
+  .app-device__head__btn:hover {
+    background: #ce0512; }
+
+.app-device__content-nav {
+  padding: 15px 0;
+  color: #888;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; }
+  .app-device__content-nav li.selected {
+    color: #333; }
+
+.app-device__content__section {
+  padding: 40px 0;
+  border-bottom: 1px solid #ddd; }
+  .app-device__content__section__title {
+    margin-bottom: 15px;
+    font-weight: bold; }
+  .app-device__content__section__text {
+    font-size: 1.2rem;
+    line-height: 1.7; }
+  .app-device__content__section:last-child {
+    border-bottom: none; }
+  .app-device__content__section__img {
+    max-width: 300px; }
+
+.app-device__content__specs__heading {
+  font-weight: bold;
+  margin-bottom: 30px; }
+
+.app-device__content__specs__table td {
+  width: 50%;
+  padding: 20px 0 !important; }
+
+.app-devices-filters {
+  padding: 15px;
+  border: 1px solid black; }
+  .app-devices-filters .app-devices-filters__section {
+    padding: 15px 0;
+    border-bottom: 1px solid black; }
+    .app-devices-filters .app-devices-filters__section-content {
+      padding-left: 10px; }
+    .app-devices-filters .app-devices-filters__section-title {
+      margin-top: 0;
+      font-weight: bold; }
+    .app-devices-filters .app-devices-filters__section:first-child {
+      padding-top: 0; }
+    .app-devices-filters .app-devices-filters__section:last-child {
+      padding-bottom: 0;
+      border-bottom: none; }
+
+/*# sourceMappingURL=app-sass.css.map */
