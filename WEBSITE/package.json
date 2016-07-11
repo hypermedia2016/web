@@ -24,6 +24,7 @@
     "babel-preset-react": "^6.5.0",
     "bootstrap": "^3.0.0",
     "gulp-print": "^2.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-shell": "^0.5.2",
     "jquery": "^2.1.4",
     "jquery-stickytabs": "^1.2.2",
