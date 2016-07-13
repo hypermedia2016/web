@@ -3,7 +3,7 @@
  */
 
 //global variables
-window.basicUrl = "http://localhost:8000";
+window.basicUrl = "http://hypermedia.thecsea.it";
 
 // vue
 if (window.Vue === undefined) {
