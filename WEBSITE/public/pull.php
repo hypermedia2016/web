@@ -17,7 +17,4 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-system('git pull origin master');
-system('cd ..');
-system('npm install');
-system('gulp --production');
+system('../pull.sh');
