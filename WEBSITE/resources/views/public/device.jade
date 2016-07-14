@@ -16,6 +16,7 @@ html(lang="en")
                     .col-md-6.text-right
                         img("v-bind:src"="parsedData.img[0]", class="app-device__head__img")
                     .col-md-6
+                        h4.app-device__head__title {{parsedData.brand}}
                         h3.app-device__head__title {{parsedData.name}}
                         p.app-device__head__desc {{parsedData.short_description}}
                         h3.app-device__head__price {{parsedData.price}} &euro;
