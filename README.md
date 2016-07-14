@@ -24,6 +24,7 @@ type `gulp serve`
 * In the realease version we will add the compiled files
 
 ## TODO
+- [ ] " Obviously the APK should also be uploaded inside the github repository."
 - [ ] config.php
 - [ ] installation guide
 - [ ] sql
