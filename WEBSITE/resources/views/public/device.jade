@@ -15,35 +15,49 @@ html(lang="en")
                 .row
                     .col-md-6.text-right
                         img("v-bind:src"="parsedData.img[0]", class="app-device__head__img")
+                        ul.list-unstyled.list-inline.app-device__head__miniatures.text-center
+                            li
+                                img("v-bind:src"="parsedData.img[0]")
+                            li
+                                img("v-bind:src"="parsedData.img[1]")
                     .col-md-6
                         h3.app-device__head__title {{parsedData.name}}
                         p.app-device__head__desc {{parsedData.short_description}}
-                        h3.app-device__head__price {{parsedData.price}} &euro;
-                        br
-                        div.app-device__head__services
-                            h3.app-device__head__services__headline Associated services
-                            ul.list-unstyled
-                                li
-                                    a(href="/dfdf", class="app-device__head__services__link") Verizon next
-                                        i.material-icons chevron_right
-                        br
-                        div
-                            button.app-device__head__btn BUY
+                        ul.list-unstyled.list-inline
+                            li
+                                h3.app-device__head__price {{parsedData.price}} &euro;
+                            li.app-device__head__colors
+                                ul.list-unstyled.list-inline
+                                    li("v-for"="color in parsedData.colors")
+                                        span(style="background-color:{{color}}; width: 20px; height:20px; display: block") &nbsp;
+                        button.app-button.app-button--big BUY
+                        .app-device__head__links
+                            h5 Smartlife services
+                            p
+                                i.material-icons chevron_right
+                                | Discover addable smartlife services
+
+                        .app-device__head__links
+                            h5 Assistance
+                            p
+                                i.material-icons chevron_right
+                                | Get assistance for this device
+                br
+                br
                 br
                 br
                 .row
-                    .col-md-12
+                    .col-md-12.text-center
                         ul.list-unstyled.list-inline.app-device__content-nav
                             li.selected Presentation
                             li Specifications
-                            li Assistance
 
                 br
                 br
                 .row#presentation
                     .col-md-12.app-device__content
-                        .row(v-for="(index,section) in presentationSections", class="app-device__content__section")
-                            .col-md-6.text-center
+                        .row(v-for="(index,section) in presentationSections", "v-bind:class"="{'app-device__content__section': true, 'app-device__content__section--type-one':index===1, 'app-device__content__section--type-two':index===2}")
+                            .col-md-6.text-center(v-if="index")
                                 img("v-bind:src"="section.image", class="app-device__content__section__img")
                             .col-md-6
                                 h2.app-device__content__section__title {{section.title}}
