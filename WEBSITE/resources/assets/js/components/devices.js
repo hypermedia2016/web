@@ -38,7 +38,13 @@ Vue.component('devices', {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
-                    _this.content = response.data;
+                    var tmp = response.data;
+                    tmp.devices = tmp.devices.map((ele)=>{
+                        ele.colors = ele.colors.split('||');
+                        ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
+                        return ele;
+                    });
+                    _this.content = tmp;
                     _this.setData();
                     _this.error = '';
                 }
