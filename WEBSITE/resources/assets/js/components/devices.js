@@ -58,6 +58,7 @@ Vue.component('devices', {
                     data.forEach((type, key)=>{
                         var tmp = type;
                         tmp.url = '#'+tmp.name.toLowerCase();
+                        tmp.img = basicUrl +'/img/dynamic/'+tmp.img;
                         data[key] = tmp;
                     });
                     _this.types = data;

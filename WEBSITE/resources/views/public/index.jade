@@ -37,15 +37,15 @@ html(lang="en")
                                 li(data-target='#promotion-devices', data-slide-to='2')
                             // Wrapper for slides
                             .carousel-inner(role='listbox')
-                                .item.active.container
+                                .item.active.container(v-for="device in promotionsDevice")
                                     .row
                                         .col-md-6
-                                            img(src='img/dynamic/ipad-pro-space-gray.png', alt='...')
+                                            img("v-bind:src"="device.img", alt='...')
 
                                         .col-md-6
-                                            h2 jhjfjhfjhfjh
-                                            p hgjhfjhjhfjhfjhfjhf
-                                            button.app-button Check it out
+                                            h2 {{device.title}}
+                                                p {{device.description}}
+                                                button Cjklkhlk
 
                             // Controls
                             a.left.carousel-control(href='#promotion-devices', role='button', data-slide='prev')
@@ -59,18 +59,14 @@ html(lang="en")
 
                 .row.app-home__services-promotion
                     h2 Enjoy our services at great price
-                    .col-md-4
+                    .col-md-4(v-for="service in promotionsService")
                         .app-home__service-promotion.text-center
-                            img(src="img/dynamic/auth0-badge.png")
-                            h3 Title
-                            p sddasdasda
-                            button.app-button Check it out
+                            img("v-bind:src"="service.img")
+                            h3 {{service.title}}
+                            p {{service.description}}
+                            button dfjdshf
 
-                    .col-md-4
-                        p Content
 
-                    .col-md-4
-                        p Content
 
 
 

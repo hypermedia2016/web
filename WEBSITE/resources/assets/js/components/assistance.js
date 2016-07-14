@@ -54,6 +54,7 @@ Vue.component('assistance', {
                     data.forEach((type, key)=>{
                         var tmp = type;
                         tmp.url = '#'+_this.escapeName(tmp.name);
+                        tmp.img = basicUrl +'/img/dynamic/'+tmp.img;
                         data[key] = tmp;
                     });
                     _this.types = data;
