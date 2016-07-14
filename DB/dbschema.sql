@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 14, 2016 at 05:19 PM
+-- Generation Time: Jul 14, 2016 at 05:28 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -128,10 +128,10 @@ CREATE TABLE `devices_types` (
 --
 
 INSERT INTO `devices_types` (`id`, `name`, `img`) VALUES
-  (1, 'Smartphones', ''),
-  (2, 'Tablets', ''),
-  (3, 'Wearable', ''),
-  (4, 'Outlet', '');
+  (1, 'Smartphones', 'smartphones_icon.png'),
+  (2, 'Tablets', 'tablets_icon.png'),
+  (3, 'Wearable', 'wearables_icon.jpg'),
+  (4, 'Outlet', 'deals_icon.jpg');
 
 -- --------------------------------------------------------
 
