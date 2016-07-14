@@ -7,56 +7,65 @@
       font-weight: bold
 
     &__desc
-      font-size: 1.2rem
+      max-width: 300px
+      margin-bottom: 30px
+      line-height: 1.5
+      font-size: 1.1rem
+      color: $app-text-gray
 
+    &__miniatures
+      li
+        width: 50px
+        height: 50px
+      img
+        width: 100%
+
+    &__colors
+      vertical-align: top
+      margin-top: 4px
+      margin-left: 15px
     &__price
+      margin: 0
+      margin-bottom: 20px
+
       color: $app-red
       font-weight: bold
 
-    &__services
-      &__headline
-        margin-bottom: 30px
-        font-weight: bold
-
-      &__link
-        padding: 10px 70px
+    &__links
+      margin-top: 30px
+      h5
+        text-transform: uppercase
         color: $app-red
-        font-size: 1.2rem
-        font-weight: bold
-        border: 2px solid $app-red
 
-        &:hover
-          color: white
-          background-color: $app-red
+      p
+        font-size: 1.1rem
 
-
-    &__btn
-      padding: 10px 30px
-      color: white
-      font-size: 1.2rem
-      font-weight: bold
-      background: $app-red
-      border: none
-      box-shadow: none
-
-      &:hover
-        background: lighten($app-red, 2%)
 
   &__content-nav
-    padding: 15px 0
     color: $app-gray
-    font-size: 1.2rem
+    font-size: 1.3rem
     font-weight: bold
-    border-top: 1px solid #ddd
     border-bottom: 1px solid #ddd
+
+
+    li
+      padding: 15px 30px
+      margin: 0 30px
 
     li.selected
       color: $app-black
+      border-bottom: 2px solid $app-red
 
   &__content
     &__section
       padding: 40px 0
-      border-bottom: 1px solid #ddd
+
+
+      &--type-one
+        background-color: $app-light-gray
+      &--type-two
+        background-color: $app-dark-gray
+
 
       &__title
         margin-bottom: 15px
