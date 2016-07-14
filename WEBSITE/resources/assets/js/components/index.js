@@ -24,7 +24,7 @@ Vue.component('index', {
                 }else {
                     var tmp = response.data;
                     tmp = tmp.map((ele)=>{
-                        ele.img = 'img/dynamic/'+ele.img;
+                        ele.img = basicUrl +'/img/dynamic/'+ele.img;
                         return ele;
                     });
                     _this.promotionsService = tmp;
@@ -42,7 +42,7 @@ Vue.component('index', {
                 }else {
                     var tmp = response.data;
                     tmp = tmp.map((ele)=>{
-                        ele.img = 'img/dynamic/'+ele.img;
+                        ele.img = basicUrl +'/img/dynamic/'+ele.img;
                         return ele;
                     });
                     _this.promotionsDevice = tmp;
