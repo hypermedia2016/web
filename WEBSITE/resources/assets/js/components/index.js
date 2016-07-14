@@ -22,7 +22,12 @@ Vue.component('index', {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
-                    _this.promotionsService = response.data;
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img = 'img/dynamic/'+ele.img;
+                        return ele;
+                    });
+                    _this.promotionsService = tmp;
                     _this.error = '';
                 }
             }, function (response) {
@@ -35,7 +40,12 @@ Vue.component('index', {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
-                    _this.promotionsDevice = response.data;
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img = 'img/dynamic/'+ele.img;
+                        return ele;
+                    });
+                    _this.promotionsDevice = tmp;
                     _this.error = '';
                 }
             }, function (response) {
