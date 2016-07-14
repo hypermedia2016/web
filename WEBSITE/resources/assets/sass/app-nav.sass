@@ -1,29 +1,30 @@
-.navbar-brand
-  height: inherit
-  img
-    width: 200px
+.top-nav
+  padding: 10px 0
+  background-color: $app-red
+
+  a
+    color: white
 
 
-.navbar-nav
-  margin-top: 20px
-  margin-left: 15px
-  font-size: 1.1rem
+.top-middle-nav
+  .navbar-brand
+    height: auto
 
-  >li
-    margin: 0 15px
+    img
+      width: 200px
 
-    >a
-      font-size: 1.3rem
-      &:hover
-        background: transparent
+  .navbar-collapse
+    padding: 20px 0
+    a
+      font-size: 1.2rem
+      font-weight: bold
 
-    &.selected
-      a
-        font-weight: bold
+    ul
+      margin-left: 60px
 
+      li
+        margin-right: 15px
 
-
-.nav > li
-.app-nav
-  &__top-nav
-    margin-top: 30px
+      li.selected
+        a
+          color: $app-red
