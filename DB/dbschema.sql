@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 14, 2016 at 03:27 PM
+-- Generation Time: Jul 14, 2016 at 04:32 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -175,6 +175,34 @@ INSERT INTO `os` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `promotions_devices`
+--
+
+CREATE TABLE `promotions_devices` (
+  `id` int(11) NOT NULL,
+  `device_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `promotions_service`
+--
+
+CREATE TABLE `promotions_service` (
+  `id` int(11) NOT NULL,
+  `service_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `services`
 --
 
@@ -283,6 +311,20 @@ ALTER TABLE `os`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `promotions_devices`
+--
+ALTER TABLE `promotions_devices`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `device_id` (`device_id`);
+
+--
+-- Indexes for table `promotions_service`
+--
+ALTER TABLE `promotions_service`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `service_id` (`service_id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -331,6 +373,16 @@ ALTER TABLE `devices_types`
 ALTER TABLE `os`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `promotions_devices`
+--
+ALTER TABLE `promotions_devices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `promotions_service`
+--
+ALTER TABLE `promotions_service`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
@@ -371,6 +423,18 @@ ALTER TABLE `device_assistance`
 ALTER TABLE `device_service`
   ADD CONSTRAINT `service` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `device2` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `promotions_devices`
+--
+ALTER TABLE `promotions_devices`
+  ADD CONSTRAINT `device3` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `promotions_service`
+--
+ALTER TABLE `promotions_service`
+  ADD CONSTRAINT `service2` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`);
 
 --
 -- Constraints for table `services`
