@@ -24,7 +24,8 @@ type `gulp serve`
 * In the realease version we will add the compiled files
 
 ## TODO
-- [ ] " Obviously the APK should also be uploaded inside the github repository."
+- [ ] "The .pdf with the P-IDM schema (the same P-IDM schema of the design project)"
+- [ ] "Obviously the APK should also be uploaded inside the github repository."
 - [ ] config.php
 - [ ] installation guide
 - [ ] sql
