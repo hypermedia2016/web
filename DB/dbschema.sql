@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 14, 2016 at 04:32 PM
+-- Generation Time: Jul 14, 2016 at 05:19 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -45,18 +45,19 @@ INSERT INTO `assistance` (`id`, `name`, `description`, `type_id`) VALUES
 
 CREATE TABLE `assistance_types` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `assistance_types`
 --
 
-INSERT INTO `assistance_types` (`id`, `name`) VALUES
-  (1, 'Configurations'),
-  (2, 'Monitoring costs and payments'),
-  (3, 'Technical support'),
-  (4, 'Smart life services');
+INSERT INTO `assistance_types` (`id`, `name`, `img`) VALUES
+  (1, 'Configurations', ''),
+  (2, 'Monitoring costs and payments', ''),
+  (3, 'Technical support', ''),
+  (4, 'Smart life services', '');
 
 -- --------------------------------------------------------
 
@@ -118,18 +119,19 @@ INSERT INTO `devices` (`id`, `name`, `price`, `brand_id`, `os_id`, `type_id`, `p
 
 CREATE TABLE `devices_types` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `devices_types`
 --
 
-INSERT INTO `devices_types` (`id`, `name`) VALUES
-  (1, 'Smartphones'),
-  (2, 'Tablets'),
-  (3, 'Wearable'),
-  (4, 'Outlet');
+INSERT INTO `devices_types` (`id`, `name`, `img`) VALUES
+  (1, 'Smartphones', ''),
+  (2, 'Tablets', ''),
+  (3, 'Wearable', ''),
+  (4, 'Outlet', '');
 
 -- --------------------------------------------------------
 
@@ -186,6 +188,13 @@ CREATE TABLE `promotions_device` (
   `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `promotions_device`
+--
+
+INSERT INTO `promotions_device` (`id`, `device_id`, `title`, `description`, `img`) VALUES
+  (1, 1, 'Test', 'test test', 'ipad-pro-space-gray.png');
+
 -- --------------------------------------------------------
 
 --
@@ -199,6 +208,13 @@ CREATE TABLE `promotions_service` (
   `description` text NOT NULL,
   `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `promotions_service`
+--
+
+INSERT INTO `promotions_service` (`id`, `service_id`, `title`, `description`, `img`) VALUES
+  (1, 1, 'Test', 'test test', 'test');
 
 -- --------------------------------------------------------
 
@@ -235,17 +251,18 @@ INSERT INTO `services` (`id`, `name`, `short_description`, `price`, `type_id`, `
 
 CREATE TABLE `services_types` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `services_types`
 --
 
-INSERT INTO `services_types` (`id`, `name`) VALUES
-  (1, 'Stay connected'),
-  (2, 'Stay amused'),
-  (3, 'Stay secure');
+INSERT INTO `services_types` (`id`, `name`, `img`) VALUES
+  (1, 'Stay connected', ''),
+  (2, 'Stay amused', ''),
+  (3, 'Stay secure', '');
 
 --
 -- Indexes for dumped tables
@@ -376,12 +393,12 @@ ALTER TABLE `os`
 -- AUTO_INCREMENT for table `promotions_device`
 --
 ALTER TABLE `promotions_device`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `promotions_service`
 --
 ALTER TABLE `promotions_service`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `services`
 --
