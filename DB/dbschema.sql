@@ -175,10 +175,10 @@ INSERT INTO `os` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `promotions_devices`
+-- Table structure for table `promotions_device`
 --
 
-CREATE TABLE `promotions_devices` (
+CREATE TABLE `promotions_device` (
   `id` int(11) NOT NULL,
   `device_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -311,9 +311,9 @@ ALTER TABLE `os`
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `promotions_devices`
+-- Indexes for table `promotions_device`
 --
-ALTER TABLE `promotions_devices`
+ALTER TABLE `promotions_device`
   ADD PRIMARY KEY (`id`),
   ADD KEY `device_id` (`device_id`);
 
@@ -373,9 +373,9 @@ ALTER TABLE `devices_types`
 ALTER TABLE `os`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT for table `promotions_devices`
+-- AUTO_INCREMENT for table `promotions_device`
 --
-ALTER TABLE `promotions_devices`
+ALTER TABLE `promotions_device`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `promotions_service`
@@ -425,9 +425,9 @@ ALTER TABLE `device_service`
   ADD CONSTRAINT `device2` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `promotions_devices`
+-- Constraints for table `promotions_device`
 --
-ALTER TABLE `promotions_devices`
+ALTER TABLE `promotions_device`
   ADD CONSTRAINT `device3` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
