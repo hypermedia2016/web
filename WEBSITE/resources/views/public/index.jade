@@ -1,3 +1,11 @@
+
+mixin item(name, link, img)
+  li(class="app-home__principal-link")
+      a(href=link, class="app-home__principal-link--img-link")
+          img(src=img, class="app-home__principal-link--img")
+
+      a(href=link, class="app-home__principal-link--text") #{name}
+//
 - var pageTitle="index"
 doctype html
 html(lang="en")
@@ -5,13 +13,8 @@ html(lang="en")
     body
         include ../includes/header.jade
         index(inline-template "v-bind:locations.sync"="locations")
-            //sub menu
-            mixin item(name, link, img)
-                li(class="app-home__principal-link")
-                    a(href=link, class="app-home__principal-link--img-link")
-                        img(src=img, class="app-home__principal-link--img")
 
-                    a(href=link, class="app-home__principal-link--text") #{name}
+
             .container
                 .row
                     .col-md-12
@@ -20,26 +23,48 @@ html(lang="en")
                             +item("Smart life services", "services.html","img/static/services-icon.jpg")
                             +item("Assistance", "assistance.html","img/static/assistance-icon.jpg")
 
-
+                br
+                br
+                br
+                br
                 .row
                     .col-md-12
-                        h2 Devices in promotion
-                        p Content
+                        #promotion-devices.carousel.slide(data-ride='carousel')
+                            // Indicators
+                            ol.carousel-indicators
+                                li.active(data-target='#promotion-devices', data-slide-to='0')
+                                li(data-target='#promotion-devices', data-slide-to='1')
+                                li(data-target='#promotion-devices', data-slide-to='2')
+                            // Wrapper for slides
+                            .carousel-inner(role='listbox')
+                                .item.active.container
+                                    .row
+                                        .col-md-6
+                                            img(src='img/dynamic/ipad-pro-space-gray.png', alt='...')
 
-                        .row
-                            .col-md-4
-                                p Content
+                                        .col-md-6
+                                            h2 jhjfjhfjhfjh
+                                                p hgjhfjhjhfjhfjhfjhf
+                                                button Cjklkhlk
 
-                            .col-md-4
-                                p Content
+                            // Controls
+                            a.left.carousel-control(href='#promotion-devices', role='button', data-slide='prev')
+                                i.material-icons(aria-hidden='true') chevron_right
+                                span.sr-only Previous
+                            a.right.carousel-control(href='#promotion-devices', role='button', data-slide='next')
+                                i.material-icons(aria-hidden='true') chevron_right
+                                span.sr-only Next
 
-                            .col-md-4
-                                p Content
+
 
                 .row
-                    h2 Services in promotions
+                    h2 Enjoy our services at great price
                     .col-md-4
-                        p Content
+                        .app-home__service-promotion.text-center
+                            img(src="img/dynamic/auth0-badge.png")
+                            h3 Title
+                            p sddasdasda
+                            button dfjdshf
 
                     .col-md-4
                         p Content
