@@ -7,12 +7,13 @@ mixin devices()
             li(v-for="device in devicesFiltered")
                 a("v-bind:href"="'device.html#'+device.id") {{device.name}} {{device.price}}
 mixin filters()
-    div(class="filters app-devices-filters")
-        ul.list-unstyled
-            li(class="app-devices-filters__section" v-for="(filtersKey, filters) in content.filters")
-                div(v-if="filters != null")
-                    h5.app-devices-filters__section-title Filter by {{filtersKey}}
-                    ul.list-unstyled.app-devices-filters__section-content
+    .col-md-12.text-center.app-devices__filters
+        ul.list-unstyled.list-inline
+            li(v-for="(filtersKey, filters) in content.filters")
+                div(v-if="filters != null", class="dropdown")
+                    p.dropdown-toggle(data-toggle="dropdown") {{filtersKey}}&nbsp;&nbsp;
+                        i.material-icons expand_more
+                    ul.list-unstyled.app-devices-filters__section-content.dropdown-menu
                         li(v-for="filter in filters")
                             a("v-on:click"="filterClicked(filter, filtersKey, $event)" href="#") {{filterText(filter, filtersKey)}}
                 div(v-else)
@@ -44,9 +45,6 @@ html(lang="en")
                     .col-md-12
                         div(class="tab-content")
                             div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade row" v-for="type in types")
-                                //p {{type.name}}
-                                .col-md-3
-                                    +filters()
-                                .col-md-9
+                                .col-md-12
                                     +devices()
         include ../includes/footer.jade
