@@ -39,6 +39,8 @@ html(lang="en")
                 br
                 br
                 .row
+                    +filters()
+                .row
                     .col-md-12
                         div(class="tab-content")
                             div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade row" v-for="type in types")
