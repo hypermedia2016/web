@@ -43,8 +43,8 @@ html(lang="en")
                             li(v-for="type in types", class="app-home__principal-link")
                                 a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link" style="padding:0")
                                     img("v-bind:src"="type.img", class="app-home__principal-link--img" )
-                                a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--text" style="padding:0") {{type.name}}
-                                    
+                                    span(class="app-home__principal-link--text" style="padding:0") {{type.name}}
+
                 //div(class="error") {{ error }}
                 br
                 br

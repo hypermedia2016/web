@@ -8,7 +8,7 @@ Vue.component('device', {
         return {
             error: '',
             data: [],
-            parsedData: {},
+            parsedData: {img:['']},
             presentationSections: [],
             specs : []
         }
