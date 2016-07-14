@@ -39,7 +39,13 @@ Vue.component('device', {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
-                    _this.data = response.data;
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.colors = ele.colors.split('||');
+                        ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
+                        return ele;
+                    });
+                    _this.data = tmp;
                     _this.error = '';
                     _this.parseData();
                 }
@@ -73,6 +79,8 @@ Vue.component('device', {
             this.locations.push({name: this.parsedData.type, url: 'devices.html#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.brand, url: 'devices.html?brand='+ encodeURIComponent(this.parsedData.brand) +'#'+this.parsedData.type.toLowerCase()});
             this.locations.push({name: this.parsedData.name, url: 'device.html#'+this.parsedData.id});
+
+            //sections
             this.createPresentationSections();
             this.createSpecItems();
 
