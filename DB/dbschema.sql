@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 13, 2016 at 04:44 PM
+-- Generation Time: Jul 14, 2016 at 03:27 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -145,10 +145,10 @@ CREATE TABLE `device_assistance` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `device_services`
+-- Table structure for table `device_service`
 --
 
-CREATE TABLE `device_services` (
+CREATE TABLE `device_service` (
   `device_id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -269,11 +269,11 @@ ALTER TABLE `device_assistance`
   ADD KEY `assistance_id` (`assistance_id`);
 
 --
--- Indexes for table `device_services`
+-- Indexes for table `device_service`
 --
-ALTER TABLE `device_services`
+ALTER TABLE `device_service`
   ADD KEY `device_id` (`device_id`),
-  ADD KEY `smartlife_id` (`service_id`);
+  ADD KEY `service_id` (`service_id`);
 
 --
 -- Indexes for table `os`
@@ -366,9 +366,9 @@ ALTER TABLE `device_assistance`
   ADD CONSTRAINT `assistance` FOREIGN KEY (`assistance_id`) REFERENCES `assistance` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `device_services`
+-- Constraints for table `device_service`
 --
-ALTER TABLE `device_services`
+ALTER TABLE `device_service`
   ADD CONSTRAINT `service` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `device2` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
