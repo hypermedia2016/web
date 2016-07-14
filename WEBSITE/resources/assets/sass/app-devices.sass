@@ -1,11 +1,36 @@
-.app-devices__filters
-  padding: 10px 0
-  border-top: 2px solid $app-dark-gray
-  border-bottom: 2px solid $app-dark-gray
-  text-transform: uppercase
+.app-devices
 
-  ul
-    li
-      margin: 0 15px
-  p
-    margin: 0
+  &__filters
+    padding: 10px 0
+    border-top: 2px solid $app-dark-gray
+    border-bottom: 2px solid $app-dark-gray
+
+    >ul
+      >li
+        margin: 0 15px
+
+        >div
+          >a,p
+            text-transform: uppercase
+    p
+      margin: 0
+
+    .dropdown-toggle
+      cursor: pointer
+
+  &__device
+    display: block
+    width: 100%
+    max-width: 250px
+    margin: 0 auto
+    padding: 30px
+    background-color: $app-light-gray
+
+    img
+      display: block
+      width: 150px
+      margin: 0 auto
+
+
+    p
+      color: $app-text-gray
