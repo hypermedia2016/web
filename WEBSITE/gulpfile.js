@@ -28,7 +28,7 @@ elixir(function (mix) {
             // If blade is true, output to resources/views, otherwise public/html
             dest: 'public',
             // Any additional watches
-            additional_watches: ['resources/views/include/**/*.jade']
+            additional_watches: ['resources/views/includes/**/*.jade']
         });
 });
 
