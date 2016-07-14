@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 14, 2016 at 05:28 PM
+-- Generation Time: Jul 14, 2016 at 06:20 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -76,8 +76,10 @@ CREATE TABLE `brands` (
 
 INSERT INTO `brands` (`id`, `name`) VALUES
   (2, 'Apple'),
-  (1, 'Samsung'),
-  (3, 'Sony');
+  (3, 'HTC'),
+  (5, 'LG'),
+  (4, 'One Plus'),
+  (1, 'Samsung');
 
 -- --------------------------------------------------------
 
@@ -95,21 +97,23 @@ CREATE TABLE `devices` (
   `popular` tinyint(1) NOT NULL DEFAULT '0',
   `creation_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `short_description` text NOT NULL,
-  `img` varchar(255) NOT NULL,
+  `img` text NOT NULL,
   `full_description` text NOT NULL,
   `specs` text NOT NULL,
-  `titles` text NOT NULL
+  `titles` text NOT NULL,
+  `img_pres` text NOT NULL,
+  `colors` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `devices`
 --
 
-INSERT INTO `devices` (`id`, `name`, `price`, `brand_id`, `os_id`, `type_id`, `popular`, `creation_date`, `short_description`, `img`, `full_description`, `specs`, `titles`) VALUES
-  (1, 'Samsung Galaxy S7', 699, 1, 1, 1, 1, '2016-05-30 08:59:32', 'Great performances, amazing display and expandible memory', '', 'Worry less about daily wear and tear of your phone. Galaxy S7 has an IP68 rating** meaning not only protection against dust, it also repels splashes, spills and even dunks. Simply wipe it off and move along.||The Samsung Galaxy S7 proves that less can actually be more. The big screen on an incredibly slim design keeps you fully engaged in movies, games and more. Plus, with the always on display, you get the time or notifications without waking your screen. And when you’re finished, just slip Galaxy S7 back into the pocket of your favorite jeans.||Fast, wireless charging++ lets you power Galaxy S7 from 0–100% in virtually no time. And with Samsung Galaxy’s biggest battery* (3000 mAH) in their thinnest device, Galaxy S7 gives you power to keep going even on those extra long days.', 'XLTE Ready:Doubling our 4G LTE bandwidth in cities coast to coast.||\r\nWorld Device: Works in over 200 countries||\r\nStandby Time: Up to 12 days‡||\r\nUsage Time: Up to 27 hrs‡||\r\nCamera: 12 MP||\r\nWidth: 2.74 in||\r\nWeight: 5.36 oz||\r\nHeight: 5.61 in||\r\nScreen: 5.1” Quad HD, Super Amoled, 577 PPI; Full Touch Bar||\r\nBattery: 3,000mAH, Non-removable||\r\nOperating System: Android Marshmallow (6.0.1)||\r\nStorage	RAM: 4G, Flash 32GB (Actual formatted capacity is less)||\r\nExpandable Memory: Removable microSD up to 200GB (sold separately)||\r\nColors: Black Onyx or Gold Platinum (Subject to availability)||\r\nSAR: Head 1.24 W/kg; Body 1.41 W/kg||\r\nHearing Aid Compatibility: M4/T3||\r\nNetwork: CDMA 1X and EvDO Rev 0/RevA; LTE (Domestic) B13, B4, B2, B5\r\nGlobal Network	LTE (Global) B3, B7, B20; GSM Quad B5, B8, B3, B2 (850/900/1800/1900Mhz) UMTS Quad B5, B8, B2, B1 (850, 900, 1900, 2100 MHz); TDS CDMA 34, 39 TDD LTE 38, 39, 40, CAT 4 / CAT 6 / (CAT 9 capable)||\r\nProcessor :Qualcomm® Snapdragon™ 820 Quad Core processor (MSM8996, Quad-Core, 2.15GHz + 1.6GHz)||\r\nHD Voice: Experience HD Voice, Video Calling and Simultaneous Voice & Data. Enable Wi-Fi Calling and make calls anywhere you have a Wi-Fi connection.||', 'Water resistant smartphone||Big on screen, slim on profile||Take charge of the charge '),
-  (2, 'Apple iPad pro', 300, 2, 2, 2, 1, '2016-05-30 08:59:32', 'The best device in the world', '', '', '', ''),
-  (3, 'Apple watch', 250, 2, 2, 3, 0, '2016-05-30 08:59:32', 'The best device in the world', '', '', '', ''),
-  (4, 'Sony smart band', 150, 3, 1, 4, 0, '2016-05-30 08:59:32', 'The best device in the world', '', '', '', '');
+INSERT INTO `devices` (`id`, `name`, `price`, `brand_id`, `os_id`, `type_id`, `popular`, `creation_date`, `short_description`, `img`, `full_description`, `specs`, `titles`, `img_pres`, `colors`) VALUES
+  (1, 'Samsung Galaxy S7', 699, 1, 1, 1, 1, '2016-05-30 08:59:32', 'The Samsung Galaxy S7 unlocks a Galaxy of technology that takes your smartphone experience to a new level. The bigger, more stunning screen completes the slimmer design. Why not have a phone that’s water resistant, too? ', '25095652471_9b7e146ff6_o.png||back-cover-sandstone-black.png', 'Worry less about daily wear and tear of your phone. Galaxy S7 has an IP68 rating** meaning not only protection against dust, it also repels splashes, spills and even dunks. Simply wipe it off and move along.||The Samsung Galaxy S7 proves that less can actually be more. The big screen on an incredibly slim design keeps you fully engaged in movies, games and more. Plus, with the always on display, you get the time or notifications without waking your screen. And when you’re finished, just slip Galaxy S7 back into the pocket of your favorite jeans.||Fast, wireless charging++ lets you power Galaxy S7 from 0–100% in virtually no time. And with Samsung Galaxy’s biggest battery* (3000 mAH) in their thinnest device, Galaxy S7 gives you power to keep going even on those extra long days.', 'XLTE Ready:Doubling our 4G LTE bandwidth in cities coast to coast.||\r\nWorld Device: Works in over 200 countries||\r\nStandby Time: Up to 12 days‡||\r\nUsage Time: Up to 27 hrs‡||\r\nCamera: 12 MP||\r\nWidth: 2.74 in||\r\nWeight: 5.36 oz||\r\nHeight: 5.61 in||\r\nScreen: 5.1” Quad HD, Super Amoled, 577 PPI; Full Touch Bar||\r\nBattery: 3,000mAH, Non-removable||\r\nOperating System: Android Marshmallow (6.0.1)||\r\nStorage	RAM: 4G, Flash 32GB (Actual formatted capacity is less)||\r\nExpandable Memory: Removable microSD up to 200GB (sold separately)||\r\nColors: Black Onyx or Gold Platinum (Subject to availability)||\r\nSAR: Head 1.24 W/kg; Body 1.41 W/kg||\r\nHearing Aid Compatibility: M4/T3||\r\nNetwork: CDMA 1X and EvDO Rev 0/RevA; LTE (Domestic) B13, B4, B2, B5\r\nGlobal Network	LTE (Global) B3, B7, B20; GSM Quad B5, B8, B3, B2 (850/900/1800/1900Mhz) UMTS Quad B5, B8, B2, B1 (850, 900, 1900, 2100 MHz); TDS CDMA 34, 39 TDD LTE 38, 39, 40, CAT 4 / CAT 6 / (CAT 9 capable)||\r\nProcessor :Qualcomm® Snapdragon™ 820 Quad Core processor (MSM8996, Quad-Core, 2.15GHz + 1.6GHz)||\r\nHD Voice: Experience HD Voice, Video Calling and Simultaneous Voice & Data. Enable Wi-Fi Calling and make calls anywhere you have a Wi-Fi connection.||', 'Water resistant smartphone||Big on screen, slim on profile||Take charge of the charge ', 'hero-pdp-image-2112016-2.jpg||hero-pdp-image-2112016-3.jpeg||hero-pdp-image-2112016-4.jpg', '#000000||#666666'),
+  (2, 'Apple iPad pro', 300, 2, 2, 2, 1, '2016-05-30 08:59:32', 'With its epic Retina display, the 12.9–inch iPad Pro is the largest and most powerful iPad ever designed, yet it’s only 6.9mm thin and weighs just over 1.5 pounds. It turns advanced tasks into brilliant, immersive experiences.', 'ipad-pro-space-gray.png||apple_ipad_mini_3_display_back_spacegray_large.png', 'With 5.6 million pixels, iPad Pro features the highest-resolution Retina display of any iOS device. The 12.9-inch screen makes everything you do — editing 4K video, designing presentations, running a business — easier, faster, and more engaging. And the Multi-Touch subsystem has been reengineered, expanding the ways you can interact with iPad.||At the heart of iPad Pro lies the new A9X, a third-generation chip with 64-bit desktop-class architecture. It delivers up to 1.8 times the CPU performance and double the graphics performance of iPad Air 2. So even the most demanding apps run effortlessly.||IPad Pro runs iOS 9, the world\'s most intuitive, advanced, and secure mobile operating system. And with improved built-in apps and multitasking features like Slide Over, Split View, and Picture in Picture, iOS 9 helps you get more done in powerful yet simple ways. ', '', 'A canvas designed for your biggest ideas||Apple\'s most powerful chip for its most capable device.||A better experience with every touch.', 'ipad-pro-pdp-1-canvas-designed-for-your-biggest-ideas-d-11112015.jpg||ipad-pro-pdp-2-most-powerful-chip-d-11112015.jpg||ipad-pro-pdp-3-better-experience-with-every-touch-d-11112015.jpg', '#000000||#FFFFFF'),
+  (3, 'Apple watch', 250, 2, 2, 3, 0, '2016-05-30 08:59:32', 'Instantly receive and respond to your favorite notifications. Get the motivation you need to stay active and healthy. Express your personal style in a whole new way. ', 'topic-apple-watch-edition.png||Apple-Watch-back.png', 'Throughout the day, Apple Watch measures your workouts, tracks your activity, and helps encourage healthy routines. All adding up to a better you.||Because it’s on your wrist, Apple Watch lets you receive notifications immediately and conveniently. The moment the people or apps you care about have something to say, you’ll feel a gentle tap. Then you can send just the right response. Just like that.||Because it’s on your wrist, Apple Watch lets you receive notifications immediately and conveniently. The moment the people or apps you care about have something to say, you’ll feel a gentle tap. Then you can send just the right response. Just like that.', '', 'Stay motivated. Stay healthy||Never miss what matters||You. At a glance.', 'apple_watch_activity-100413684-medium.jpg||call_watch.png||heart.png', '#3366FF||#000000||#FFFFFF'),
+  (4, 'Sony smart band', 150, 3, 1, 4, 0, '2016-05-30 08:59:32', 'The best device in the world', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -373,7 +377,7 @@ ALTER TABLE `assistance_types`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `devices`
 --
