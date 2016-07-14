@@ -2,7 +2,7 @@
 
 ## How to configure
 1. Create a mysql database and an user with write acces to it
-2. Import `DB/data.sql`
+2. Import `DB/dbschema.sql`
 3. Set server address on
     * `WEBSITE/resources/views/includes/config.jade`
     * `WEBSITE/resources/assets/js/app.js`
@@ -21,7 +21,6 @@ type `gulp serve`
 ### Libraries
 
 ## Notes
-* import `data.sql`, at the moment it is the last version
 * In the realease version we will add the compiled files
 
 ## TODO
