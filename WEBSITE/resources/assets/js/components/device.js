@@ -81,10 +81,12 @@ Vue.component('device', {
         createPresentationSections(){
             var titles = this.parsedData.titles.split('||');
             var full_description = this.parsedData.full_description.split('||');
+            var images = this.parsedData.img_pres.split('||');
             for(let i=0; i<titles.length; i++){
                 this.presentationSections.push({
                     title : titles[i],
-                    content : full_description[i]
+                    content : full_description[i],
+                    image : basicUrl +'/img/dynamic/'+images[i]
                 })
             }
         },

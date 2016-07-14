@@ -44,7 +44,7 @@ html(lang="en")
                     .col-md-12.app-device__content
                         .row(v-for="(index,section) in presentationSections", class="app-device__content__section")
                             .col-md-6.text-center
-                                img("v-bind:src"="'img/static/samsung1-pres-'+(index+1)+'.jpeg'", class="app-device__content__section__img")
+                                img("v-bind:src"="section.image", class="app-device__content__section__img")
                             .col-md-6
                                 h2.app-device__content__section__title {{section.title}}
                                 p.app-device__content__section__text {{section.content}}
