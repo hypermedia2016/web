@@ -19,8 +19,7 @@ html(lang="en")
                     li(v-for="type in types" class="app-home__principal-link")
                         a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link")
                             img("v-bind:src"="type.img" class="app-home__principal-link--img")
-
-                        a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--text") {{type.name}}
+                            span(class="app-home__principal-link--text") {{type.name}}
                 div(class="error") {{ error }}
                 div(class="tab-content")
                     div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
