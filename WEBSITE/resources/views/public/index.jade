@@ -40,16 +40,31 @@ html(lang="en")
                                 .item.active.container(v-for="device in promotionsDevice")
                                     .row
                                         .col-md-6
-                                            img("v-bind:src"="device.img", alt='...')
+                                            div.carousel__img-container
+                                                img("v-bind:src"="device.img", alt='...')
 
                                         .col-md-6
-                                            h2 {{device.title}}
+                                            div.carousel__text-container
+                                                h2 {{device.title}}
                                                 p {{device.description}}
-                                                button Cjklkhlk
+                                                button.app-button.app-button--big Cjklkhlk
+
+                                .item.container(v-for="device in promotionsDevice")
+                                    .row
+                                        .col-md-6
+                                            div.carousel__img-container
+                                                img("v-bind:src"="device.img", alt='...')
+
+                                        .col-md-6
+                                            div.carousel__text-container
+                                                h2 {{device.title}}
+                                                p {{device.description}}
+                                                button.app-button.app-button--big Cjklkhlk
+
 
                             // Controls
                             a.left.carousel-control(href='#promotion-devices', role='button', data-slide='prev')
-                                i.material-icons(aria-hidden='true') chevron_right
+                                i.material-icons(aria-hidden='true') chevron_left
                                 span.sr-only Previous
                             a.right.carousel-control(href='#promotion-devices', role='button', data-slide='next')
                                 i.material-icons(aria-hidden='true') chevron_right
@@ -64,7 +79,7 @@ html(lang="en")
                             img("v-bind:src"="service.img")
                             h3 {{service.title}}
                             p {{service.description}}
-                            button dfjdshf
+                            button.app-button Check it out
 
 
 

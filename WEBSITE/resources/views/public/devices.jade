@@ -4,13 +4,21 @@
 mixin devices()
     div.col-md-4(v-for="device in devicesFiltered")
         a.app-devices__device.text-center("v-bind:href"="'device.html#'+device.id")
-            img
+            img("v-bind:src"="device.img[0]")
+            h4.app-devices__device-brand {{device.brand}}
             h4 {{device.name}}
             ul.list-unstyled
                 li sadsada
-            div dasdsa
-            h4 {{device.price}}
-            img("v-bind:src"="device.img[0]")
+            br
+            ul.list-unstyled.list-inline
+                li
+                    span.app-devices__device-color-label COLORS&nbsp;&nbsp;
+                li
+                    ul.list-unstyled.list-inline
+                        li(v-for="color in device.colors")
+                            span(style="background-color:{{color}}; width: 20px; height: 20px; display:block; border: 1px solid rgba(0,0,0,.2)") &nbsp;
+            h3 {{device.price}}&euro;
+
 
 
         ul.list-unstyled
