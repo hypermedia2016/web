@@ -32,7 +32,7 @@ function addCharacteristics(&$data){
         $data[$key]['characteristics'] = [];
         if($row['popular'] == '1')
             $data[$key]['characteristics'][] = 'Popular';
-        if((time()-(new DateTime($row['creation_date']))->getTimestamp())<=3600*24*7) //one week
+        if((time()-(new DateTime($row['creation_date']))->getTimestamp())<=3600*24*28) //four weeks
             $data[$key]['characteristics'][] = 'Recently added';
     }
 }
