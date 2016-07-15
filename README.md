@@ -18,7 +18,15 @@ type `gulp serve`
 
 ## External reosurces
 ### Frameworks
+* [Vuje](http://vuejs.org/)
+* [pug (ex jade)](http://jade-lang.com/)
+* [sass](http://sass-lang.com/)
+* [less](http://lesscss.org/)
+* [bootstrap](http://getbootstrap.com/)
+* [jQuery](https://jquery.com/)
+
 ### Libraries
+
 
 ## Notes
 * In the realease version we will add the compiled files
