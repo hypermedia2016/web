@@ -37,7 +37,7 @@ Vue.component('services', {
                 }else {
                     var tmp = response.data;
                     tmp = tmp.map((ele)=>{
-                        ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
+                        ele.img = basicUrl +'/img/dynamic/'+ele.img;
                         return ele;
                     });
                     _this.services = tmp;
