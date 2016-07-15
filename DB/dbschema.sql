@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 15, 2016 at 09:13 PM
+-- Generation Time: Jul 15, 2016 at 09:26 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -157,6 +157,13 @@ CREATE TABLE `device_assistance` (
   `assistance_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `device_assistance`
+--
+
+INSERT INTO `device_assistance` (`device_id`, `assistance_id`) VALUES
+  (1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -167,6 +174,13 @@ CREATE TABLE `device_service` (
   `device_id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `device_service`
+--
+
+INSERT INTO `device_service` (`device_id`, `service_id`) VALUES
+  (1, 1);
 
 -- --------------------------------------------------------
 
