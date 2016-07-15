@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 15, 2016 at 02:00 AM
+-- Generation Time: Jul 15, 2016 at 11:37 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -226,7 +226,9 @@ CREATE TABLE `promotions_service` (
 --
 
 INSERT INTO `promotions_service` (`id`, `service_id`, `title`, `description`, `img`) VALUES
-  (1, 1, 'Test', 'test test', 'test');
+  (1, 1, 'Verizon next', 'Your phone upgraded year after year', 'hpm-trade-in-event-promo-d-041216.png'),
+  (2, 2, 'Verizon music', 'Enjoy music everywhere with your devices', 'google_play.png'),
+  (3, 3, 'Verizon pay', 'A secure confortable payment method', 'auth0-badge.png');
 
 -- --------------------------------------------------------
 
@@ -410,7 +412,7 @@ ALTER TABLE `promotions_device`
 -- AUTO_INCREMENT for table `promotions_service`
 --
 ALTER TABLE `promotions_service`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `services`
 --
