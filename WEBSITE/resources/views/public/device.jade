@@ -93,14 +93,11 @@ html(lang="en")
                             h3.app-modal__title Addable Smartlife Services
                         .modal-body
                             ul.list-unstyled.app-modal__items
-                                li
+                                li("v-for"="service in services")
                                     a.clearfix(href="#")
-                                        span Bla
+                                        span {{service.name}}
                                         i.material-icons chevron_right
-                                li
-                                    a.clearfix(href="#")
-                                        span Bla
-                                        i.material-icons chevron_right
+
 
             .modal.fade(tabindex='-1', role='dialog',id='assistance')
                 .modal-dialog
@@ -112,12 +109,8 @@ html(lang="en")
                             h3.app-modal__title Assistance
                         .modal-body
                             ul.list-unstyled.app-modal__items
-                                li
+                                li("v-for"="assistance_item in assistance")
                                     a.clearfix(href="#")
-                                        span Bla
-                                        i.material-icons chevron_right
-                                li
-                                    a.clearfix(href="#")
-                                        span Bla
+                                        span {{assistance_item.name}}
                                         i.material-icons chevron_right
         include ../includes/footer.jade
