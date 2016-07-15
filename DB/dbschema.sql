@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 15, 2016 at 01:22 AM
+-- Generation Time: Jul 15, 2016 at 02:00 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -272,9 +272,9 @@ CREATE TABLE `services_types` (
 --
 
 INSERT INTO `services_types` (`id`, `name`, `img`) VALUES
-  (1, 'Stay connected', ''),
-  (2, 'Stay amused', ''),
-  (3, 'Stay secure', '');
+  (1, 'Stay connected', 'stay_connected.png'),
+  (2, 'Stay amused', 'entertainment_icon.png'),
+  (3, 'Stay secure', 'services_for_people_icon.png');
 
 --
 -- Indexes for dumped tables
