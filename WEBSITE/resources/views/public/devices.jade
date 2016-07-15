@@ -21,7 +21,7 @@ mixin devices()
 
 
 
-        ul.list-unstyled
+        //ul.list-unstyled
             li(v-for="device in devicesFiltered")
                 a("v-bind:href"="'device.html#'+device.id") {{device.name}} {{device.price}}
 mixin filters()
@@ -57,8 +57,12 @@ html(lang="en")
                 //div(class="error") {{ error }}
                 br
                 br
+                br
+                br
                 .row
                     +filters()
+                br
+                br
                 .row
                     .col-md-12
                         div(class="tab-content")
