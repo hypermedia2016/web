@@ -9,7 +9,8 @@
 4. Create `config.php` file using example on `config` directory
 
 ## How to compile
-type `gulp`
+1. type `npm install` 
+1. type `gulp`
 
 ## How to test locally
 type `gulp serve`
@@ -24,9 +25,20 @@ type `gulp serve`
 * [less](http://lesscss.org/)
 * [bootstrap](http://getbootstrap.com/)
 * [jQuery](https://jquery.com/)
+* [Gulp](http://gulpjs.com/)
 
 ### Libraries
-
+All libraries are npm libraries
+ * babel-preset-es2015
+ * babel-preset-react
+ * gulp-print
+ * gulp-rename
+ * gulp-shell
+ * jquery-stickytabs
+ * laravel-elixir
+ * laravel-elixir-pug
+ * query-string
+ * vue-resource
 
 ## Notes
 * In the realease version we will add the compiled files
