@@ -3,35 +3,33 @@
     &__img
       max-width: 300px
       margin-right: 30px
-    &__title
-      font-weight: bold
 
-    &__desc
+    &-desc
       max-width: 300px
       margin-bottom: 30px
       line-height: 1.5
       font-size: 1.1rem
       color: $app-text-gray
 
-    &__miniatures
+    &-miniatures
       li
         width: 50px
         height: 50px
       img
         width: 100%
 
-    &__colors
+    &-colors
       vertical-align: top
       margin-top: 4px
       margin-left: 15px
-    &__price
+    &-price
       margin: 0
       margin-bottom: 20px
 
       color: $app-red
       font-weight: bold
 
-    &__links
+    &-links
       margin-top: 30px
       h5
         text-transform: uppercase
@@ -52,41 +50,66 @@
       padding: 15px 30px
       margin: 0 30px
 
-    li.selected
+    li.active
       color: $app-black
       border-bottom: 2px solid $app-red
 
-  &__content
-    &__section
-      padding: 40px 0
+  &__section
+    padding: 40px
+    height: 500px
+
+    >div
+      position: relative
+      height: 100%
 
 
-      &--type-one
-        background-color: $app-light-gray
-      &--type-two
-        background-color: $app-dark-gray
+    &--type-one
+      background-color: $app-light-gray
+    &--type-two
+      background-color: $app-dark-gray
 
 
-      &__title
-        margin-bottom: 15px
-        font-weight: bold
+    &__title
+      margin-bottom: 15px
+      font-weight: bold
 
-      &__text
-        font-size: 1.2rem
-        line-height: 1.7
+    &__text
+      font-size: 1.2rem
+      line-height: 1.7
 
-      &:last-child
-        border-bottom: none
-      &__img
-        max-width: 300px
+    &:last-child
+      border-bottom: none
+    &__img
+      max-width: 400px
 
-    &__specs
-      &__heading
-        font-weight: bold
-        margin-bottom: 30px
+  &__specs
+
+    &-heading
+      margin: 30px 0
 
 
-      &__table
-        td
-          width: 50%
-          padding: 20px 0 !important
+    &-table
+      td
+        width: 50%
+        padding: 20px 0 !important
+
+
+  &__section-img
+    max-width: 400px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    &--stick-bottom
+      margin-bottom: -40px
+
+  &__section-text
+    position: absolute
+    width: 80%
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+    p
+      color: $app-text-gray

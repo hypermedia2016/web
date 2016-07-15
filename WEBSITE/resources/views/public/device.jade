@@ -15,30 +15,30 @@ html(lang="en")
                 .row
                     .col-md-6.text-right
                         img("v-bind:src"="parsedData.img[0]", class="app-device__head__img")
-                        ul.list-unstyled.list-inline.app-device__head__miniatures.text-center
+                        ul.list-unstyled.list-inline.app-device__head-miniatures.text-center
                             li
                                 img("v-bind:src"="parsedData.img[0]")
                             li
                                 img("v-bind:src"="parsedData.img[1]")
                     .col-md-6
-                        h4.app-device__head__title {{parsedData.brand}}
-                        h3.app-device__head__title {{parsedData.name}}
-                        p.app-device__head__desc {{parsedData.short_description}}
+                        h4 {{parsedData.brand}}
+                        h3 {{parsedData.name}}
+                        p.app-device__head-desc {{parsedData.short_description}}
                         ul.list-unstyled.list-inline
                             li
-                                h3.app-device__head__price {{parsedData.price}} &euro;
-                            li.app-device__head__colors
+                                h3.app-device__head-price {{parsedData.price}} &euro;
+                            li.app-device__head-colors
                                 ul.list-unstyled.list-inline
                                     li("v-for"="color in parsedData.colors")
                                         span(style="background-color:{{color}}; width: 20px; height:20px; display: block") &nbsp;
                         button.app-button.app-button--big BUY
-                        .app-device__head__links
+                        .app-device__head-links
                             h5 Smartlife services
                             p
                                 i.material-icons chevron_right
                                 | Discover addable smartlife services
 
-                        .app-device__head__links
+                        .app-device__head-links
                             h5 Assistance
                             p
                                 i.material-icons chevron_right
@@ -49,31 +49,37 @@ html(lang="en")
                 br
                 .row
                     .col-md-12.text-center
-                        ul.list-unstyled.list-inline.app-device__content-nav
-                            li.selected Presentation
-                            li Specifications
+                        ul.list-unstyled.list-inline.app-device__content-nav(role="tab-list")
+                            li.active(role="presentation")
+                                a(href="#presentation",role="tab",data-toggle="tab") Presentation
+                            li(role="presentation")
+                                a(href="#specs", role="tab", data-toggle="tab") Specifications
 
                 br
                 br
-                .row#presentation
-                    .col-md-12.app-device__content
-                        .row(v-for="(index,section) in presentationSections", "v-bind:class"="{'app-device__content__section': true, 'app-device__content__section--type-one':index===1, 'app-device__content__section--type-two':index===2}")
-                            .col-md-6.text-center(v-if="index")
-                                img("v-bind:src"="section.image", class="app-device__content__section__img")
-                            .col-md-6
-                                h2.app-device__content__section__title {{section.title}}
-                                p.app-device__content__section__text {{section.content}}
+                .tab-content
+                    .row.tab-pane.active.fade.in#presentation(role="tabpanel")
+                        .col-md-12
+                            .row(v-for="(index,section) in presentationSections", "v-bind:class"="{'app-device__section': true, 'app-device__section--type-one':index===1, 'app-device__section--type-two':index===2}")
+                                .col-md-6.text-center(v-if="index===0 || index ===2")
+                                    img("v-bind:src"="section.image", class="app-device__section-img")
+                                .col-md-6("v-bind:class"="{'text-right':index===1}")
+                                    .app-device__section-text
+                                        h2.app-device__section__title {{section.title}}
+                                        p.app-device__section__text {{section.content}}
+                                .col-md-6.text-center(v-if="index===1")
+                                    img("v-bind:src"="section.image", class="app-device__section-img")
 
 
-                .row#specs
-                    .col-md-12
-                        h2.app-device__content__specs__heading  Specifications
-                        table.table.app-device__content__specs__table
-                            thead
-                            tbody
-                                tr(v-for="spec in specs")
-                                    td {{spec.title}}
-                                    td {{spec.content}}
+                    .row.tab-pane.fade#specs(role="tabpanel")
+                        .col-md-12
+                            h2.app-device__specs-heading  Specifications
+                            table.table.app-device__specs-table
+                                thead
+                                tbody
+                                    tr(v-for="spec in specs")
+                                        td {{spec.title}}
+                                        td {{spec.content}}
 
 
         include ../includes/footer.jade
