@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 15, 2016 at 09:49 PM
+-- Generation Time: Jul 15, 2016 at 10:50 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -260,17 +260,19 @@ CREATE TABLE `services` (
   `img` varchar(255) NOT NULL,
   `full_description` text NOT NULL,
   `features` text NOT NULL,
-  `rules` text NOT NULL
+  `rules` text NOT NULL,
+  `faq` text NOT NULL,
+  `faq_titles` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `name`, `short_description`, `price`, `type_id`, `img`, `full_description`, `features`, `rules`) VALUES
-  (1, 'Verizon next', 'Tired with having an obsolete device? With Verizon Next you can exchange your device at no expenses with a more recent one so you will be always ahed', 19.99, 1, 'Latest-Smartphones-with-2-GB-RAM-In-India.jpg', 'Verizon Next is a verizon service that lets you replace easily your smartphone with a new one year by year at a small montly fee of 19,99 €. You can for example buy a Samsung Galaxy S7 today and replace with the new S8 within a year from the bought of the latter.', 'Get the latest smartphone ready to be used with a small monthly fee||We will configure your new smartphone right away. No time spent to find out to restore your contacts anymore||Your new smartphone will come with an extended 3 year warranty by default', 'The service works only with a specific set of smartphones that are shown above||To enjoy the service you are required to own a smartphone purchased from Verizon or to buy a new one from verizon when you subscribe to the service||In order to get the chance to replace year by year your smartphone a montly fee of 19,99€ is required and will constitute the cost of the service||The service\'s monthly fee must be payed with a credit card that belongs to one of the following payment circuits: Mastercard, Visa, American Express'),
-  (2, 'Verizon music', 'Stream your favourite music anywhere with your connected devices', 300, 2, 'banner-2_1.jpg', 'Verizon Music is a verizon service that lets you stream over 10 millions songs, create playlists and discover new music at just 9,99€/month. You can enjoy it on every platform: Android, iOS, Windows Phone, Smart TVs, Browser', 'Create, share and discover music playlists||Listen to over 10 millions songs||Enjoy music without adds  or commercials||Enjoy the experience with your smartphone, tablet, broswer or tv', ''),
-  (3, 'Verizon Pay', 'Safe and super easy mobile payments', 250, 3, 'coupon.jpg', 'Verizon pay gives you an electronic wallet protected and made accessible for everyone via the Verizon network. Install the app on selected devices, link your credit card and everything is done for you ', 'Portable electronic payment wallet on your smartphone||End to end encryption via SSL and SEC||Dedicated 24h support line||Available both for online and offline purchases', '');
+INSERT INTO `services` (`id`, `name`, `short_description`, `price`, `type_id`, `img`, `full_description`, `features`, `rules`, `faq`, `faq_titles`) VALUES
+  (1, 'Verizon next', 'Tired with having an obsolete device? With Verizon Next you can exchange your device at no expenses with a more recent one so you will be always ahed', 19.99, 1, 'Latest-Smartphones-with-2-GB-RAM-In-India.jpg', 'Verizon Next is a verizon service that lets you replace easily your smartphone with a new one year by year at a small montly fee of 19,99 €. You can for example buy a Samsung Galaxy S7 today and replace with the new S8 within a year from the bought of the latter.', 'Get the latest smartphone ready to be used with a small monthly fee||We will configure your new smartphone right away. No time spent to find out to restore your contacts anymore||Your new smartphone will come with an extended 3 year warranty by default', 'The service works only with a specific set of smartphones that are shown above||To enjoy the service you are required to own a smartphone purchased from Verizon or to buy a new one from verizon when you subscribe to the service||In order to get the chance to replace year by year your smartphone a montly fee of 19,99€ is required and will constitute the cost of the service||The service\'s monthly fee must be payed with a credit card that belongs to one of the following payment circuits: Mastercard, Visa, American Express', '', ''),
+  (2, 'Verizon music', 'Stream your favourite music anywhere with your connected devices', 300, 2, 'banner-2_1.jpg', 'Verizon Music is a verizon service that lets you stream over 10 millions songs, create playlists and discover new music at just 9,99€/month. You can enjoy it on every platform: Android, iOS, Windows Phone, Smart TVs, Browser', 'Create, share and discover music playlists||Listen to over 10 millions songs||Enjoy music without adds  or commercials||Enjoy the experience with your smartphone, tablet, broswer or tv', '', '', ''),
+  (3, 'Verizon Pay', 'Safe and super easy mobile payments', 250, 3, 'coupon.jpg', 'Verizon pay gives you an electronic wallet protected and made accessible for everyone via the Verizon network. Install the app on selected devices, link your credit card and everything is done for you ', 'Portable electronic payment wallet on your smartphone||End to end encryption via SSL and SEC||Dedicated 24h support line||Available both for online and offline purchases', '', '', '');
 
 -- --------------------------------------------------------
 
