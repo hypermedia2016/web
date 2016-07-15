@@ -35,7 +35,12 @@ Vue.component('services', {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
-                    _this.services = response.data;
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
+                        return ele;
+                    });
+                    _this.services = tmp;
                     _this.error = '';
                 }
             }, function (response) {

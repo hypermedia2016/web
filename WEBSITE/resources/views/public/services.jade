@@ -5,7 +5,8 @@ mixin services()
     div(class="services")
         ul
             li(v-for="service in services")
-                a("v-bind:href"="'service.html#'+service.id") {{service.name}}
+                a("v-bind:href"="'service.html#'+service.id") {{service.name}} {{service.short_description}}
+                    img("v-bind:src"="service.img")
 doctype html
 html(lang="en")
     include ../includes/head.jade
@@ -23,6 +24,5 @@ html(lang="en")
                 div(class="error") {{ error }}
                 div(class="tab-content")
                     div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
-                        p {{type.name}}
                         +services()
         include ../includes/footer.jade
