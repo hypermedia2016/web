@@ -9,6 +9,7 @@ Vue.component('assistance-details', {
             error: '',
             data: [],
             parsedData: {},
+            devices: [],
         }
 
     },
@@ -18,6 +19,9 @@ Vue.component('assistance-details', {
 
         //load assistance
         this.loadAssistance();
+
+        //load relationships
+        this.loadDevices();
 
         //id changed
         var _this = this;
@@ -74,6 +78,24 @@ Vue.component('assistance-details', {
 
         escapeName(name){
             return name.toLowerCase().replace(/\s+/g,'_');
+        },
+        loadDevices(){
+            var _this = this;
+            this.$http({url: basicUrl + '/api/device-assistance.php?assistance_id='+this.getAssistanceId(), method: 'GET'}).then( (response) => {
+                if(response.data.error != undefined){
+                    _this.error = response.data.error;
+                }else {
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
+                        return ele;
+                    });
+                    _this.devices = tmp;
+                    _this.error = '';
+                }
+            }, function (response) {
+                _this.error = 'Loading error...';
+            });
         },
     }
 });
