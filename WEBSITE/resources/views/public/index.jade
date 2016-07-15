@@ -47,7 +47,8 @@ html(lang="en")
                                             div.carousel__text-container
                                                 h2 {{device.title}}
                                                 p {{device.description}}
-                                                button.app-button.app-button--big Cjklkhlk
+                                                a("v-bind:href"="'device.html#'+device.id")
+                                                    button.app-button.app-button--big Check it out
 
                                 .item.container(v-for="device in promotionsDevice")
                                     .row
@@ -79,7 +80,8 @@ html(lang="en")
                             img("v-bind:src"="service.img")
                             h3 {{service.title}}
                             p {{service.description}}
-                            button.app-button Check it out
+                            a("v-bind:href"="'service.html#'+service.id")
+                                button.app-button Check it out
 
 
 
