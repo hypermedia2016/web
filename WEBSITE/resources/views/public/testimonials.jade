@@ -1,0 +1,53 @@
+- var pageTitle="Who we are"
+- var headMenuSelected='Who we are'
+
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header_who_we_are.jade
+
+        who-we-are(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+
+                div
+                    h1 Testimonials
+                include ../includes/breadcrumb.jade
+                .row
+                    .col-md-12#fazio
+                        .app-testimonials__video-text
+                            h3 Fabio Fazio
+                            h2 sadlsahdsakldj
+                            ul.list-unstyled.list-inline
+                                li
+                                    i.material-icons play_circle_outline
+                                li
+                                    span Play the video
+                .row
+                    .col-md-12#pif
+                        .app-testimonials__video-text
+                            h3 Fabio Fazio
+                            h2 sadlsahdsakldj
+                            ul.list-unstyled.list-inline
+                                li
+                                    i.material-icons play_circle_outline
+                                li
+                                    span Play the video
+
+
+
+                .row
+                    .col-md-12#lee
+                        .app-testimonials__video-text
+                            h3 Fabio Fazio
+                            h2 sadlsahdsakldj
+                            ul.list-unstyled.list-inline
+                                li
+                                    i.material-icons play_circle_outline
+                                li
+                                    span Play the video
+
+
+
+        include ../includes/footer.jade
