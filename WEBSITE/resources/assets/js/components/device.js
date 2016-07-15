@@ -10,7 +10,9 @@ Vue.component('device', {
             data: [],
             parsedData: {img:['']},
             presentationSections: [],
-            specs : []
+            specs : [],
+            services: [],
+            assistance: []
         }
 
     },
@@ -20,6 +22,10 @@ Vue.component('device', {
 
         //load device
         this.loadDevice();
+
+        //load other elements
+        this.loadServices();
+        this.loadAssistance();
 
         //id changed
         var _this = this;
@@ -109,6 +115,42 @@ Vue.component('device', {
                     content: splittedChunk[1]
                 })
             }
-        }
+        },
+        loadServices(){
+            var _this = this;
+            this.$http({url: basicUrl + '/api/device-service.php?device_id='+this.getDeviceId(), method: 'GET'}).then( (response) => {
+                if(response.data.error != undefined){
+                    _this.error = response.data.error;
+                }else {
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img = basicUrl +'/img/dynamic/'+ele.img;
+                        return ele;
+                    });
+                    _this.services = tmp;
+                    _this.error = '';
+                }
+            }, function (response) {
+                _this.error = 'Loading error...';
+            });
+        },
+        loadAssistance(){
+            var _this = this;
+            this.$http({url: basicUrl + '/api/device-assistance.php?device_id='+this.getDeviceId(), method: 'GET'}).then( (response) => {
+                if(response.data.error != undefined){
+                    _this.error = response.data.error;
+                }else {
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img = basicUrl +'/img/dynamic/'+ele.img;
+                        return ele;
+                    });
+                    _this.assistance = tmp;
+                    _this.error = '';
+                }
+            }, function (response) {
+                _this.error = 'Loading error...';
+            });
+        },
     }
 });
