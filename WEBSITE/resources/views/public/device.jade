@@ -14,7 +14,7 @@ html(lang="en")
             .container
                 .row
                     .col-md-6.text-right
-                        img("v-bind:src"="parsedData.img[0]", class="app-device__head__img")
+                        img("v-bind:src"="parsedData.img[0]", class="app-device__head-img")
                         ul.list-unstyled.list-inline.app-device__head-miniatures.text-center
                             li
                                 img("v-bind:src"="parsedData.img[0]")
@@ -30,17 +30,17 @@ html(lang="en")
                             li.app-device__head-colors
                                 ul.list-unstyled.list-inline
                                     li("v-for"="color in parsedData.colors")
-                                        span(style="background-color:{{color}}; width: 20px; height:20px; display: block") &nbsp;
+                                        span("v-bind:style"="'background-color:'+color+'; width: 20px; height:20px; display: block'") &nbsp;
                         button.app-button.app-button--big BUY
                         .app-device__head-links
                             h5 Smartlife services
-                            p
+                            p(data-toggle="modal" data-target="#smartlife")
                                 i.material-icons chevron_right
                                 | Discover addable smartlife services
 
                         .app-device__head-links
                             h5 Assistance
-                            p
+                            p(data-toggle="modal" data-target="#assistance")
                                 i.material-icons chevron_right
                                 | Get assistance for this device
                 br
@@ -65,8 +65,8 @@ html(lang="en")
                                     img("v-bind:src"="section.image", class="app-device__section-img")
                                 .col-md-6("v-bind:class"="{'text-right':index===1}")
                                     .app-device__section-text
-                                        h2.app-device__section__title {{section.title}}
-                                        p.app-device__section__text {{section.content}}
+                                        h2 {{section.title}}
+                                        p {{section.content}}
                                 .col-md-6.text-center(v-if="index===1")
                                     img("v-bind:src"="section.image", class="app-device__section-img")
 
@@ -82,4 +82,42 @@ html(lang="en")
                                         td {{spec.content}}
 
 
+
+            .modal.fade(tabindex='-1', role='dialog',id='smartlife')
+                .modal-dialog
+                    .modal-content
+                        .modal-header
+                            button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                span.material-icons(aria-hidden='true') clear
+                            h4.app-modal__pre {{parsedData.brand+' '+parsedData.name}}
+                            h3.app-modal__title Addable Smartlife Services
+                        .modal-body
+                            ul.list-unstyled.app-modal__items
+                                li
+                                    a.clearfix(href="#")
+                                        span Bla
+                                        i.material-icons chevron_right
+                                li
+                                    a.clearfix(href="#")
+                                        span Bla
+                                        i.material-icons chevron_right
+
+            .modal.fade(tabindex='-1', role='dialog',id='assistance')
+                .modal-dialog
+                    .modal-content
+                        .modal-header
+                            button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                span.material-icons(aria-hidden='true') clear
+                            h4.app-modal__pre {{parsedData.brand+' '+parsedData.name}}
+                            h3.app-modal__title Assistance
+                        .modal-body
+                            ul.list-unstyled.app-modal__items
+                                li
+                                    a.clearfix(href="#")
+                                        span Bla
+                                        i.material-icons chevron_right
+                                li
+                                    a.clearfix(href="#")
+                                        span Bla
+                                        i.material-icons chevron_right
         include ../includes/footer.jade

@@ -1,0 +1,42 @@
+.modal
+  .modal-content
+    border: none
+    border-radius: 0
+
+  .modal-header
+    border: none
+    padding: 30px
+
+  .modal-body
+    padding: 0 30px 30px 30px
+
+.app-modal
+  &__title
+    margin-top: 10px
+    color: $app-red
+
+  &__pre
+    margin: 0
+
+  &__items
+    li
+      border-bottom: 1px solid $app-light-gray
+
+      &:last-child
+        border-bottom: none
+
+      a
+        padding: 10px 5px
+        display: block
+
+        &:hover
+          background-color: $app-light-gray
+
+      span
+        padding-top: 2px
+        float: left
+        font-size: 1.1rem
+
+
+      i
+        float: right

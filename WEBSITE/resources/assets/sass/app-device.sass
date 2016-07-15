@@ -1,6 +1,6 @@
 .app-device
   &__head
-    &__img
+    &-img
       max-width: 300px
       margin-right: 30px
 
@@ -37,6 +37,7 @@
 
       p
         font-size: 1.1rem
+        cursor: pointer
 
 
   &__content-nav
@@ -69,18 +70,30 @@
       background-color: $app-dark-gray
 
 
-    &__title
-      margin-bottom: 15px
-      font-weight: bold
-
-    &__text
-      font-size: 1.2rem
-      line-height: 1.7
-
-    &:last-child
-      border-bottom: none
-    &__img
+    &-img
       max-width: 400px
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+      &--stick-bottom
+        margin-bottom: -40px
+
+    &-text
+      position: absolute
+      width: 80%
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+      p
+        font-size: 1.2rem
+        line-height: 1.7
+        color: $app-text-gray
+
+
+
 
   &__specs
 
@@ -93,23 +106,3 @@
         width: 50%
         padding: 20px 0 !important
 
-
-  &__section-img
-    max-width: 400px
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-
-    &--stick-bottom
-      margin-bottom: -40px
-
-  &__section-text
-    position: absolute
-    width: 80%
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-
-    p
-      color: $app-text-gray
