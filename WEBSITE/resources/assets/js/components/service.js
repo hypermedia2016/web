@@ -10,6 +10,8 @@ Vue.component('service', {
             data: [],
             parsedData: {},
             devices: [],
+            faqSections: [],
+            ruleSections: [],
         }
 
     },
@@ -70,6 +72,8 @@ Vue.component('service', {
             }
             //OK
             this.parsedData = this.data[0];
+            this.createFaqSections();
+            this.createRuleSections();
             
             //push states
             this.locations.push({name: this.parsedData.type, url: 'services.html#'+this.escapeName(this.parsedData.type)});
@@ -96,6 +100,24 @@ Vue.component('service', {
             }, function (response) {
                 _this.error = 'Loading error...';
             });
+        },
+        createFaqSections(){
+            var titles = this.parsedData.faq_titles.split('||');
+            var faqs = this.parsedData.faq.split('||');
+            for(let i=0; i<titles.length; i++){
+                this.faqSections.push({
+                    title : titles[i],
+                    content : faqs[i],
+                })
+            }
+        },
+        createRuleSections(){
+            var rules = this.parsedData.rules.split('||');
+            for(let i=0; i<rules.length; i++){
+                this.ruleSections.push({
+                    content : rules[i],
+                })
+            }
         },
     }
 });
