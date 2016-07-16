@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 16, 2016 at 09:57 AM
+-- Generation Time: Jul 16, 2016 at 10:07 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -187,7 +187,33 @@ CREATE TABLE `device_service` (
 --
 
 INSERT INTO `device_service` (`device_id`, `service_id`) VALUES
-  (1, 1);
+  (1, 1),
+  (1, 2),
+  (1, 3),
+  (2, 1),
+  (2, 2),
+  (3, 3),
+  (4, 1),
+  (4, 2),
+  (4, 3),
+  (5, 1),
+  (5, 2),
+  (5, 3),
+  (6, 1),
+  (6, 2),
+  (6, 3),
+  (7, 2),
+  (7, 3),
+  (9, 2),
+  (9, 3),
+  (10, 2),
+  (10, 3),
+  (11, 2),
+  (11, 3),
+  (12, 1),
+  (12, 2),
+  (12, 3),
+  (13, 3);
 
 -- --------------------------------------------------------
 
