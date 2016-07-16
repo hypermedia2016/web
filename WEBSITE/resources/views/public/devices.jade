@@ -7,8 +7,8 @@ mixin devices()
             img("v-bind:src"="device.img[0]")
             h4.app-devices__device-brand {{device.brand}}
             h4 {{device.name}}
-            ul.list-unstyled
-                li sadsada
+            ul("v-for"="desc in device.list_desc").list-unstyled.text-left
+                li {{desc}}
             br
             ul.list-unstyled.list-inline
                 li
@@ -18,8 +18,7 @@ mixin devices()
                         li(v-for="color in device.colors")
                             span("v-bind:style"="'background-color:'+color+'; width: 20px; height: 20px; display:block; border: 1px solid rgba(0,0,0,.2)'") &nbsp;
             h3 {{device.price}}&euro;
-            ul("v-for"="desc in device.list_desc")
-                li {{desc}}
+
 
 
 

@@ -2,6 +2,10 @@
   &__principal-links
     text-align: center
 
+    @media(max-width: 650px)
+      text-align: left
+      padding: 0 15px
+
   &__principal-link
     display: inline-block
     margin: 0 40px
@@ -17,6 +21,33 @@
     &--text
       display: block
       font-size: 1.2rem
+
+    @media(max-width: 650px)
+      display: block
+      margin-bottom: 15px
+      margin-right: 0
+      margin-left: 0
+
+      a
+        display: inline-block
+        margin-bottom: 0
+
+        &:last-child
+          vertical-align: top
+          margin-top: 30px
+          margin-left: 30px
+
+      &--img
+        width: 80px
+
+      &:last-child
+        margin-bottom: 0
+
+
+      &:hover
+        background-color: $app-light-gray
+        font-weight: bold
+
 
   &__services-promotion
     > h2
@@ -40,6 +71,33 @@
     p
       margin-bottom: 15px
       color: $app-text-gray
+
+
+    @media(max-width: 768px)
+      margin-bottom: 30px
+      max-width: none
+
+      h3
+        font-size: 20px
+
+      button
+
+        font-size: 90%
+
+      img
+        width: 120px
+        height: 120px
+
+
+
+    @media(max-width: 500px)
+
+      button
+        padding: 5px 15px
+      img
+        width: 100px
+        height: 100px
+
 
 
 
