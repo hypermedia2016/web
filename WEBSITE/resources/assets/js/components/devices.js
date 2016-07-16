@@ -34,8 +34,8 @@ Vue.component('devices', {
         loadTab(name){
             var _this = this;
             this.locations.pop();
-            this.locations.push({name: name, url: '#'+name.toLowerCase()});
-            this.$http({url: basicUrl + '/api/devices.php?type='+ encodeURIComponent(name), method: 'GET'}).then( (response) => {
+            this.locations.push({name: name, url: '#'+name.trim().toLowerCase()});
+            this.$http({url: basicUrl + '/api/devices.php?type='+ encodeURIComponent(name.trim()), method: 'GET'}).then( (response) => {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
@@ -83,9 +83,10 @@ Vue.component('devices', {
                             var name = $(event.target).text();
                             //this is not executed the first time if a query was passed
                             if(!_this.keepActiveFilter) {
-                                history.pushState(null, null, location.origin + location.pathname + '#' + name.toLowerCase());
+                                history.pushState(null, null, location.origin + location.pathname + '#' + name.trim().toLowerCase());
                                 _this.activeFilter = {};
                             }
+                            _this.searchParsed = [];
                             _this.keepActiveFilter = false;
                             _this.loadTab(name);
                         });
@@ -114,9 +115,9 @@ Vue.component('devices', {
             //at the moment we consider only one active element per time
             if(this.activeFilter[keys[0]] == 'undefined'){
                 this.specialFilterClicked(keys[0], null);
-                return ;
+            }else {
+                this.filterClicked({name: this.activeFilter[keys[0]]}, keys[0], null);
             }
-            this.filterClicked({name: this.activeFilter[keys[0]]}, keys[0], null);
         },
 
         getFilter(){
@@ -171,14 +172,14 @@ Vue.component('devices', {
             if(filter == 'All')
                 this.devicesFiltered = this.content.devices;
             else
-                this.devicesFiltered = this.content.devices.filter((item) =>{
+                this.devicesFiltered = this.content.devices.filter((item) => {
                     return item.characteristics.includes(filter);
                 });
         },
 
         setCurrentFilter(name, value){
             this.activeFilter = {};
-            this.activeFilter[name] = value;
+            this.activeFilter[name] = value+'';
             history.pushState(null, null, location.origin + location.pathname + '?'+encodeURIComponent(name)+'='+encodeURIComponent(value) + window.location.hash);
             this.searchParsed = queryString.parse(location.search);
         }
