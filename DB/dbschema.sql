@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 16, 2016 at 11:53 AM
+-- Generation Time: Jul 16, 2016 at 11:56 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -245,6 +245,26 @@ INSERT INTO `device_service` (`device_id`, `service_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `content`, `date`) VALUES
+  (1, 'Verizon communicates that Paolo Ventellini has left his position as Business Support Office director', '2016-07-16 09:56:28'),
+  (2, 'Verizon suspends the price rimodulation on voice services', '2016-07-16 09:56:37');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `os`
 --
 
@@ -414,6 +434,12 @@ ALTER TABLE `device_service`
   ADD KEY `service_id` (`service_id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `os`
 --
 ALTER TABLE `os`
@@ -477,6 +503,11 @@ ALTER TABLE `devices`
 --
 ALTER TABLE `devices_types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `os`
 --
