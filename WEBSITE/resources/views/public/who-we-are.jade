@@ -14,9 +14,12 @@ html(lang="en")
         who-we-are(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
 
-                div
-                    h1 Innovation
+                .row
+                    .col-md-12.app-who__page-label.text-center
+                            h1 Innovation
                 include ../includes/breadcrumb.jade
+                br
+                br
                 .row
                     .col-md-12
                         div.app-who__manifesto.text-center
@@ -25,6 +28,8 @@ html(lang="en")
                                 We design, build and operate global networks, information systems and mobile technologies that connect people, grow businesses and economies, and improve communities.
                                 Technology inspires us. We believe that through our powerful technology, we can help transform any industry, leave a positive impact on any issue and create new possibilities for our customers and our world.
 
+                br
+                br
                 .row.app-device__section.app-device__section--type-one
                         .col-md-6.text-center
                             img(src="img/static/in_1.jpg", class="app-device__section-img")
