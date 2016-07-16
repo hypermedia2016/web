@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 16, 2016 at 11:56 AM
+-- Generation Time: Jul 16, 2016 at 04:19 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -342,17 +342,18 @@ CREATE TABLE `services` (
   `features` text NOT NULL,
   `rules` text NOT NULL,
   `faq` text NOT NULL,
-  `faq_titles` text NOT NULL
+  `faq_titles` text NOT NULL,
+  `img_tag` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `name`, `short_description`, `price`, `type_id`, `img`, `full_description`, `features`, `rules`, `faq`, `faq_titles`) VALUES
-  (1, 'Verizon next', 'Tired with having an obsolete device? With Verizon Next you can exchange your device at no expenses with a more recent one so you will be always ahed', 19.99, 1, 'Latest-Smartphones-with-2-GB-RAM-In-India.jpg', 'Verizon Next is a verizon service that lets you replace easily your smartphone with a new one year by year at a small montly fee of 19,99 €. You can for example buy a Samsung Galaxy S7 today and replace with the new S8 within a year from the bought of the latter.', 'Get the latest smartphone ready to be used with a small monthly fee||We will configure your new smartphone right away. No time spent to find out to restore your contacts anymore||Your new smartphone will come with an extended 3 year warranty by default', 'The service works only with a specific set of smartphones that are shown above||To enjoy the service you are required to own a smartphone purchased from Verizon or to buy a new one from verizon when you subscribe to the service||In order to get the chance to replace year by year your smartphone a montly fee of 19,99€ is required and will constitute the cost of the service||The service\'s monthly fee must be payed with a credit card that belongs to one of the following payment circuits: Mastercard, Visa, American Express', 'Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.1||Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.2||Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.3', 'How can i subscribe to the service||How can i subscribe to the service2||How can i subscribe to the service3'),
-  (2, 'Verizon music', 'Stream your favourite music anywhere with your connected devices', 300, 2, 'banner-2_1.jpg', 'Verizon Music is a verizon service that lets you stream over 10 millions songs, create playlists and discover new music at just 9,99€/month. You can enjoy it on every platform: Android, iOS, Windows Phone, Smart TVs, Browser', 'Create, share and discover music playlists||Listen to over 10 millions songs||Enjoy music without adds  or commercials||Enjoy the experience with your smartphone, tablet, broswer or tv', '', '', ''),
-  (3, 'Verizon Pay', 'Safe and super easy mobile payments', 250, 3, 'coupon.jpg', 'Verizon pay gives you an electronic wallet protected and made accessible for everyone via the Verizon network. Install the app on selected devices, link your credit card and everything is done for you ', 'Portable electronic payment wallet on your smartphone||End to end encryption via SSL and SEC||Dedicated 24h support line||Available both for online and offline purchases', '', '', '');
+INSERT INTO `services` (`id`, `name`, `short_description`, `price`, `type_id`, `img`, `full_description`, `features`, `rules`, `faq`, `faq_titles`, `img_tag`) VALUES
+  (1, 'Verizon next', 'Tired with having an obsolete device? With Verizon Next you can exchange your device at no expenses with a more recent one so you will be always ahed', 19.99, 1, 'Latest-Smartphones-with-2-GB-RAM-In-India.jpg', 'Verizon Next is a verizon service that lets you replace easily your smartphone with a new one year by year at a small montly fee of 19,99 €. You can for example buy a Samsung Galaxy S7 today and replace with the new S8 within a year from the bought of the latter.', 'Get the latest smartphone ready to be used with a small monthly fee||We will configure your new smartphone right away. No time spent to find out to restore your contacts anymore||Your new smartphone will come with an extended 3 year warranty by default', 'The service works only with a specific set of smartphones that are shown above||To enjoy the service you are required to own a smartphone purchased from Verizon or to buy a new one from verizon when you subscribe to the service||In order to get the chance to replace year by year your smartphone a montly fee of 19,99€ is required and will constitute the cost of the service||The service\'s monthly fee must be payed with a credit card that belongs to one of the following payment circuits: Mastercard, Visa, American Express', 'Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.1||Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.2||Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.3', 'How can i subscribe to the service||How can i subscribe to the service2||How can i subscribe to the service3', 1),
+  (2, 'Verizon music', 'Stream your favourite music anywhere with your connected devices', 300, 2, 'banner-2_1.jpg', 'Verizon Music is a verizon service that lets you stream over 10 millions songs, create playlists and discover new music at just 9,99€/month. You can enjoy it on every platform: Android, iOS, Windows Phone, Smart TVs, Browser', 'Create, share and discover music playlists||Listen to over 10 millions songs||Enjoy music without adds  or commercials||Enjoy the experience with your smartphone, tablet, broswer or tv', '', '', '', 2),
+  (3, 'Verizon Pay', 'Safe and super easy mobile payments', 250, 3, 'coupon.jpg', 'Verizon pay gives you an electronic wallet protected and made accessible for everyone via the Verizon network. Install the app on selected devices, link your credit card and everything is done for you ', 'Portable electronic payment wallet on your smartphone||End to end encryption via SSL and SEC||Dedicated 24h support line||Available both for online and offline purchases', '', '', '', 3);
 
 -- --------------------------------------------------------
 
@@ -383,96 +384,96 @@ INSERT INTO `services_types` (`id`, `name`, `img`) VALUES
 -- Indexes for table `assistance`
 --
 ALTER TABLE `assistance`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`,`type_id`),
-  ADD KEY `type_id` (`type_id`);
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `name` (`name`,`type_id`),
+ADD KEY `type_id` (`type_id`);
 
 --
 -- Indexes for table `assistance_types`
 --
 ALTER TABLE `assistance_types`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `brands`
 --
 ALTER TABLE `brands`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `devices`
 --
 ALTER TABLE `devices`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`,`brand_id`,`os_id`,`type_id`),
-  ADD KEY `os_id` (`os_id`) USING BTREE,
-  ADD KEY `type_id` (`type_id`) USING BTREE,
-  ADD KEY `brand_id` (`brand_id`) USING BTREE;
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `name` (`name`,`brand_id`,`os_id`,`type_id`),
+ADD KEY `os_id` (`os_id`) USING BTREE,
+ADD KEY `type_id` (`type_id`) USING BTREE,
+ADD KEY `brand_id` (`brand_id`) USING BTREE;
 
 --
 -- Indexes for table `devices_types`
 --
 ALTER TABLE `devices_types`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `device_assistance`
 --
 ALTER TABLE `device_assistance`
-  ADD UNIQUE KEY `device_id_2` (`device_id`,`assistance_id`),
-  ADD KEY `device_id` (`device_id`),
-  ADD KEY `assistance_id` (`assistance_id`);
+ADD UNIQUE KEY `device_id_2` (`device_id`,`assistance_id`),
+ADD KEY `device_id` (`device_id`),
+ADD KEY `assistance_id` (`assistance_id`);
 
 --
 -- Indexes for table `device_service`
 --
 ALTER TABLE `device_service`
-  ADD UNIQUE KEY `device_id_2` (`device_id`,`service_id`),
-  ADD KEY `device_id` (`device_id`),
-  ADD KEY `service_id` (`service_id`);
+ADD UNIQUE KEY `device_id_2` (`device_id`,`service_id`),
+ADD KEY `device_id` (`device_id`),
+ADD KEY `service_id` (`service_id`);
 
 --
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `os`
 --
 ALTER TABLE `os`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `promotions_device`
 --
 ALTER TABLE `promotions_device`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `device_id` (`device_id`) USING BTREE;
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `device_id` (`device_id`) USING BTREE;
 
 --
 -- Indexes for table `promotions_service`
 --
 ALTER TABLE `promotions_service`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `service_id` (`service_id`) USING BTREE;
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `service_id` (`service_id`) USING BTREE;
 
 --
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name-type_id` (`name`,`type_id`) USING BTREE,
-  ADD KEY `type_id` (`type_id`);
+ADD PRIMARY KEY (`id`),
+ADD UNIQUE KEY `name-type_id` (`name`,`type_id`) USING BTREE,
+ADD KEY `type_id` (`type_id`);
 
 --
 -- Indexes for table `services_types`
 --
 ALTER TABLE `services_types`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -482,57 +483,57 @@ ALTER TABLE `services_types`
 -- AUTO_INCREMENT for table `assistance`
 --
 ALTER TABLE `assistance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `assistance_types`
 --
 ALTER TABLE `assistance_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `devices`
 --
 ALTER TABLE `devices`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `devices_types`
 --
 ALTER TABLE `devices_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `os`
 --
 ALTER TABLE `os`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `promotions_device`
 --
 ALTER TABLE `promotions_device`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `promotions_service`
 --
 ALTER TABLE `promotions_service`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `services_types`
 --
 ALTER TABLE `services_types`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -541,44 +542,44 @@ ALTER TABLE `services_types`
 -- Constraints for table `assistance`
 --
 ALTER TABLE `assistance`
-  ADD CONSTRAINT `assistance-type` FOREIGN KEY (`type_id`) REFERENCES `assistance_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `assistance-type` FOREIGN KEY (`type_id`) REFERENCES `assistance_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `devices`
 --
 ALTER TABLE `devices`
-  ADD CONSTRAINT `brand` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `os` FOREIGN KEY (`os_id`) REFERENCES `os` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `type` FOREIGN KEY (`type_id`) REFERENCES `devices_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `brand` FOREIGN KEY (`brand_id`) REFERENCES `brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `os` FOREIGN KEY (`os_id`) REFERENCES `os` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `type` FOREIGN KEY (`type_id`) REFERENCES `devices_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `device_assistance`
 --
 ALTER TABLE `device_assistance`
-  ADD CONSTRAINT `assistance` FOREIGN KEY (`assistance_id`) REFERENCES `assistance` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `device` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `assistance` FOREIGN KEY (`assistance_id`) REFERENCES `assistance` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `device` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `device_service`
 --
 ALTER TABLE `device_service`
-  ADD CONSTRAINT `device2` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `service` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `device2` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `service` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `promotions_device`
 --
 ALTER TABLE `promotions_device`
-  ADD CONSTRAINT `device3` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `device3` FOREIGN KEY (`device_id`) REFERENCES `devices` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `promotions_service`
 --
 ALTER TABLE `promotions_service`
-  ADD CONSTRAINT `service2` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`);
+ADD CONSTRAINT `service2` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`);
 
 --
 -- Constraints for table `services`
 --
 ALTER TABLE `services`
-  ADD CONSTRAINT `services-types` FOREIGN KEY (`type_id`) REFERENCES `services_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `services-types` FOREIGN KEY (`type_id`) REFERENCES `services_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
