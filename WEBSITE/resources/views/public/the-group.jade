@@ -19,11 +19,8 @@ html(lang="en")
                             .col-md-2.app-group__news-label
                                 h3 News
                             .col-md-10
-                                ul.list-inline.list-unstyled
-                                    li
-                                        | sadasdas
-                                    li
-                                        | sdasd
+                                ul("v-for"="news_item in news").list-inline.list-unstyled
+                                    li {{news_item.date}} {{news_item.content}}
 
                 .row
                     .col-md-12.app-group__hero
