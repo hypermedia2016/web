@@ -13,15 +13,6 @@ Vue.component('who-we-are', {
     ready() {
         //add current location
         this.locations.push({name: 'Who we are', url: 'who-we-are.html'});
-
-        //listener
-        var _this = this;
-        $('.nav-tabs a').on('shown.bs.tab', function(event){
-            var name = $(event.target).text();
-
-            _this.loadTab(name);
-        });
-        $('.nav-tabs').stickyTabs();
     },
 
     methods:{

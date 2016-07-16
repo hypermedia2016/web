@@ -5,7 +5,7 @@ doctype html
 html(lang="en")
     include ../includes/head.jade
     body
-        include ../includes/header.jade
+        include ../includes/header_static.jade
         service(inline-template "v-bind:locations.sync"="locations")
             div(class="error") {{ error }}
             p device info {{parsedData.name}}
