@@ -2,6 +2,10 @@
  * Created by claudio on 24/05/16.
  */
 
+//dependencies
+var marked = require('marked');
+
+
 Vue.component('assistance-details', {
     props: ['locations'],
     data() {
@@ -96,6 +100,13 @@ Vue.component('assistance-details', {
             }, function (response) {
                 _this.error = 'Loading error...';
             });
+        }
+    },
+    filters: {
+        marked: function (data){
+            if (data == undefined)
+                data = '';
+            return marked(data);
         },
     }
 });
