@@ -1,0 +1,67 @@
+.app-group
+  &__news
+    background-color: $app-light-gray
+    height: 100px
+
+
+  &__news-label
+    position: relative
+
+    h3
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,50%)
+
+
+  &__hero
+    position: relative
+    height: 500px
+    background: url('../img/static/hero.jpg') no-repeat center
+    background-size: cover
+
+    h2
+      position: absolute
+      width: 80%
+      max-width: 600px
+      bottom: 10%
+      left: 50%
+      color: white
+      transform: translateX(-50%)
+      line-height: 1.2
+
+
+  &__group-desc
+    width: 90%
+    max-width: 600px
+    margin: 60px auto
+
+    p
+      font-size: 1.2rem
+      color: $app-text-gray
+      line-height: 1.5
+
+  &__features
+    margin-bottom: 40px
+    li
+      vertical-align: top
+      margin-right: 30px
+
+      &:last-child
+        margin-right: 0
+
+  &__feature
+    width: 200px
+    padding: 30px
+    background-color: $app-light-gray
+
+    img
+      margin-bottom: 15px
+      width: 70px
+      height: 70px
+
+    p
+      font-size: 1.2rem
+    p:last-child
+      font-weight: bold
+

@@ -1,24 +1,24 @@
 - var pageTitle="The group"
 - var headMenuSelected='The group'
+include ../includes/static-breadcrumb.jade
 
-mixin sub-item(name, link)
-    li&attributes(attributes)
-        a(href=link data-toggle="tab") #{name}
 
 doctype html
 html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header_group.jade
-        include ../includes/breadcrumb.jade
+
+
         the-group(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
+                +breadcrumb(['The group'],['/the-group.html'])
                 .row
-                    .col-md-12
-                        ul.list-inline.list-unstyled
-                            li
-                                span News
-                            li
+                    .col-md-12.app-group__news
+                        .row
+                            .col-md-2.app-group__news-label
+                                h3 News
+                            .col-md-10
                                 ul.list-inline.list-unstyled
                                     li
                                         | sadasdas
@@ -26,35 +26,54 @@ html(lang="en")
                                         | sdasd
 
                 .row
-                    .col-md-12
-                        div
-                            h2
-                                | sdjhdkjashdkjahskdjh
+                    .col-md-12.app-group__hero
+                        h2.text-center We are problem-solvers, engineers, technologists and innovators. Every day, we connect millions of people, companies and communities with our powerful technology.
 
 
-                .row
-                    .col-md-12
-                        div.text-center
-                            h2 sajkjdlsajd
-                            p ssddasdasd
 
                 .row
                     .col-md-12
-                        ul.list-inline.list-unstyled
-                            li
-                                div dasdasd
-                            li
-                                div sadasdas
-                            li
-                                div sdasdasd
+                        div.text-center.app-group__group-desc
+                            h2 The group at glance
+                            p Verizon is one of the biggest group in the telecommunication market. With more than 20 years of activities in the US and in Europe it innovates and produce value for customers and communities like anyone
 
-                        ul.list-inline.list-unstyled
+                .row
+                    .col-md-12.text-center
+                        ul.list-inline.list-unstyled.app-group__features
                             li
-                                div dasdasd
+                                div.app-group__feature.text-center
+                                    img(src="img/static/customers.png")
+                                    p Customers
+                                    p 50 Millions
                             li
-                                div sadasdas
+                                div.app-group__feature.text-center
+                                    img(src="img/static/ic_store_mall_directory.png")
+                                    p Retail stores
+                                    p 3000
                             li
-                                div sdasdasd
+                                div.app-group__feature.text-center
+                                    img(src="img/static/ic_public.png")
+                                    p Countries
+                                    p 90
+
+                        ul.list-inline.list-unstyled.app-group__features
+                            li
+                                div.app-group__feature.text-center
+                                    img(src="img/static/ic_settings_input_antenna.png")
+                                    p Global network
+                                    p 800,000 miles
+                            li
+                                div.app-group__feature.text-center
+                                    img(src="img/static/ic_local_atm.png")
+                                    p Revenues
+                                    p 100 mld of $
+                            li
+                                div.app-group__feature.text-center
+                                    img(src="img/static/ic_star.png")
+                                    p Investments
+                                    p 1 mld of $
+
+
 
 
 
