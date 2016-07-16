@@ -27,7 +27,7 @@ Vue.component('service', {
 
         //id changed
         var _this = this;
-        $(window).on('hashchange', ()=>{_this.locations.pop();_this.locations.pop();_this.locations.pop();_this.loadService();});
+        $(window).on('hashchange', ()=>{_this.locations.pop();_this.locations.pop();_this.locations.pop();_this.loadService();_this.loadDevices();});
     },
 
     methods:{
