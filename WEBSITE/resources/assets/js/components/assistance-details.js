@@ -103,14 +103,18 @@ Vue.component('assistance-details', {
         }
     },
     filters: {
-        marked: function (data){
+        marked (data){
             if (data == undefined)
                 data = '';
             return marked(data);
         },
-        realUrls: function (data){
-            console.log(data);
+        realUrls (data){
             return data.replace(/src=\"([^\"]*)\"/gi, 'src="'+basicUrl+'/img/dynamic/$1"');
         },
+        customTags (data){
+            if (data == undefined)
+                data = '';
+            return data.replace(/---OR/gi, '<hr>OR'); //TODO
+        }
     }
 });

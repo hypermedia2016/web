@@ -9,5 +9,5 @@ html(lang="en")
         assistance-details(inline-template "v-bind:locations.sync"="locations")
             div(class="error") {{ error }}
             p assistance info {{parsedData.name}}
-            div("v-html"="parsedData.description | marked | realUrls")
+            div("v-html"="parsedData.description |customTags | marked | realUrls")
         include ../includes/footer.jade
