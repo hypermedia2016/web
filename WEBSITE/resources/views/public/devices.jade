@@ -53,9 +53,11 @@ html(lang="en")
                     .col-md-12
                         ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
                             li(v-for="type in types", class="app-home__principal-link")
-                                a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link" style="padding:0")
-                                    img("v-bind:src"="type.img", class="app-home__principal-link--img" )
-                                    span(class="app-home__principal-link--text" style="padding:0") {{type.name}}
+                                a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link row" style="padding:0")
+                                    .col-md-12.col-sm-12.col-xs-6
+                                        img("v-bind:src"="type.img", class="app-home__principal-link--img" )
+                                    .col-md-12.col-sm-12.col-xs-6
+                                        span(class="app-home__principal-link--text" style="padding:0") {{type.name}}
 
                 //div(class="error") {{ error }}
                 br
