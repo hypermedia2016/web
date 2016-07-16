@@ -1,6 +1,7 @@
-- var pageTitle="Who we are"
-- var headMenuSelected='Who we are'
-
+- var pageTitle="Who we are ! Testimonials"
+- var superSectionSelected="Who we are"
+- var mainMenuSelected='Testimonials'
+include ../includes/who-we-are-breadcrumb.jade
 
 doctype html
 html(lang="en")
@@ -14,7 +15,9 @@ html(lang="en")
                 .row
                     .col-md-12.app-who__page-label.text-center
                         h1 Testimonials
-                include ../includes/breadcrumb.jade
+
+                +breadcrumb(['Who we are', 'Testimonials'],['/who-we-are.html', '/testimonials.html'])
+
                 .row
                     .col-md-12#fazio.app-testimonials__video
                         .app-testimonials__video-text

@@ -1,9 +1,7 @@
-- var pageTitle="Who we are"
-- var headMenuSelected='Who we are'
-
-mixin sub-item(name, link)
-    li&attributes(attributes)
-        a(href=link data-toggle="tab") #{name}
+- var pageTitle="Who we are ! Innovation"
+- var superSectionSelected="Who we are"
+- var mainMenuSelected='Innovation'
+include ../includes/who-we-are-breadcrumb.jade
 
 doctype html
 html(lang="en")
@@ -17,7 +15,7 @@ html(lang="en")
                 .row
                     .col-md-12.app-who__page-label.text-center
                             h1 Innovation
-                include ../includes/breadcrumb.jade
+                +breadcrumb(['Who we are', 'Innovation'],['/who-we-are.html', '/who-we-are.html'])
                 br
                 br
                 .row

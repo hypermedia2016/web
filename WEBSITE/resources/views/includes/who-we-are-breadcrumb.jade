@@ -1,0 +1,13 @@
+mixin breadcrumb(list, links)
+    .row
+        .col-md-12
+            ul.list-unstyled.list-inline.app-breadcrumb.app-breadcrumb--ligth
+                li(class="app-breadcrumb__item")
+                    a(href="index.html", class="app-breadcrumb__text")
+                        i.material-icons.app-breadcrumb__separator home
+                    i(class="material-icons app-breadcrumb__separator") chevron_right
+                each val, index in list
+                    li(class="app-breadcrumb__item")
+                        a(href=links[index], class="app-breadcrumb__text")=val
+                        if index != (list.length - 1)
+                            i(class="material-icons app-breadcrumb__separator") chevron_right

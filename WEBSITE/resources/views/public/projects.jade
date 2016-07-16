@@ -1,9 +1,7 @@
-- var pageTitle="Who we are"
-- var headMenuSelected='Who we are'
-
-mixin sub-item(name, link)
-    li&attributes(attributes)
-        a(href=link data-toggle="tab") #{name}
+- var pageTitle="Who we are | Projects"
+- var superSectionSelected="Who we are"
+- var mainMenuSelected='Projects'
+include ../includes/who-we-are-breadcrumb.jade
 
 doctype html
 html(lang="en")
@@ -14,18 +12,20 @@ html(lang="en")
         who-we-are(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
 
-                div
-                    h1 Projects
-                include ../includes/breadcrumb.jade
+                .row
+                    .col-md-12.app-who__page-label.text-center
+                        h1 Projects
+                +breadcrumb(['Who we are','Projects'],['/who-we-are.html','/projects.html'])
+                br
+                br
                 .row
                     .col-md-12
                         div.app-who__manifesto.text-center
                             h1 Our projects
                             p.
-                                Our projects are big and futuristic ideas that can radically change the way we consume technology and we develop relationships. We also creates simple but powerful initiatives that can benefit the community and boost innovation
-                            p.
-                                Discover what we're working on
-
+                                Our projects are big and futuristic ideas that can radically change the way we consume technology and we develop relationships. We also creates simple but powerful initiatives that can benefit the community and boost innovation. Discover what we are working on
+                br
+                br
                 .row.app-device__section.app-device__section--type-one
                     .col-md-6.text-center
                         img(src="img/static/CloudComputing_2.jpg", class="app-device__section-img")

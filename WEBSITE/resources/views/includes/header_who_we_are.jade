@@ -1,5 +1,5 @@
 -
-    headMenu = [{name: 'Who we are ', link: 'who-we-are.html'},
+    headMenu = [{name: 'Who we are', link: 'who-we-are.html'},
     {name: 'The group', link: 'the-group.html'}]
 -
     mainMenu = [{name: 'Innovation', link: 'who-we-are.html'},
@@ -24,6 +24,9 @@ nav.top-nav
             .col-md-12
                 ul#head-menui.list-inline.list-unstyled
                     each item, i in headMenu
+                        if superSectionSelected == item.name
+                            +menu-item(item.name, item.link)(class="selected")
+                        else
                             +menu-item(item.name, item.link)
 //main menu
 br
