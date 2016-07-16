@@ -94,7 +94,7 @@ html(lang="en")
                         .modal-body
                             ul.list-unstyled.app-modal__items
                                 li("v-for"="service in services")
-                                    a.clearfix(href="#")
+                                    a.clearfix("v-bind:href"="'service.html#'+service.id")
                                         span {{service.name}}
                                         i.material-icons chevron_right
 
@@ -110,7 +110,7 @@ html(lang="en")
                         .modal-body
                             ul.list-unstyled.app-modal__items
                                 li("v-for"="assistance_item in assistance")
-                                    a.clearfix(href="#")
+                                    a.clearfix("v-bind:href"="'assistance-details.html#'+assistance_item.id")
                                         span {{assistance_item.name}}
                                         i.material-icons chevron_right
         include ../includes/footer.jade
