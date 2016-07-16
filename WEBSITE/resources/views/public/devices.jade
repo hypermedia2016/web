@@ -52,7 +52,7 @@ html(lang="en")
                 .row
                     .col-md-12
                         ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
-                            li(v-for="type in types", class="app-home__principal-link")
+                            li(v-for="type in types", class="app-home__principal-link app-home__principal-link--special")
                                 a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link row" style="padding:0")
                                     .col-md-12.col-sm-12.col-xs-6
                                         img("v-bind:src"="type.img", class="app-home__principal-link--img" )

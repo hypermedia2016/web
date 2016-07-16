@@ -63,6 +63,12 @@
       position: relative
       height: 100%
 
+    @media (max-width: 768px)
+      padding: 20px
+      height: auto
+
+      >div
+        height: auto
 
     &--type-one
       background-color: $app-light-gray
@@ -80,6 +86,15 @@
       &--stick-bottom
         margin-bottom: -40px
 
+      @media(max-width: 765px)
+        max-width: none
+        position: inherit
+        top: auto
+        left: auto
+        transform: none
+        margin: 0 auto
+        text-align: center
+
     &-text
       position: absolute
       width: 80%
@@ -91,6 +106,22 @@
         font-size: 1.2rem
         line-height: 1.7
         color: $app-text-gray
+
+      @media(max-width: 765px)
+        max-width: none
+        position: inherit
+        top: auto
+        left: auto
+        transform: none
+
+
+        h2
+          font-size: 25px
+
+
+        p
+          font-size: 1rem
+          line-height: 1.5
 
 
 
