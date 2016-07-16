@@ -42,6 +42,7 @@ Vue.component('devices', {
                     tmp.devices = tmp.devices.map((ele)=>{
                         ele.colors = ele.colors.split('||');
                         ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
+                        ele.list_desc = ele.list_desc.split('||');
                         return ele;
                     });
                     _this.content = tmp;

@@ -18,6 +18,8 @@ mixin devices()
                         li(v-for="color in device.colors")
                             span("v-bind:style"="'background-color:'+color+'; width: 20px; height: 20px; display:block; border: 1px solid rgba(0,0,0,.2)'") &nbsp;
             h3 {{device.price}}&euro;
+            ul("v-for"="desc in device.list_desc")
+                li {{desc}}
 
 
 
