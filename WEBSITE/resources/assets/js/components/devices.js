@@ -159,12 +159,14 @@ Vue.component('devices', {
             if(event != null)
                 event.preventDefault();
             this.setCurrentFilter(type, filter.name);
-            if(type=='price')
+            if(type=='price') {
+                filter = filter.split('_');
                 this.filterPrice(filter);
-            else
-                this.devicesFiltered = this.content.devices.filter((item) =>{
-                   return (item[type] == filter.name);
+            }else {
+                this.devicesFiltered = this.content.devices.filter((item) => {
+                    return (item[type] == filter.name);
                 });
+            }
         },
 
         specialFilterClicked(filter,  event){

@@ -20,7 +20,7 @@ $filters['Popular'] = null;
 $filters['Recently added'] = null;
 $filters['brand'] = getData('brands');
 $filters['os'] = getData('os');
-$filters['price'] = [[0,100],[100,500],[500,-1]];
+$filters['price'] = ['0_100','100_500','500_-1'];
 print json_encode(['filters'=>$filters,'devices'=>$devices]);
 
 
