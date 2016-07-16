@@ -114,7 +114,7 @@ Vue.component('assistance-details', {
         customTags (data){
             if (data == undefined)
                 data = '';
-            return data.replace(/---OR/gi, '<hr>OR'); //TODO
+            return data.replace(/---OR/gi, '<div style="width:100%; position:relative; height: 1px; background-color: #1B3280">\n<span style="position:absolute; top:-14px; left:50%; background-color:white; padding:5px">or</span>\n</div>');
         }
     }
 });
