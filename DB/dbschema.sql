@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 15, 2016 at 10:50 PM
+-- Generation Time: Jul 16, 2016 at 09:57 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -33,9 +33,16 @@ CREATE TABLE `assistance` (
 
 INSERT INTO `assistance` (`id`, `name`, `description`, `type_id`) VALUES
   (1, 'iOS configuration', 'The best assistance in the world', 1),
-  (2, 'Refund', 'The best assistance in the world', 2),
-  (3, 'Device specific support', 'The best assistance in the world', 3),
-  (4, 'Unsubscribe', 'The best assistance in the world', 4);
+  (2, 'Check my line usage', 'The best assistance in the world', 2),
+  (3, 'My device is not charging(Apple)', 'The best assistance in the world', 3),
+  (4, 'Unsubscribe from a smartlife service', 'The best assistance in the world', 4),
+  (5, 'Android initial configuration', '', 1),
+  (6, 'My device does not work', '', 3),
+  (7, 'No connectivity on the verizon network', '', 3),
+  (8, 'Change payment method', '', 2),
+  (9, 'Set a cap on roaming', '', 2),
+  (10, 'Install Verizon Music', '', 4),
+  (11, 'Cnnect Verizon Pay with bank account', '', 4);
 
 -- --------------------------------------------------------
 
@@ -270,7 +277,7 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `name`, `short_description`, `price`, `type_id`, `img`, `full_description`, `features`, `rules`, `faq`, `faq_titles`) VALUES
-  (1, 'Verizon next', 'Tired with having an obsolete device? With Verizon Next you can exchange your device at no expenses with a more recent one so you will be always ahed', 19.99, 1, 'Latest-Smartphones-with-2-GB-RAM-In-India.jpg', 'Verizon Next is a verizon service that lets you replace easily your smartphone with a new one year by year at a small montly fee of 19,99 €. You can for example buy a Samsung Galaxy S7 today and replace with the new S8 within a year from the bought of the latter.', 'Get the latest smartphone ready to be used with a small monthly fee||We will configure your new smartphone right away. No time spent to find out to restore your contacts anymore||Your new smartphone will come with an extended 3 year warranty by default', 'The service works only with a specific set of smartphones that are shown above||To enjoy the service you are required to own a smartphone purchased from Verizon or to buy a new one from verizon when you subscribe to the service||In order to get the chance to replace year by year your smartphone a montly fee of 19,99€ is required and will constitute the cost of the service||The service\'s monthly fee must be payed with a credit card that belongs to one of the following payment circuits: Mastercard, Visa, American Express', '', ''),
+  (1, 'Verizon next', 'Tired with having an obsolete device? With Verizon Next you can exchange your device at no expenses with a more recent one so you will be always ahed', 19.99, 1, 'Latest-Smartphones-with-2-GB-RAM-In-India.jpg', 'Verizon Next is a verizon service that lets you replace easily your smartphone with a new one year by year at a small montly fee of 19,99 €. You can for example buy a Samsung Galaxy S7 today and replace with the new S8 within a year from the bought of the latter.', 'Get the latest smartphone ready to be used with a small monthly fee||We will configure your new smartphone right away. No time spent to find out to restore your contacts anymore||Your new smartphone will come with an extended 3 year warranty by default', 'The service works only with a specific set of smartphones that are shown above||To enjoy the service you are required to own a smartphone purchased from Verizon or to buy a new one from verizon when you subscribe to the service||In order to get the chance to replace year by year your smartphone a montly fee of 19,99€ is required and will constitute the cost of the service||The service\'s monthly fee must be payed with a credit card that belongs to one of the following payment circuits: Mastercard, Visa, American Express', 'Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.1||Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.2||Ultima undis solidumque matutinis undas diffundi erat: ventis margine nondum limitibus premuntur hanc temperiemque origo volucres fossae dixere ita supplex flexi animal nuper mea primaque campos dissaepserat pinus pontus finxit peragebant verba nisi homo zephyro non semine fuerant deus secant norant non effervescere nullo grandia deducite habentia natus illic cornua undis acervo corpore animalibus mundum turba quoque diremit fecit quae nix retinebat gravitate traxit praeter.3', 'How can i subscribe to the service||How can i subscribe to the service2||How can i subscribe to the service3'),
   (2, 'Verizon music', 'Stream your favourite music anywhere with your connected devices', 300, 2, 'banner-2_1.jpg', 'Verizon Music is a verizon service that lets you stream over 10 millions songs, create playlists and discover new music at just 9,99€/month. You can enjoy it on every platform: Android, iOS, Windows Phone, Smart TVs, Browser', 'Create, share and discover music playlists||Listen to over 10 millions songs||Enjoy music without adds  or commercials||Enjoy the experience with your smartphone, tablet, broswer or tv', '', '', ''),
   (3, 'Verizon Pay', 'Safe and super easy mobile payments', 250, 3, 'coupon.jpg', 'Verizon pay gives you an electronic wallet protected and made accessible for everyone via the Verizon network. Install the app on selected devices, link your credit card and everything is done for you ', 'Portable electronic payment wallet on your smartphone||End to end encryption via SSL and SEC||Dedicated 24h support line||Available both for online and offline purchases', '', '', '');
 
@@ -394,7 +401,7 @@ ALTER TABLE `services_types`
 -- AUTO_INCREMENT for table `assistance`
 --
 ALTER TABLE `assistance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `assistance_types`
 --
