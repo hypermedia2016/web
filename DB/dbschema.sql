@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 16, 2016 at 07:14 PM
+-- Generation Time: Jul 17, 2016 at 12:06 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -152,7 +152,7 @@ INSERT INTO `devices_types` (`id`, `name`, `img`) VALUES
   (1, 'Smartphones', 'smartphones_icon.png'),
   (2, 'Tablets', 'tablets_icon.png'),
   (3, 'Wearable', 'wearables_icon.jpg'),
-  (4, 'Outlet', 'deals_icon.jpg');
+  (4, 'Outlet', 'deals_icon.png');
 
 -- --------------------------------------------------------
 
