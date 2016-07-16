@@ -13,7 +13,7 @@ Vue.component('devices', {
             error: '',
             types: [],
             activeFilter: {},
-            keepActiveFilter: false,
+            keepActiveFilter: false
         }
 
     },
@@ -52,6 +52,17 @@ Vue.component('devices', {
             }, function (response) {
                 _this.error = 'Loading error...';
             });
+        },
+        shutCurrentFilter(){
+            for(let key in this.activeFilter){
+                if(this.activeFilter[key] === undefined){
+                    return {'key':key,'value':''};
+                }
+                else{
+                    return {'key':key,'value':': '+this.activeFilter[key]};
+                }
+
+            }
         },
 
         loadTypes(){

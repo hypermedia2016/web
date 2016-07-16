@@ -66,6 +66,11 @@ html(lang="en")
                 br
                 .row
                     +filters()
+                .row(v-if="activeFilter.length > 0")
+                    .col-md-12(style="margin: 15px 0 0 0")
+                        h4 Devices filtered by
+                            span.red-colored &nbsp;{{shutCurrentFilter().key}}
+                            span.red-colored &nbsp;{{shutCurrentFilter().value}}
                 br
                 br
                 .row

@@ -51,6 +51,11 @@
       padding: 15px 30px
       margin: 0 30px
 
+      @media(max-width: 500px)
+        margin: 0
+        padding: 15px 20px
+        font-size: 1.1rem
+
     li.active
       color: $app-black
       border-bottom: 2px solid $app-red
@@ -86,14 +91,13 @@
       &--stick-bottom
         margin-bottom: -40px
 
-      @media(max-width: 765px)
-        max-width: none
+      @media(max-width: 768px)
+        max-width: 100%
         position: inherit
         top: auto
         left: auto
         transform: none
-        margin: 0 auto
-        text-align: center
+
 
     &-text
       position: absolute
@@ -107,12 +111,15 @@
         line-height: 1.7
         color: $app-text-gray
 
-      @media(max-width: 765px)
+      @media(max-width: 768px)
+        padding: 15px 0
         max-width: none
         position: inherit
         top: auto
         left: auto
         transform: none
+        margin: 0 auto
+        text-align: center
 
 
         h2
