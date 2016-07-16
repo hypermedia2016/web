@@ -15,6 +15,7 @@ Vue.component('devices', {
             activeFilter: {},
             keepActiveFilter: false,
             searchParsed: queryString.parse(location.search),
+            clicked: false,
         }
 
     },
@@ -79,10 +80,11 @@ Vue.component('devices', {
                         $($('.tab-content div')[0]).addClass('in').addClass('active');
 
                         //listener
+                        $('.nav-tabs a').on('click', (event) =>{_this.clicked = true;});
                         $('.nav-tabs a').on('shown.bs.tab', function(event){
                             var name = $(event.target).text();
                             //this is not executed the first time if a query was passed
-                            if(!_this.keepActiveFilter) {
+                            if(!_this.keepActiveFilter || _this.clicked) {
                                 history.pushState(null, null, location.origin + location.pathname + '#' + name.trim().toLowerCase());
                                 _this.activeFilter = {};
                             }
