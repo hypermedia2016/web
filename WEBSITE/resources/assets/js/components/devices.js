@@ -13,7 +13,8 @@ Vue.component('devices', {
             error: '',
             types: [],
             activeFilter: {},
-            keepActiveFilter: false
+            keepActiveFilter: false,
+            searchParsed: queryString.parse(location.search),
         }
 
     },
@@ -52,17 +53,6 @@ Vue.component('devices', {
             }, function (response) {
                 _this.error = 'Loading error...';
             });
-        },
-        shutCurrentFilter(){
-            for(let key in this.activeFilter){
-                if(this.activeFilter[key] === undefined){
-                    return {'key':key,'value':''};
-                }
-                else{
-                    return {'key':key,'value':': '+this.activeFilter[key]};
-                }
-
-            }
         },
 
         loadTypes(){
@@ -190,7 +180,20 @@ Vue.component('devices', {
             this.activeFilter = {};
             this.activeFilter[name] = value;
             history.pushState(null, null, location.origin + location.pathname + '?'+encodeURIComponent(name)+'='+encodeURIComponent(value) + window.location.hash);
+            this.searchParsed = queryString.parse(location.search);
         }
+
+    },
+    computed: {
+        shutCurrentFilter(){
+            var data = this.searchParsed;
+            var keys = Object.keys(data);
+            if(keys.length == 0)
+                return {key:'', value:''};
+            var key = keys[0];
+            var value = data[key];
+            return {key: key, value: value};
+        },
 
     }
 });
