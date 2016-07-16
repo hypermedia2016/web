@@ -108,5 +108,9 @@ Vue.component('assistance-details', {
                 data = '';
             return marked(data);
         },
+        realUrls: function (data){
+            console.log(data);
+            return data.replace(/src=\"([^\"]*)\"/gi, 'src="'+basicUrl+'/img/dynamic/$1"');
+        },
     }
 });
