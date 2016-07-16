@@ -10,7 +10,7 @@ doctype html
 html(lang="en")
     include ../includes/head.jade
     body
-        include ../includes/header_dynamic
+        include ../includes/header_dynamic.jade
         include ../includes/breadcrumb.jade
         assistance(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
