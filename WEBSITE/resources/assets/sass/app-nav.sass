@@ -5,12 +5,23 @@
   a
     color: white
 
+  li
+    margin-right: 10px
+    &:last-child
+      margin-right: 0
   li.selected
     a
       font-weight: bold
 
 
 .top-middle-nav
+
+  .navbar-toggle
+    margin-top: 10px
+
+    i
+      font-size: 40px
+
   .navbar-brand
     height: auto
 
@@ -18,12 +29,14 @@
       width: 200px
 
   .navbar-collapse
-    padding: 20px 0
+    padding: 10px 0
+    border-bottom: 1px solid $app-dark-gray
     a
       font-size: 1.2rem
       font-weight: bold
 
     ul
+      margin-top: 10px
       margin-left: 60px
 
       li
@@ -32,3 +45,9 @@
       li.selected
         a
           color: $app-red
+
+    @media(max-width: 768px)
+      padding: 10px 15px
+
+      ul
+        margin: 0

@@ -1,0 +1,40 @@
+- var pageTitle="The group"
+- var mainMenuSelected='Investors'
+
+include ../includes/static-breadcrumb.jade
+
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header_group.jade
+        the-group(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                +breadcrumb(['The group', 'Governance'],['/the-group.html', '/governance.html'])
+                .row
+                    .col-md-12.app-who__page-label.text-center
+                        h1 Governance
+                br
+                br
+                .row
+                    .col-md-12.app-business__section-padded
+                        .app-business__heading-section.text-center
+                            h2 Model
+                            p Verizon's corporate governance framework is rooted in our core values of integrity, responsibility and accountability. Our Board of Directors is committed to the highest standards of corporate governance and oversees the management of risks inherent in the operation of the Company's businesses and implementation of its strategic plan. All of our Directors stand for election each year. Board oversight is effected through our four standing committees: Audit, Corporate Governance and Policy, Finance, and Human Resources. Each Committee oversees the management of Company risks that fall within its unique areas of responsibility and has a written charter that defines the specific responsibilities of that Committee.
+                .row
+                    .col-md-12.app-business__section-padded.app-business__section-colored
+                        h2.text-center Structure
+                        .app-business__heading-section.text-center
+                            img(src="img/static/structure.jpg", width="100%")
+
+
+
+
+
+
+
+
+
+
+
+        include ../includes/footer.jade

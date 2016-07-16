@@ -19,9 +19,9 @@ html(lang="en")
                 .row
                     .col-md-12
                         ul(class="app-home__principal-links list-unstyled")
-                            +item("Devices", "devices.html","img/static/devices-icon.jpg")
-                            +item("Smart life services", "services.html","img/static/services-icon.jpg")
-                            +item("Assistance", "assistance.html","img/static/assistance-icon.jpg")
+                            +item("Devices", "devices.html","img/static/devices-icon.png")
+                            +item("Smart life services", "services.html","img/static/services-icon.png")
+                            +item("Assistance", "assistance.html","img/static/assistance-icon.png")
 
                 br
                 br
@@ -30,37 +30,20 @@ html(lang="en")
                 .row
                     .col-md-12
                         #promotion-devices.carousel.slide(data-ride='carousel')
-                            // Indicators
-                            ol.carousel-indicators
-                                li.active(data-target='#promotion-devices', data-slide-to='0')
-                                li(data-target='#promotion-devices', data-slide-to='1')
-                                li(data-target='#promotion-devices', data-slide-to='2')
                             // Wrapper for slides
                             .carousel-inner(role='listbox')
-                                .item.active.container(v-for="device in promotionsDevice")
+                                .item.active(v-for="device in promotionsDevice")
                                     .row
-                                        .col-md-6
+                                        .col-md-6.col-sm-6.col-xs-12
                                             div.carousel__img-container
                                                 img("v-bind:src"="device.img", alt='...')
 
-                                        .col-md-6
+                                        .col-md-6.col-sm-6.col-xs-12
                                             div.carousel__text-container
                                                 h2 {{device.title}}
                                                 p {{device.description}}
                                                 a("v-bind:href"="'device.html#'+device.id")
                                                     button.app-button.app-button--big Check it out
-
-                                .item.container(v-for="device in promotionsDevice")
-                                    .row
-                                        .col-md-6
-                                            div.carousel__img-container
-                                                img("v-bind:src"="device.img", alt='...')
-
-                                        .col-md-6
-                                            div.carousel__text-container
-                                                h2 {{device.title}}
-                                                p {{device.description}}
-                                                button.app-button.app-button--big Cjklkhlk
 
 
                             // Controls
@@ -71,17 +54,24 @@ html(lang="en")
                                 i.material-icons(aria-hidden='true') chevron_right
                                 span.sr-only Next
 
+                            ol.carousel-indicators
+                                li.active(data-target='#promotion-devices', data-slide-to='0')
+                                li(data-target='#promotion-devices', data-slide-to='1')
+                                li(data-target='#promotion-devices', data-slide-to='2')
+
 
 
                 .row.app-home__services-promotion
                     h2 Enjoy our services at great price
-                    .col-md-4(v-for="service in promotionsService")
-                        .app-home__service-promotion.text-center
-                            img("v-bind:src"="service.img")
-                            h3 {{service.title}}
-                            p {{service.description}}
-                            a("v-bind:href"="'service.html#'+service.id")
-                                button.app-button Check it out
+                    .col-md-4.col-sm-4.col-xs-12(v-for="service in promotionsService")
+                        .app-home__service-promotion.text-center.row
+                            .col-md-12.col-sm-12.col-xs-6
+                                img("v-bind:src"="service.img")
+                            .col-md-12.col-xs-6.col-sm-12
+                                h3 {{service.title}}
+                                p {{service.description}}
+                                a("v-bind:href"="'service.html#'+service.id")
+                                    button.app-button Check it out
 
 
 

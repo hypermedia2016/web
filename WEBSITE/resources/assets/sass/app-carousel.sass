@@ -1,6 +1,5 @@
 #promotion-devices
-  .item
-    background-color: $app-dark-gray
+  background-color: $app-dark-gray
 
   .carousel-control
     background: none
@@ -9,25 +8,72 @@
 
     &.right
       i
+        border-radius: 50%
+        color: $app-text-gray
+        background-color: white
         position: absolute
-        top: calc(50% - 30px)
+        top: calc(50% - 20px)
         left: 50%
-        font-size: 60px
+        font-size: 40px
     &.left
       i
+        color: $app-text-gray
+        border-radius: 50%
+        background-color: white
         position: absolute
-        top: calc(50% - 30px)
+        top: calc(50% - 20px)
         right: 50%
-        font-size: 60px
+        font-size: 40px
   .carousel__img-container
     padding: 80px 0
 
     img
       display: block
+      width: 90%
+      max-width: 600px
       margin: 0 auto
+
+    @media(max-width: 992px )
+
+      img
+        width: 80%
 
   .carousel__text-container
     padding: 120px 0 80px 0
+    width: 90%
+    max-width: 400px
+
+    p
+      margin: 30px 0
+      font-size: 1.2rem
+      line-height: 1.5
+      color: $app-text-gray
+
+    @media(max-width: 992px )
+      padding: 80px 0
+
+    @media(max-width: 768px)
+      padding: 0
+      margin: 0 auto
+      text-align: center
+
+      h2
+        font-size: 25px
+
+
+.carousel-indicators
+  position: inherit
+  margin: 0 auto
+  padding: 15px 0
+  bottom: auto
+  left: auto
+
+  li
+    border: 1px solid $app-text-gray
+
+  li.active
+    background-color: $app-text-gray
+
 .carousel-slide
   > div
     float: left
