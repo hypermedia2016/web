@@ -2,22 +2,24 @@
 - var mainMenuSelected='Devices'
 
 mixin devices()
-    div.col-md-4(v-for="device in devicesFiltered")
-        a.app-devices__device.text-center("v-bind:href"="'device.html#'+device.id")
-            img("v-bind:src"="device.img[0]")
-            h4.app-devices__device-brand {{device.brand}}
-            h4 {{device.name}}
-            ul("v-for"="desc in device.list_desc").list-unstyled.text-left
-                li {{desc}}
-            br
-            ul.list-unstyled.list-inline
-                li
-                    span.app-devices__device-color-label COLORS&nbsp;&nbsp;
-                li
-                    ul.list-unstyled.list-inline
-                        li(v-for="color in device.colors")
-                            span("v-bind:style"="'background-color:'+color+'; width: 20px; height: 20px; display:block; border: 1px solid rgba(0,0,0,.2)'") &nbsp;
-            h3 {{device.price}}&euro;
+    div.col-md-4.col-sm-4.col-xs-12(v-for="device in devicesFiltered")
+        a.app-devices__device.text-center("v-bind:href"="'device.html#'+device.id").row
+            .col-sm-12.col-md-12.col-xs-6
+                img("v-bind:src"="device.img[0]")
+            .col-sm-12.col-md-12.col-xs-6
+                h4.app-devices__device-brand {{device.brand}}
+                h4 {{device.name}}
+                ul("v-for"="desc in device.list_desc").list-unstyled
+                    li {{desc}}
+                br
+                ul.list-unstyled.list-inline
+                    li
+                        span.app-devices__device-color-label COLORS&nbsp;&nbsp;
+                    li
+                        ul.list-unstyled.list-inline
+                            li(v-for="color in device.colors")
+                                span("v-bind:style"="'background-color:'+color+'; width: 20px; height: 20px; display:block; border: 1px solid rgba(0,0,0,.2)'") &nbsp;
+                h3 {{device.price}}&euro;
 
 
 
@@ -68,6 +70,5 @@ html(lang="en")
                     .col-md-12
                         div(class="tab-content")
                             div("v-bind:id"="type.name.toLowerCase()" class="tab-pane fade row" v-for="type in types")
-                                .col-md-12
-                                    +devices()
+                                +devices()
         include ../includes/footer.jade
