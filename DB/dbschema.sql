@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 16, 2016 at 10:10 AM
+-- Generation Time: Jul 16, 2016 at 10:26 AM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -169,7 +169,33 @@ CREATE TABLE `device_assistance` (
 --
 
 INSERT INTO `device_assistance` (`device_id`, `assistance_id`) VALUES
-  (1, 1);
+  (1, 5),
+  (1, 6),
+  (2, 1),
+  (2, 3),
+  (2, 6),
+  (3, 3),
+  (3, 6),
+  (4, 5),
+  (4, 6),
+  (5, 1),
+  (5, 3),
+  (5, 6),
+  (6, 5),
+  (6, 6),
+  (7, 5),
+  (7, 6),
+  (9, 5),
+  (9, 6),
+  (10, 5),
+  (10, 6),
+  (11, 5),
+  (11, 6),
+  (12, 1),
+  (12, 3),
+  (12, 6),
+  (13, 5),
+  (13, 6);
 
 -- --------------------------------------------------------
 
