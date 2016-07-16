@@ -1,3 +1,8 @@
+-
+    mainMenu = [{name: 'Devices', link: 'devices.html'},
+    {name: 'Smart life services', link: 'services.html'},
+    {name: 'Assistance', link: 'assistance.html'}]
+
 include header.jade
 
 nav.navbar.top-middle-nav
@@ -5,8 +10,10 @@ nav.navbar.top-middle-nav
         .navbar-header
             a.navbar-brand(href='index.html')
                 img(src='img/static/app-logo.jpeg',alt='Verizon', class="")
+
             button.navbar-toggle.collapsed.app-header_hamburger-menu(data-toggle='collapse', data-target='#indexNavigation')
                 i.material-icons menu
+
 
         .collapse.navbar-collapse#indexNavigation
             ul.nav.navbar-nav
@@ -15,3 +22,7 @@ nav.navbar.top-middle-nav
                         +menu-item(item.name, item.link)(class='selected')
                     else
                         +menu-item(item.name, item.link)
+
+
+
+

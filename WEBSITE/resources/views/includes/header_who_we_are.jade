@@ -3,21 +3,4 @@
     {name: 'Testimonials', link: 'testimonials.html'},
     {name: 'Projects', link: 'projects.html'}]
 
-include header.jade
-
-
-nav.navbar.top-middle-nav
-    .container
-        .navbar-header
-            a.navbar-brand(href='index.html')
-                img(src='img/static/app-logo.jpeg',alt='Verizon', class="")
-            button.navbar-toggle.collapsed.app-header_hamburger-menu(data-toggle='collapse', data-target='#indexNavigation')
-                i.material-icons menu
-
-        .collapse.navbar-collapse#indexNavigation
-            ul.nav.navbar-nav
-                each item, i in mainMenu
-                    if mainMenuSelected == item.name
-                        +menu-item(item.name, item.link)(class='selected')
-                    else
-                        +menu-item(item.name, item.link)
+include header_static.jade
