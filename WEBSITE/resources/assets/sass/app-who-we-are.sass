@@ -10,6 +10,7 @@
       line-height: 1.7
 
   &__page-label
+    margin-top: 15px
     height: 100px
     background: url('../img/static/header-bg.jpg') no-repeat center
     background-size: cover
@@ -25,6 +26,9 @@
     height: 500px
     background-size: cover !important
 
+    @media(max-width: 1200px)
+      background-position: right !important
+
 
 
   &__video-text
@@ -34,6 +38,13 @@
     top: 50%
     left: 10%
     transform: translateY(-50%)
+
+    @media(max-width: 600px)
+      padding: 15px
+      width: 100%
+      left: 0
+
+
 
     h2
       font-weight: normal

@@ -11,15 +11,15 @@ html(lang="en")
 
         who-we-are(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
-
+                +breadcrumb(['Who we are', 'Testimonials'],['/who-we-are.html', '/testimonials.html'])
                 .row
-                    .col-md-12.app-who__page-label.text-center
+                    .col-md-12.col-sm-12.col-xs-12.app-who__page-label.text-center
                         h1 Testimonials
 
-                +breadcrumb(['Who we are', 'Testimonials'],['/who-we-are.html', '/testimonials.html'])
+
 
                 .row
-                    .col-md-12#fazio.app-testimonials__video
+                    .col-md-12.col-sm-12.col-xs-12#fazio.app-testimonials__video
                         .app-testimonials__video-text
                             h3 Fabio Fazio
                             h2 "You can be everywhere with a click. You can explore entire new worlds and live neverending adventures!"
@@ -29,7 +29,7 @@ html(lang="en")
                                 li
                                     span Play the video
                 .row
-                    .col-md-12#pif.app-testimonials__video
+                    .col-md-12.col-xs-12.col-sm-12#pif.app-testimonials__video
                         .app-testimonials__video-text
                             h3 Pif
                             h2 "The web is never the purpose but the medium!"
