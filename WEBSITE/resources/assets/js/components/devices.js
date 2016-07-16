@@ -131,7 +131,9 @@ Vue.component('devices', {
         filterText(filter, type){
             if(type=='price')
                 return this.priceFilterText(filter.split('_'));
-            return filter.name;
+            if(filter.name != undefined)
+                return filter.name;
+            return filter;
         },
 
         priceFilterText(price){
@@ -159,9 +161,10 @@ Vue.component('devices', {
             if(event != null)
                 event.preventDefault();
             if(type=='price') {
+                if(filter.name != undefined)
+                    filter = filter.name;//tmp fix for setData case
                 this.setCurrentFilter(type, filter);
-                filter = filter.split('_');
-                this.filterPrice(filter);
+                this.filterPrice(filter.split('_'));
             }else {
                 this.setCurrentFilter(type, filter.name);
                 this.devicesFiltered = this.content.devices.filter((item) => {

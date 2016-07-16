@@ -44,7 +44,7 @@ doctype html
 html(lang="en")
     include ../includes/head.jade
     body
-        include ../includes/header_dynamic
+        include ../includes/header_dynamic.jade
         include ../includes/breadcrumb.jade
         br
         devices(inline-template "v-bind:locations.sync"="locations")
@@ -71,7 +71,7 @@ html(lang="en")
                     .col-md-12(style="margin: 15px 0 0 0")
                         h4 Devices filtered by
                             span.red-colored &nbsp;{{shutCurrentFilter.key}}
-                            span("v-if"="shutCurrentFilter.value != 'undefined'").red-colored &nbsp;{{shutCurrentFilter.value}}
+                            span("v-if"="shutCurrentFilter.value != 'undefined'").red-colored &nbsp;{{filterText(shutCurrentFilter.value, shutCurrentFilter.key)}}
                 br
                 br
                 .row
