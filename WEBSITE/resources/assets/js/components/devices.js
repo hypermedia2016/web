@@ -112,8 +112,8 @@ Vue.component('devices', {
                 return;
             }
             //at the moment we consider only one active element per time
-            if(this.activeFilter[keys[0]] == undefined){
-                this.specialFilterClicked({name: keys[0]}, null);
+            if(this.activeFilter[keys[0]] == 'undefined'){
+                this.specialFilterClicked(keys[0], null);
                 return ;
             }
             this.filterClicked({name: this.activeFilter[keys[0]]}, keys[0], null);
