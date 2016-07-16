@@ -29,7 +29,7 @@ Vue.component('assistance-details', {
 
         //id changed
         var _this = this;
-        $(window).on('hashchange', ()=>{_this.locations.pop();_this.locations.pop();_this.locations.pop();_this.loadAssistance();});
+        $(window).on('hashchange', ()=>{_this.locations.pop();_this.locations.pop();_this.locations.pop();_this.loadAssistance();_this.loadDevices();});
     },
 
     methods:{

@@ -29,7 +29,7 @@ Vue.component('device', {
 
         //id changed
         var _this = this;
-        $(window).on('hashchange', ()=>{_this.locations.pop();_this.locations.pop();_this.locations.pop();_this.loadDevice();});
+        $(window).on('hashchange', ()=>{_this.locations.pop();_this.locations.pop();_this.locations.pop();_this.loadDevice();_this.loadAssistance();_this.loadServices();});
     },
 
     methods:{
