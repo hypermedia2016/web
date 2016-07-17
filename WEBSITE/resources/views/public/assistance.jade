@@ -2,7 +2,7 @@
 - var mainMenuSelected='Assistance'
 
 mixin assistance()
-    div(class="assistance" "v-show"="!home")
+    div(class="assistance")
         ul
             li(v-for="assistanceItem in assistance")
                 a("v-bind:href"="'assistance-details.html#'+assistanceItem.id") {{assistanceItem.name}}
@@ -16,7 +16,7 @@ html(lang="en")
             div(class="container")
                 //sub menu
                 .row.
-                ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
+                ul(class="nav nav-tabs app-home__principal-links app-devices-nav" "v-show"="home")#sub
                     li(v-for="type in types" class="app-home__principal-link app-home__principal-link--special")
                         a("v-bind:href"="type.url" data-toggle="tab" class="row app-home__principal-link--img-link")
                             .col-md-8.col-sm-8.col-xs-6.col-md-offset-2.col-sm-offset-2.col-xs-offset-0
@@ -24,7 +24,7 @@ html(lang="en")
                             .col-md-8.col-sm-8.col-xs-6.col-md-offset-2.col-sm-offset-2.col-xs-offset-0
                                 span(class="app-home__principal-link--text" style="padding:0") {{type.name}}
                 div(class="error") {{ error }}
-                div(class="tab-content")
+                div(class="tab-content" "v-show"="!home")
                     div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
                         p {{type.name}}
                         +assistance()
