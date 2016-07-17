@@ -6,7 +6,75 @@ html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header_dynamic.jade
+        include ../includes/breadcrumb.jade
         service(inline-template "v-bind:locations.sync"="locations")
             div(class="error") {{ error }}
-            p device info {{parsedData.name}}
+            .container
+                .row
+                    .col-md-12
+                        img("v-bind:src"="'img/dynamic/'+parsedData.img").app-service__img
+                        .app-service__head.text-center
+                            h2 {{parsedData.name}}
+                            p {{parsedData.short_description}}
+                            h2.red-colored {{parsedData.price}}&nbsp;&euro;&nbsp;/&nbsp;month
+                            button.app-button.app-button--big SUBSCRIBE
+                br
+                br
+                .row
+                    .col-md-12.text-center
+                        ul.list-unstyled.list-inline.app-device__content-nav(role="tab-list").app-investors__nav
+                            li.active(role="presentation")
+                                a(href="#presentation",role="tab",data-toggle="tab") Presentation
+                            li(role="presentation")
+                                a(href="#performance", role="tab", data-toggle="tab") Activation & Rules
+                            li(role="presentation")
+                                a(href="#balance", role="tab", data-toggle="tab") FAQ
+
+
+
+                .tab-content
+                    .row.tab-pane.active.fade.in#presentation(role="tabpanel")
+                        .col-md-12
+                            .app-service__pres-text.text-center
+                                h2 Discover {{parsedData.name}}
+                                p {{parsedData.full_description}}
+                            .app-service__pres-features
+                                .app-service__pres-features--inner
+                                    ul.list-unstyled
+                                        li(v-for="feature in parsedData.features")
+                                            i.material-icons checkmark
+                                            span {{feature}}
+
+                            #related-devices.carousel.slide(data-ride='carousel')
+                                // Wrapper for slides
+                                .carousel-inner(role='listbox')
+                                    .item.active(v-for="device in parsedData.devices")
+                                        .row
+                                            .col-md-6.col-sm-6.col-xs-12
+                                                div.carousel__img-container
+                                                    img("v-bind:src"="device.img", alt='...')
+
+                                            .col-md-6.col-sm-6.col-xs-12
+                                                div.carousel__text-container
+                                                    h2 {{device.title}}
+                                                    p {{device.description}}
+                                                    a("v-bind:href"="'device.html#'+device.id")
+                                                        button.app-button.app-button--big Check it out
+
+
+                                // Controls
+                                a.left.carousel-control(href='#promotion-devices', role='button', data-slide='prev')
+                                    i.material-icons(aria-hidden='true') chevron_left
+                                    span.sr-only Previous
+                                a.right.carousel-control(href='#promotion-devices', role='button', data-slide='next')
+                                    i.material-icons(aria-hidden='true') chevron_right
+                                    span.sr-only Next
+
+                                ol.carousel-indicators
+                                    li.active(data-target='#promotion-devices', data-slide-to='0')
+                                    li(data-target='#promotion-devices', data-slide-to='1')
+                                    li(data-target='#promotion-devices', data-slide-to='2')
+
+
+
         include ../includes/footer.jade

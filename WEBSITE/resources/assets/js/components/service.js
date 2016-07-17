@@ -94,7 +94,7 @@ Vue.component('service', {
                         ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
                         return ele;
                     });
-                    _this.devices = tmp;
+                    _this.devices = tmp;//_this.splitDevices(tmp);
                     _this.error = '';
                 }
             }, function (response) {
