@@ -77,3 +77,70 @@ h3
 
   &:focus, &:visited
     border: none
+
+
+.subsection-nav
+  width: 700px
+  margin: 0 auto
+  li
+    width: 25%
+    vertical-align: top
+
+    a
+      display: block
+      width: 150px
+      margin: 0 auto
+      text-align: center
+      padding: 0
+
+      img
+        width: 70px
+        height: 70px
+        display: block
+        margin: 0 auto 15px auto
+
+      p
+        font-size: 1.2rem
+
+  li.active
+    p
+      font-weight: bold
+
+
+  &--three
+    li
+      width: 33.3%
+
+      a
+        width: 190px
+
+  &--big
+    li
+      a
+        img
+          width: 80px
+          height: 80px
+
+
+  @media(max-width: 768px)
+    width: 100%
+
+    li
+      width: 100%
+      margin-bottom: 10px
+
+      &:last-child
+        margin-bottom: 0
+
+      a
+        width: 100%
+
+        img
+          margin-bottom: 0
+        p
+          font-size: 1.1rem
+          margin-top: 25px
+
+        &:hover
+          background-color: $app-dark-gray !important
+

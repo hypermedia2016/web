@@ -46,13 +46,21 @@ html(lang="en")
     body
         include ../includes/header_dynamic.jade
         include ../includes/breadcrumb.jade
-        br
         devices(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
                 //sub menu
+                br
+                br
                 .row
                     .col-md-12
-                        ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
+                        ul.list-inline.list-unstyled.subsection-nav.subsection-nav--big.nav.nav-tabs
+                            li(v-for="type in types")
+                                a("v-bind:href"="type.url",data-toggle="tab").row
+                                    .col-md-12.col-xs-6.col-sm-12
+                                        img("v-bind:src"="type.img")
+                                    .col-md-12.col-xs-6.col-sm-12
+                                        p {{type.name}}
+                        //ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
                             li(v-for="type in types", class="app-home__principal-link app-home__principal-link--special")
                                 a("v-bind:href"="type.url" data-toggle="tab" class="app-home__principal-link--img-link row" style="padding:0")
                                     .col-md-12.col-sm-12.col-xs-6
