@@ -18,7 +18,7 @@ Vue.component('service', {
     },
     ready() {
         //add basic location
-        this.locations.push({name: 'services', url: 'services.html'});
+        this.locations.push({name: 'Smart life services', url: 'services.html'});
 
         //load service
         this.loadService();

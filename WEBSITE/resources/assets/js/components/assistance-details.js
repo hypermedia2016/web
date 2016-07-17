@@ -19,7 +19,7 @@ Vue.component('assistance-details', {
     },
     ready() {
         //add basic location
-        this.locations.push({name: 'assistance', url: 'assistance.html'});
+        this.locations.push({name: 'Assistance & support', url: 'assistance.html'});
 
         //load assistance
         this.loadAssistance();
