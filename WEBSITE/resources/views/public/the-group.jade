@@ -17,11 +17,14 @@ html(lang="en")
                 .row
                     .col-md-12.app-group__news
                         .row
-                            .col-md-2.app-group__news-label
+                            .col-md-2.app-group__news-label.col-sm-3.col-xs-12
                                 h3 News
-                            .col-md-10
-                                ul("v-for"="news_item in news").list-inline.list-unstyled
-                                    li {{news_item.date}} {{news_item.content}}
+                            .col-md-10.col-sm-9.col-xs-12.app-group__news-list
+                                .row
+                                    .col-md-3.col-sm-6("v-for"="news_item in news")
+                                        div.app-group__news-text
+                                            p {{news_item.date}}
+                                            p {{news_item.content}}
 
                 .row
                     .col-md-12.app-group__hero
@@ -36,40 +39,54 @@ html(lang="en")
                             p Verizon is one of the biggest group in the telecommunication market. With more than 20 years of activities in the US and in Europe it innovates and produce value for customers and communities like anyone
 
                 .row
-                    .col-md-12.text-center
-                        ul.list-inline.list-unstyled.app-group__features
-                            li
+                    .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.col-xs-offset-0
+                        .row
+                            .col-md-4.text-center.col-sm-4.col-xs-4.app-group__feature-container
                                 div.app-group__feature.text-center
                                     img(src="img/static/customers.png")
                                     p Customers
                                     p 50 Millions
-                            li
+                            .col-md-4.text-center.col-sm-4.col-xs-4.app-group__feature-container
                                 div.app-group__feature.text-center
                                     img(src="img/static/ic_store_mall_directory.png")
                                     p Retail stores
                                     p 3000
-                            li
+                            .col-md-4.text-center.col-sm-4.col-xs-4.app-group__feature-container
                                 div.app-group__feature.text-center
                                     img(src="img/static/ic_public.png")
                                     p Countries
                                     p 90
-
-                        ul.list-inline.list-unstyled.app-group__features
-                            li
+                br
+                .row
+                    .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.col-xs-offset-0
+                        .row
+                            .col-md-4.text-center.col-sm-4.col-xs-4.app-group__feature-container
                                 div.app-group__feature.text-center
                                     img(src="img/static/ic_settings_input_antenna.png")
                                     p Global network
                                     p 800,000 miles
+
+                            .col-md-4.text-center.col-sm-4.col-xs-4.app-group__feature-container
+                                div.app-group__feature.text-center
+                                    img(src="img/static/ic_local_atm.png")
+                                    p Revenues
+                                    p 100 mld of $
+
+                            .col-md-4.text-center.col-sm-4.col-xs-4.app-group__feature-container
+                                div.app-group__feature.text-center
+                                    img(src="img/static/ic_star.png")
+                                    p Investments
+                                    p 1 mld of $
+                        //ul.list-inline.list-unstyled.app-group__features
+                            li
+
                             li
                                 div.app-group__feature.text-center
                                     img(src="img/static/ic_local_atm.png")
                                     p Revenues
                                     p 100 mld of $
                             li
-                                div.app-group__feature.text-center
-                                    img(src="img/static/ic_star.png")
-                                    p Investments
-                                    p 1 mld of $
+
 
 
 

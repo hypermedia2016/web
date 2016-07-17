@@ -1,17 +1,61 @@
 .app-group
   &__news
+    margin-top: 15px
     background-color: $app-light-gray
-    height: 100px
+
+    >div
+      height: 100%
+
+      >div
+        height: 100%
+
+
+    ul
+      height: 100%
+    li
+      height: 100%
+      vertical-align: top
+      padding: 10px 20px
+      border-right: 1px solid $app-dark-gray
+
+    &-list
+      .row
+        >div:first-child
+          border-right: 1px solid $app-dark-gray
+
+          @media(max-width: 768px)
+            border-right: 0
+            border-bottom: 1px solid $app-dark-gray
+      @media(max-width: 768px)
+        height: 140px
 
 
   &__news-label
     position: relative
 
     h3
-      position: absolute
-      top: 50%
-      left: 50%
-      transform: translate(-50%,50%)
+      margin-top: 50px
+      margin-left: 50px
+
+      @media(max-width: 768px)
+        margin-left: 0
+        text-align: center
+
+
+  &__news-text
+    margin: 0 auto
+    width: 200px
+    padding: 30px 5px
+
+    @media(max-width: 768px)
+      width: 100%
+      max-width: 400px
+
+    p
+      margin: 0
+    p:first-child
+      font-size: 90%
+      margin-bottom: 5px
 
 
   &__hero
@@ -65,6 +109,13 @@
     p:last-child
       font-weight: bold
 
+  &__feature-container
+    @media(max-width: 700px)
+      width: 100%
+      margin-bottom: 22.5px
+
+      >div
+        margin: 0 auto
 
 
 .app-business
