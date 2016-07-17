@@ -6,8 +6,48 @@ html(lang="en")
     include ../includes/head.jade
     body
         include ../includes/header_dynamic.jade
+        include ../includes/breadcrumb.jade
         assistance-details(inline-template "v-bind:locations.sync"="locations")
-            div(class="error") {{ error }}
-            p assistance info {{parsedData.name}}
-            div("v-html"="parsedData.description |customTags | marked | realUrls")
+            .container
+                div(class="error") {{ error }}
+                br
+                br
+                .row
+                    .col-md-8.col-md-offset-2
+                        div("v-html"="parsedData.description |customTags | marked | realUrls","v-bind:class"="{'app-assistance__content--img': parsedData.id==='5'}").app-assistance__content
+                br
+                .row
+                    .col-md-12
+                        #related-devices.carousel.slide(data-ride='carousel')(v-if="devices.length > 0").app-assistance__carousel
+                            // Wrapper for slides
+                            h3.text-center Use this guide for
+                            .carousel-inner(role='listbox')
+                                .item.active
+                                    .row
+                                        .col-md-4.col-sm-4.col-xs-12(v-for="subdevice in devices[0]")
+                                            a.app-service__carousel("v-bind:href"="'/device.html#'+subdevice.id")
+                                                img("v-bind:src"="subdevice.img[0]", alt='...')
+                                                h4 {{subdevice.brand}}
+                                                h4 {{subdevice.name}}
+
+                                .item(v-for="(index,device) in devices")(v-if="index!==0")
+                                    .row
+                                        .col-md-4.col-sm-4.col-xs-12(v-for="subdevice in device")
+                                            a.app-service__carousel("v-bind:href"="'/device.html#'+subdevice.id")
+                                                img("v-bind:src"="subdevice.img[0]", alt='...')
+                                                h4 {{subdevice.brand}}
+                                                h4 {{subdevice.name}}
+
+
+                            // Controls
+                            a.left.carousel-control(href='#related-devices', role='button', data-slide='prev')
+                                i.material-icons(aria-hidden='true') chevron_left
+                                span.sr-only Previous
+                            a.right.carousel-control(href='#related-devices', role='button', data-slide='next')
+                                i.material-icons(aria-hidden='true') chevron_right
+                                span.sr-only Next
+
+                            ol.carousel-indicators
+                                li.active(data-target='#related-devices', data-slide-to='0')
+                                li(data-target='#related-devices', data-slide-to='{{index}}')(v-for="(index,bullet) in devices",v-if="index!==0")
         include ../includes/footer.jade

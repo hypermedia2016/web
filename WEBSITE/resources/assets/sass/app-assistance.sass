@@ -29,3 +29,89 @@
             background-color: white
             box-shadow: 0px 2px 15px rgba(0,0,0,.2)
             font-weight: bold
+
+  &__list-services
+    margin-top: 30px
+    li
+      border-bottom: 1px solid $app-dark-gray
+      &:last-child
+        border-bottom: none
+      a
+        display: block
+        width: 100%
+        padding: 15px
+        font-size: 1.2rem
+        background-color: $app-light-gray
+        color: $app-text-gray
+        transition: all 50ms linear
+        border-bottom: 1px solid $app-dark-gray
+
+        i
+          float: right
+          font-size: 36px
+          margin-top: -5px
+
+        &:hover
+          background-color: white
+          box-shadow: 0px 2px 15px rgba(0,0,0,.2)
+          font-weight: bold
+
+
+  &__content
+    ol
+      margin-bottom: 30px
+      li
+        padding: 10px
+        font-size: 1.2rem
+
+    p
+      font-size: 1.2rem
+
+      &:last-child
+        margin-top: 40px
+
+      @media(max-width: 768px)
+        font-size: 1.1rem
+
+
+    h1
+      font-size: 25px
+      margin-bottom: 22.5px
+
+    h2
+      font-size: 20px
+
+    img
+      margin: 30px auto
+      max-width: 100%
+
+
+    .img
+      img
+        width: 400px
+        display: block
+
+        @media (max-width: 400px)
+          width: 100%
+
+#related-devices
+  background-color: white !important
+  h3
+    padding: 15px 0 30px 0
+    border-bottom: 1px solid $app-dark-gray
+
+  @media (max-width: 768px)
+    .item
+      padding: 20px 0
+
+      .row
+        >div
+          margin-bottom: 30px
+
+
+
+
+
+
+
+

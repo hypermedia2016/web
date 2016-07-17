@@ -79,6 +79,13 @@ Vue.component('assistance-details', {
             this.locations.push({name: this.parsedData.type, url: 'assistance.html#'+this.escapeName(this.parsedData.type)});
             this.locations.push({name: this.parsedData.name, url: 'assistance-details.html#'+this.parsedData.id});
         },
+        createGroupedArray (arr, chunkSize) {
+            var groups = [], i;
+            for (i = 0; i < arr.length; i += chunkSize) {
+                groups.push(arr.slice(i, i + chunkSize));
+            }
+            return groups;
+        },
 
         escapeName(name){
             return name.toLowerCase().replace(/\s+/g,'_');
@@ -94,7 +101,7 @@ Vue.component('assistance-details', {
                         ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
                         return ele;
                     });
-                    _this.devices = tmp;
+                    _this.devices = _this.createGroupedArray(tmp,3);
                     _this.error = '';
                 }
             }, function (response) {

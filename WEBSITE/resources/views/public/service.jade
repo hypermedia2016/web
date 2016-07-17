@@ -52,13 +52,13 @@ html(lang="en")
                                                 td {{feature.content}}
 
 
-                            #related-devices.carousel.slide(data-ride='carousel')
+                            #related-devices.carousel.slide(data-ride='carousel')(v-if="devices.length > 0")
                                 // Wrapper for slides
                                 .carousel-inner(role='listbox')
                                     .item.active
                                         .row
                                             .col-md-4.col-sm-4.col-xs-4(v-for="subdevice in devices[0]")
-                                                div.app-service__carousel
+                                                a.app-service__carousel("v-bind:href"="'/device.html#'+subdevice.id")
                                                     img("v-bind:src"="subdevice.img[0]", alt='...')
                                                     h4 {{subdevice.brand}}
                                                     h4 {{subdevice.name}}
@@ -66,7 +66,7 @@ html(lang="en")
                                     .item(v-for="(index,device) in devices")(v-if="index!==0")
                                         .row
                                             .col-md-4.col-sm-4.col-xs-4(v-for="subdevice in device")
-                                                div.app-service__carousel
+                                                a.app-service__carousel("v-bind:href"="'/device.html#'+subdevice.id")
                                                     img("v-bind:src"="subdevice.img[0]", alt='...')
                                                     h4 {{subdevice.brand}}
                                                     h4 {{subdevice.name}}
