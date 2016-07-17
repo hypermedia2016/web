@@ -52,6 +52,14 @@ Vue.component('service', {
             });
         },
 
+        createGroupedArray (arr, chunkSize) {
+            var groups = [], i;
+            for (i = 0; i < arr.length; i += chunkSize) {
+                groups.push(arr.slice(i, i + chunkSize));
+            }
+            return groups;
+        },
+
         getServiceId(){
             var id = window.location.hash.substr(1); //remove #
             if(isNaN(id) || id <= 0)
@@ -94,7 +102,7 @@ Vue.component('service', {
                         ele.img = ele.img.split('||').map((ele2)=>{return basicUrl +'/img/dynamic/'+ele2;});
                         return ele;
                     });
-                    _this.devices = tmp;
+                    _this.devices = this.createGroupedArray(tmp,3);
                     _this.error = '';
                 }
             }, function (response) {
