@@ -148,12 +148,12 @@ Vue.component('devices', {
         filterPrice(price){
             if(price[1]==-1)
                 this.devicesFiltered = this.content.devices.filter((item) =>{
-                    return (item['price'] >= price[0]);
+                    return (item['price']*1 >= price[0]);
                 });
             //This case covers also the case "less than"
             else
                 this.devicesFiltered = this.content.devices.filter((item) =>{
-                    return (item['price'] >= price[0] && item['price'] <= price[1]);
+                    return (item['price']*1 >= price[0] && item['price']*1 <= price[1]);
                 });
         },
 
