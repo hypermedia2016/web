@@ -1,0 +1,57 @@
+- var pageTitle="Assistance & support"
+- var mainMenuSelected='Assistance'
+
+mixin assistance()
+    div(class="assistance" "v-show"="!home")
+        ul
+            li(v-for="assistanceItem in assistance")
+                a("v-bind:href"="'assistance-details.html#'+assistanceItem.id") {{assistanceItem.name}}
+doctype html
+html(lang="en")
+    include ../includes/head.jade
+    body
+        include ../includes/header_dynamic.jade
+        include ../includes/breadcrumb.jade
+        assistance_settings(inline-template "v-bind:locations.sync"="locations")
+            div(class="container")
+                br
+                br
+                ul.list-inline.list-unstyled.subsection-nav.nav.nav-tabs
+                    li(v-for="type in types")
+                        a("v-bind:href"="type.url",data-toggle="tab").row
+                            .col-md-12.col-xs-6.col-sm-12
+                                img("v-bind:src"="type.img")
+                            .col-md-12.col-xs-6.col-sm-12
+                                p {{type.name}}
+
+                div(class="error") {{ error }}
+
+                br
+                br
+                br
+                br
+                div.app-assistance__frequent.row("v-show"="home")
+                    .col-md-12
+                        h4 FREQUENT ASSISTANCE SERVICES
+                        table
+                            thead
+                                th
+                                th
+                                th
+                            tbody
+                                tr
+                                    td(v-for="(index,frequent) in frequents",v-if="index < 3")
+                                        a("v-bind:href"="'/assistance-details.html#'+frequent.id") {{frequent.name}}
+                                tr
+                                    td(v-for="(index,frequent) in frequents",v-if="index > 2")
+                                        a("v-bind:href"="'/assistance-details.html#'+frequent.id") {{frequent.name}}
+
+
+
+                div(class="tab-content")
+                    div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
+                        p {{type.name}}
+                        +assistance()
+
+        include ../includes/footer.jade
+
