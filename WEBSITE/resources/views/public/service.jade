@@ -83,8 +83,7 @@ html(lang="en")
 
                                 ol.carousel-indicators
                                     li.active(data-target='#related-devices', data-slide-to='0')
-                                    li(data-target='#related-devices', data-slide-to='1')
-                                    li(data-target='#related-devices', data-slide-to='2')
+                                    li(data-target='#related-devices', data-slide-to='{{index}}')(v-for="(index,bullet) in devices")(v-if="index!==0")
 
                     .row.tab-pane.fade#rules(role="tabpanel")
                         .col-md-12

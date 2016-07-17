@@ -56,8 +56,7 @@ html(lang="en")
 
                             ol.carousel-indicators
                                 li.active(data-target='#promotion-devices', data-slide-to='0')
-                                li(data-target='#promotion-devices', data-slide-to='1')
-                                li(data-target='#promotion-devices', data-slide-to='2')
+                                li(data-target='#promotion-devices', data-slide-to='{{index}}')(v-for="bullet in promotionDevice")(v-if="index!==0")
 
 
 
