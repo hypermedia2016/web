@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 17, 2016 at 02:10 PM
+-- Generation Time: Jul 17, 2016 at 03:03 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -61,10 +61,10 @@ CREATE TABLE `assistance_types` (
 --
 
 INSERT INTO `assistance_types` (`id`, `name`, `img`) VALUES
-  (1, 'Configurations', ''),
-  (2, 'Monitoring costs and payments', ''),
-  (3, 'Technical support', ''),
-  (4, 'Smart life services', '');
+  (1, 'Configurations', '03_Configurazione.png'),
+  (2, 'Monitoring costs and payments', '02_CostiPagamenti_0.png'),
+  (3, 'Technical support', 'icon.png'),
+  (4, 'Smart life services', '04_ConenutiDigitalLife.png');
 
 -- --------------------------------------------------------
 
