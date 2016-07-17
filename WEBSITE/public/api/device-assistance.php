@@ -12,14 +12,14 @@ if(isset($_GET['device_id']))
 {
     $id = $connection->real_escape_string(isset($_GET['device_id'])?$_GET['device_id']:'');
 
-    $query = 'SELECT A.*, D.name as device FROM assistance A, devices D, device_assistance DA WHERE  DA.device_id = D.id and DA.assistance_id = A.id and D.id = \''.$id.'\'';
+    $query = 'SELECT A.*, D.name as device, B.name as brand FROM assistance A, devices D, device_assistance DA, brands B WHERE D.brand_id = B.id and DA.device_id = D.id and DA.assistance_id = A.id and D.id = \''.$id.'\'';
     $assistance = getDataByQuery($query);
 
     print json_encode($assistance);
 }else if(isset($_GET['assistance_id'])){
     $id = $connection->real_escape_string(isset($_GET['assistance_id'])?$_GET['assistance_id']:'');
 
-    $query = 'SELECT D.*, A.name as assistance FROM assistance A, devices D, device_assistance DA WHERE  DA.device_id = D.id and DA.assistance_id = A.id and A.id = \''.$id.'\'';
+    $query = 'SELECT D.*, A.name as assistance, B.name as brand FROM assistance A, devices D, device_assistance DA, brands B WHERE D.brand_id = B.id and DA.device_id = D.id and DA.assistance_id = A.id and A.id = \''.$id.'\'';
     $devices = getDataByQuery($query);
 
     print json_encode($devices);
