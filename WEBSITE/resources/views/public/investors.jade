@@ -13,12 +13,12 @@ html(lang="en")
             div(class="container")
                 +breadcrumb(['The group', 'Investors'],['/the-group.html', '/investors.html'])
                 .row
-                    .col-md-12.app-who__page-label.text-center
+                    .col-md-12.col-sm-12.col-xs-12.app-who__page-label.text-center
                         h1 Investors
                 br
                 .row
                     .col-md-12.text-center
-                        ul.list-unstyled.list-inline.app-device__content-nav(role="tab-list")
+                        ul.list-unstyled.list-inline.app-device__content-nav(role="tab-list").app-investors__nav
                             li.active(role="presentation")
                                 a(href="#financial",role="tab",data-toggle="tab") Main financial data
                             li(role="presentation")
@@ -31,7 +31,7 @@ html(lang="en")
                 .tab-content
                     .row.tab-pane.active.fade.in#financial(role="tabpanel")
                         .col-md-12.app-business__section-padded.app-business__section-colored
-                            h2.text-center Indices
+                            h2.text-center Indices(blns of $, 2015)
                             table.app-investors__data
                                 thead
                                     th
@@ -39,28 +39,28 @@ html(lang="en")
                                 tbody
                                     tr
                                         td Revenues
-                                        td EBIT
+                                        td.text-center 100
                                     tr
                                         td EBIT
-                                        td EBIT
+                                        td.text-center 40
                                     tr
                                         td EBITDA
-                                        td EBIT
+                                        td.text-center 30
                                     tr
                                         td Profits before taxes
-                                        td EBIT
+                                        td.text-center 29
                                     tr
                                         td Net profit
-                                        td EBIT
+                                        td.text-center 20
                                     tr
                                         td Financial Investments
-                                        td EBIT
+                                        td.text-center 2
                                     tr
                                         td Industrial Investments
-                                        td EBIT
+                                        td.text-center 10
                                     tr
                                         td Debts
-                                        td
+                                        td.text-center 90
 
                     .row.tab-pane.fade#performance(role="tabpanel")
                         .col-md-12.app-business__section-padded.app-business__section-colored
@@ -86,7 +86,7 @@ html(lang="en")
                     .row.tab-pane.fade#balance(role="tabpanel")
                         .col-md-12.app-business__section-padded.app-business__section-colored
                             h2.text-center Relations and balance sheets
-                            h4 2015
+                            h4.app-business__table-heading 2015
                             table.app-investors__balance
                                 thead
                                     th
@@ -105,7 +105,7 @@ html(lang="en")
                                         td.text-right
                                             i.material-icons get_app
 
-                            h4 2014
+                            h4.app-business__table-heading 2014
                             table.app-investors__balance
                                 thead
                                     th

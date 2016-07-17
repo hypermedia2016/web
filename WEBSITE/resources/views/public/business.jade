@@ -15,11 +15,8 @@ html(lang="en")
             div(class="container")
                 +breadcrumb(['The group', 'Business & Markets'],['/the-group.html', '/business.html'])
                 .row
-                    .col-md-12.app-who__page-label.text-center
+                    .col-md-12.col-sm-12.col-xs-12.app-who__page-label.text-center
                         h1 Business & Markets
-
-                br
-                br
                 .row
                    .col-md-12.app-business__section-padded.app-business__section-colored
                        .app-business__heading-section.text-center
@@ -32,24 +29,28 @@ html(lang="en")
                     .col-md-12.text-center
                         h2 Trends
                         br
-                        ul.list-inline.list-unstyled.app-business__features
-                            li
-                                .app-business__feature
-                                    img(src="img/static/ic_local_atm.png")
-                                    p Mobile payments
-                            li
-                                .app-business__feature
-                                    img(src="img/static/ic_widgets.png")
-                                    p Apps
-                            li
-                                .app-business__feature
-                                    img(src="img/static/ic_watch.png")
-                                    p Wearables
+                        .row
+                            .col-md-12.col-md-offset-0.col-sm-10.col-sm-offset-1.col-xs-12.col-xs-offset-0
+                                .row.app-business__feature-list
+                                    .col-md-3.col-sm-6.col-xs-12
+                                        .app-business__feature
+                                            img(src="img/static/ic_local_atm.png")
+                                            p Mobile payments
 
-                            li
-                                .app-business__feature
-                                    img(src="img/static/ic_visibility.png")
-                                    p Augmented reality
+                                    .col-md-3.col-sm-6.col-xs-12
+                                        .app-business__feature
+                                            img(src="img/static/ic_widgets.png")
+                                            p Apps
+
+                                    .col-md-3.col-sm-6.col-xs-12
+                                        .app-business__feature
+                                            img(src="img/static/ic_watch.png")
+                                            p Wearables
+
+                                    .col-md-3.col-sm-6.col-xs-12
+                                        .app-business__feature
+                                            img(src="img/static/ic_visibility.png")
+                                            p Augmented reality
                 br
                 br
                 br
@@ -67,20 +68,20 @@ html(lang="en")
                                 tbody
                                     tr
                                         td Verizon
-                                        td 140m
+                                        td 50m
                                         td 20%
                                     tr
                                         td AT&T
-                                        td 140m
-                                        td 20%
+                                        td 40m
+                                        td 17%
                                     tr
                                         td T-mobile
-                                        td 65m
-                                        td 10%
+                                        td 35m
+                                        td 14%
                                     tr
                                         td Sprint
-                                        td 60m
-                                        td 8%
+                                        td 30m
+                                        td 11%
 
 
 

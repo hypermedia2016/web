@@ -141,6 +141,7 @@
     width: 200px
     padding: 30px
     background-color: $app-light-gray
+    margin: 0 auto
     img
       width: 60px
       height: 60px
@@ -148,6 +149,12 @@
 
     p
       font-size: 1.2rem
+
+    &-list
+      @media (max-width: 992px)
+        >div
+          margin-bottom: 40px
+
 
   &__market-content
     width: 90%
@@ -199,3 +206,29 @@
       &:hover
         color: $app-red
 
+
+  &__nav
+    @media(min-width: 1000px) and (max-width: 1200px)
+      li
+        padding: 10px 15px
+        margin: 0 15px
+        a
+          font-size: 1.2rem
+
+    @media(min-width: 768px) and (max-width: 1000px)
+      li
+        padding: 5px 15px
+        margin: 0 15px
+        a
+          font-size: 1.1rem
+
+    @media (max-width: 768px)
+      li
+        display: block
+        width: 70%
+        margin: 15px auto
+
+.app-business__table-heading
+  width: 90%
+  max-width: 600px
+  margin: 30px auto -10px auto
