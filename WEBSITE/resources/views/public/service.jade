@@ -41,39 +41,42 @@ html(lang="en")
                             .app-service__pres-features
                                 .app-service__pres-features--inner
                                     ul.list-unstyled
-                                        li(v-for="feature in parsedData.features")
+                                        li
                                             i.material-icons checkmark
                                             span {{feature}}
 
                             #related-devices.carousel.slide(data-ride='carousel')
                                 // Wrapper for slides
                                 .carousel-inner(role='listbox')
-                                    .item.active(v-for="device in parsedData.devices")
+                                    .item.active
                                         .row
-                                            .col-md-6.col-sm-6.col-xs-12
-                                                div.carousel__img-container
-                                                    img("v-bind:src"="device.img", alt='...')
+                                            .col-md-4.col-sm-4.col-xs-4(v-for="subdevice in devices[0]")
+                                                div.app-service__carousel
+                                                    img("v-bind:src"="subdevice.img[0]", alt='...')
+                                                    h4 {{subdevice.brand}}
+                                                    h4 {{subdevice.name}}
 
-                                            .col-md-6.col-sm-6.col-xs-12
-                                                div.carousel__text-container
-                                                    h2 {{device.title}}
-                                                    p {{device.description}}
-                                                    a("v-bind:href"="'device.html#'+device.id")
-                                                        button.app-button.app-button--big Check it out
+                                    .item(v-for="(index,device) in devices")(v-if="index!==0")
+                                        .row
+                                            .col-md-4.col-sm-4.col-xs-4(v-for="subdevice in device")
+                                                div.app-service__carousel
+                                                    img("v-bind:src"="subdevice.img[0]", alt='...')
+                                                    h4 {{subdevice.brand}}
+                                                    h4 {{subdevice.name}}
 
 
                                 // Controls
-                                a.left.carousel-control(href='#promotion-devices', role='button', data-slide='prev')
+                                a.left.carousel-control(href='#related-devices', role='button', data-slide='prev')
                                     i.material-icons(aria-hidden='true') chevron_left
                                     span.sr-only Previous
-                                a.right.carousel-control(href='#promotion-devices', role='button', data-slide='next')
+                                a.right.carousel-control(href='#related-devices', role='button', data-slide='next')
                                     i.material-icons(aria-hidden='true') chevron_right
                                     span.sr-only Next
 
                                 ol.carousel-indicators
-                                    li.active(data-target='#promotion-devices', data-slide-to='0')
-                                    li(data-target='#promotion-devices', data-slide-to='1')
-                                    li(data-target='#promotion-devices', data-slide-to='2')
+                                    li.active(data-target='#related-devices', data-slide-to='0')
+                                    li(data-target='#related-devices', data-slide-to='1')
+                                    li(data-target='#related-devices', data-slide-to='2')
 
 
 
