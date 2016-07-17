@@ -2,7 +2,7 @@
 - var mainMenuSelected='Assistance'
 
 mixin assistance()
-    div(class="assistance")
+    div(class="assistance" "v-show"="!home")
         ul
             li(v-for="assistanceItem in assistance")
                 a("v-bind:href"="'assistance-details.html#'+assistanceItem.id") {{assistanceItem.name}}
@@ -28,4 +28,8 @@ html(lang="en")
                     div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
                         p {{type.name}}
                         +assistance()
+                div("v-show"="home")
+                    p frequents...
+                        ul
+                            li("v-for"="assistanceItem in frequents") {{assistanceItem.name}}
         include ../includes/footer.jade
