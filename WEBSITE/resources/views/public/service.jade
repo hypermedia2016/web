@@ -13,7 +13,7 @@ html(lang="en")
                 .row
                     .col-md-12
                         img("v-bind:src"="'img/dynamic/'+parsedData.img").app-service__img
-                        .app-service__head.text-center
+                        .app-service__head.text-center("v-bind:class"="{'app-services__text--centered' : (service.img_tag==='2'), 'app-services__text--right':(service.img_tag==='3')}")
                             h2 {{parsedData.name}}
                             p {{parsedData.short_description}}
                             h2.red-colored {{parsedData.price}}&nbsp;&euro;&nbsp;/&nbsp;month
