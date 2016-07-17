@@ -44,7 +44,12 @@ Vue.component('service', {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
-                    _this.data = response.data;
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img =  basicUrl +'/img/dynamic/'+ele.img;
+                        return ele;
+                    });
+                    _this.data = tmp;
                     _this.error = '';
                     _this.parseData();
                 }

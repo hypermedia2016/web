@@ -48,10 +48,10 @@ html(lang="en")
                                 tbody
                                     tr
                                         td(v-for="(index,frequent) in frequents",v-if="index < 3")
-                                            a("v-bind:href"="'/assistance-details.html#'+frequent.id") {{frequent.name}}
+                                            a("v-bind:href"="'assistance-details.html#'+frequent.id") {{frequent.name}}
                                     tr
                                         td(v-for="(index,frequent) in frequents",v-if="index > 2")
-                                            a("v-bind:href"="'/assistance-details.html#'+frequent.id") {{frequent.name}}
+                                            a("v-bind:href"="'assistance-details.html#'+frequent.id") {{frequent.name}}
 
 
 

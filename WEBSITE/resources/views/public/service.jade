@@ -12,7 +12,7 @@ html(lang="en")
             .container
                 .row
                     .col-md-12
-                        img("v-bind:src"="'img/dynamic/'+parsedData.img").app-service__img
+                        img("v-bind:src"="parsedData.img").app-service__img
                         .app-service__head.text-center("v-bind:class"="{'app-services__text--centered' : (service.img_tag==='2'), 'app-services__text--right':(service.img_tag==='3')}")
                             h2 {{parsedData.name}}
                             p {{parsedData.short_description}}
@@ -59,7 +59,7 @@ html(lang="en")
                                     .item.active
                                         .row
                                             .col-md-4.col-sm-4.col-xs-12(v-for="subdevice in devices[0]")
-                                                a.app-service__carousel("v-bind:href"="'/device.html#'+subdevice.id")
+                                                a.app-service__carousel("v-bind:href"="'device.html#'+subdevice.id")
                                                     img("v-bind:src"="subdevice.img[0]", alt='...')
                                                     h4 {{subdevice.brand}}
                                                     h4 {{subdevice.name}}
@@ -67,7 +67,7 @@ html(lang="en")
                                     .item(v-for="(index,device) in devices")(v-if="index!==0")
                                         .row
                                             .col-md-4.col-sm-4.col-xs-12(v-for="subdevice in device")
-                                                a.app-service__carousel("v-bind:href"="'/device.html#'+subdevice.id")
+                                                a.app-service__carousel("v-bind:href"="'device.html#'+subdevice.id")
                                                     img("v-bind:src"="subdevice.img[0]", alt='...')
                                                     h4 {{subdevice.brand}}
                                                     h4 {{subdevice.name}}
