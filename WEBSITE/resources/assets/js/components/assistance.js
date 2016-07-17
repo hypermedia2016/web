@@ -8,6 +8,7 @@ Vue.component('assistance', {
     data() {
         return {
             assistance: [],
+            frequents: [],
             error: '',
             types: [],
         }
@@ -20,6 +21,9 @@ Vue.component('assistance', {
         
         //load types
         this.loadTypes();
+
+        //load frequents
+        this.loaFrequents();
     },
 
     methods:{
@@ -78,6 +82,25 @@ Vue.component('assistance', {
                        /* window.addEventListener('popstate', (href) => {
                         });*/
                     });
+                }
+            }, function (response) {
+                _this.error = 'Loading error...';
+            });
+        },
+
+        loaFrequents(){
+            var _this = this;
+            this.$http({url: basicUrl + '/api/assistance-frequent.php', method: 'GET'}).then( (response) => {
+                if(response.data.error != undefined){
+                    _this.error = response.data.error;
+                }else {
+                    var tmp = response.data;
+                    tmp = tmp.map((ele)=>{
+                        ele.img = basicUrl +'/img/dynamic/'+ele.img;
+                        return ele;
+                    });
+                    _this.frequents = tmp;
+                    _this.error = '';
                 }
             }, function (response) {
                 _this.error = 'Loading error...';
