@@ -12,6 +12,7 @@ Vue.component('service', {
             devices: [],
             faqSections: [],
             ruleSections: [],
+            featuresSections: [],
         }
 
     },
@@ -82,6 +83,7 @@ Vue.component('service', {
             this.parsedData = this.data[0];
             this.createFaqSections();
             this.createRuleSections();
+            this.createFeaturesSections();
             
             //push states
             this.locations.push({name: this.parsedData.type, url: 'services.html#'+this.escapeName(this.parsedData.type)});
@@ -127,5 +129,14 @@ Vue.component('service', {
                 })
             }
         },
+        createFeaturesSections(){
+            var rules = this.parsedData.features.split('||');
+            for(let i=0; i<rules.length; i++){
+                this.featuresSections.push({
+                    content : rules[i],
+                })
+            }
+        },
+
     }
 });

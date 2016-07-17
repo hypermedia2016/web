@@ -41,9 +41,9 @@ html(lang="en")
                             .app-service__pres-features
                                 .app-service__pres-features--inner
                                     ul.list-unstyled
-                                        li(v-for="feature in parsedData.features")
+                                        li(v-for="feature in featuresSections")
                                             i.material-icons checkmark
-                                            span {{feature}}
+                                            span {{feature.content}}
 
                             #related-devices.carousel.slide(data-ride='carousel')
                                 // Wrapper for slides
