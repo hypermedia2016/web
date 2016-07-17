@@ -2,7 +2,7 @@
 - var mainMenuSelected='Assistance'
 
 mixin assistance()
-    div(class="assistance")
+    div(class="assistance" "v-show"="!home")
         ul
             li(v-for="assistanceItem in assistance")
                 a("v-bind:href"="'assistance-details.html#'+assistanceItem.id") {{assistanceItem.name}}
@@ -30,7 +30,7 @@ html(lang="en")
                 br
                 br
                 br
-                div.app-assistance__frequent.row
+                div.app-assistance__frequent.row("v-show"="home")
                     .col-md-12
                         h4 FREQUENT ASSISTANCE SERVICES
                         table
@@ -52,7 +52,6 @@ html(lang="en")
                     div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")
                         p {{type.name}}
                         +assistance()
+
         include ../includes/footer.jade
-
-
 

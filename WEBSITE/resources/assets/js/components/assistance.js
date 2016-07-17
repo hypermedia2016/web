@@ -11,13 +11,14 @@ Vue.component('assistance', {
             frequents: [],
             error: '',
             types: [],
+            home: true,
         }
 
     },
     ready() {
         //add current location
         this.locations.push({name: 'Assistance & support', url: 'assistance.html'});
-        this.locations.push({name: 'Assistance & support', url: 'assistance.html'}); //this will be removed by loadTab called by loadTypes
+        //this.locations.push({name: 'Assistance & support', url: 'assistance.html'}); //this will be removed by loadTab called by loadTypes
         
         //load types
         this.loadTypes();
@@ -33,7 +34,8 @@ Vue.component('assistance', {
 
         loadTab(name){
             var _this = this;
-            this.locations.pop();
+            if(!this.home)
+                this.locations.pop();
             this.locations.push({name: name, url: '#'+name.trim().toLowerCase()});
             this.$http({url: basicUrl + '/api/assistance.php?type='+ encodeURIComponent(name.trim()), method: 'GET'}).then( (response) => {
                 if(response.data.error != undefined){
@@ -66,14 +68,15 @@ Vue.component('assistance', {
                     //data loaded and displayed
                     _this.$nextTick(function () {
                         //load default
-                        _this.loadTab(_this.types[0].name);
+                        /*_this.loadTab(_this.types[0].name);
                         $($('.nav-tabs li')[0]).addClass('active');
-                        $($('.tab-content div')[0]).addClass('in').addClass('active');
+                        $($('.tab-content div')[0]).addClass('in').addClass('active');*/
 
                         //listener
                         $('.nav-tabs a').on('shown.bs.tab', function(event){
                             var name = $(event.target).text();
                             _this.loadTab(name);
+                            _this.home = false;
                         });
                         $('.nav-tabs').stickyTabs();
 
