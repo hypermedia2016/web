@@ -12,19 +12,35 @@ Vue.component('assistance', {
             error: '',
             types: [],
             home: true,
+            locationOriginalLength: 0,
         }
 
     },
     ready() {
         //add current location
         this.locations.push({name: 'Assistance & support', url: 'assistance.html'});
+        this.locationOriginalLength = this.locations.length;
         //this.locations.push({name: 'Assistance & support', url: 'assistance.html'}); //this will be removed by loadTab called by loadTypes
         
         //load types
         this.loadTypes();
 
         //load frequents
-        this.loaFrequents();
+        this.loadFrequents();
+
+        //hash changed
+        var _this = this;
+        $(window).on('hashchange', ()=>{
+            if(location.hash == '')
+            {
+                _this.home = true;
+                _this.locations.pop();
+            }else {
+                _this.home = false;
+                if(_this.locationOriginalLength == _this.locations.length)
+                    _this.locations.push({name: location.hash.slice(1), url: location.hash.slice(1) + '.html'}); //TODO improove
+            }
+        });
     },
 
     methods:{
@@ -91,7 +107,7 @@ Vue.component('assistance', {
             });
         },
 
-        loaFrequents(){
+        loadFrequents(){
             var _this = this;
             this.$http({url: basicUrl + '/api/assistance-frequent.php', method: 'GET'}).then( (response) => {
                 if(response.data.error != undefined){
