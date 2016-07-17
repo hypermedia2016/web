@@ -30,8 +30,8 @@ Vue.component('assistance', {
         loadTab(name){
             var _this = this;
             this.locations.pop();
-            this.locations.push({name: name, url: '#'+name.toLowerCase()});
-            this.$http({url: basicUrl + '/api/assistance.php?type='+ encodeURIComponent(name), method: 'GET'}).then( (response) => {
+            this.locations.push({name: name, url: '#'+name.trim().toLowerCase()});
+            this.$http({url: basicUrl + '/api/assistance.php?type='+ encodeURIComponent(name.trim()), method: 'GET'}).then( (response) => {
                 if(response.data.error != undefined){
                     _this.error = response.data.error;
                 }else {
