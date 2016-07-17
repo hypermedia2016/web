@@ -26,9 +26,9 @@ html(lang="en")
                             li.active(role="presentation")
                                 a(href="#presentation",role="tab",data-toggle="tab") Presentation
                             li(role="presentation")
-                                a(href="#performance", role="tab", data-toggle="tab") Activation & Rules
+                                a(href="#rules", role="tab", data-toggle="tab") Activation & Rules
                             li(role="presentation")
-                                a(href="#balance", role="tab", data-toggle="tab") FAQ
+                                a(href="#faq", role="tab", data-toggle="tab") FAQ
 
 
 
@@ -40,10 +40,17 @@ html(lang="en")
                                 p {{parsedData.full_description}}
                             .app-service__pres-features
                                 .app-service__pres-features--inner
-                                    ul.list-unstyled
-                                        li(v-for="feature in featuresSections")
-                                            i.material-icons checkmark
-                                            span {{feature.content}}
+                                    table
+                                        thead
+                                            th
+                                            th
+                                        tbody.app-service__features
+                                            tr(v-for="feature in featuresSections").app-service__feature
+                                                td.text-center
+                                                    i.material-icons done
+
+                                                td {{feature.content}}
+
 
                             #related-devices.carousel.slide(data-ride='carousel')
                                 // Wrapper for slides
@@ -77,6 +84,21 @@ html(lang="en")
                                     li.active(data-target='#related-devices', data-slide-to='0')
                                     li(data-target='#related-devices', data-slide-to='1')
                                     li(data-target='#related-devices', data-slide-to='2')
+
+                    .row.tab-pane.fade#rules(role="tabpanel")
+                        .col-md-12
+                            .app-service__rules
+                                p(v-for="rule in ruleSections") {{rule.content}}
+
+
+                    .row.tab-pane#faq(role="tabpanel")
+                        .col-md-12
+                            .app-service__faq
+                                ul.list-unstyled
+                                    li(v-for="faq in faqSections")
+                                        h5 {{faq.title}}
+                                        p {{faq.content}}
+
 
 
 

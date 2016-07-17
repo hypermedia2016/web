@@ -15,9 +15,14 @@ html(lang="en")
         assistance(inline-template "v-bind:locations.sync"="locations")
             div(class="container")
                 //sub menu
-                ul(class="nav nav-tabs")#sub
-                    li(v-for="type in types")
-                        a("v-bind:href"="type.url" data-toggle="tab") {{type.name}}
+                .row.
+                ul(class="nav nav-tabs app-home__principal-links app-devices-nav")#sub
+                    li(v-for="type in types" class="app-home__principal-link app-home__principal-link--special")
+                        a("v-bind:href"="type.url" data-toggle="tab" class="row app-home__principal-link--img-link")
+                            .col-md-8.col-sm-8.col-xs-6.col-md-offset-2.col-sm-offset-2.col-xs-offset-0
+                                img("v-bind:src"="type.img", class="app-home__principal-link--img" )
+                            .col-md-8.col-sm-8.col-xs-6.col-md-offset-2.col-sm-offset-2.col-xs-offset-0
+                                span(class="app-home__principal-link--text" style="padding:0") {{type.name}}
                 div(class="error") {{ error }}
                 div(class="tab-content")
                     div("v-bind:id"="escapeName(type.name)" class="tab-pane fade" v-for="type in types")

@@ -23,10 +23,24 @@
     &--inner
       width: 80%
       margin: 0 auto
-      max-width: 500px
+      max-width: 600px
       padding: 15px
       background-color: white
 
+
+  &__feature
+    border-bottom: 1px solid $app-red
+
+    td
+      padding: 15px
+      font-size: 1.2rem
+
+      i
+        color: $app-red
+
+  &__features
+    tr:last-child
+      border-bottom: none
 
   &__carousel
     width: 80%
@@ -37,7 +51,40 @@
       width: 150px
       height: 170px
 
+  &__rules, &__faq
+    width: 80%
+    margin: 60px auto
+    max-width: 600px
+
+  &__faq
+    li
+      margin: 30px 0
 
 #related-devices
+  background-color: $app-dark-gray
   .item
     padding: 60px 0
+
+  .carousel-control
+    background: none
+    opacity: 1
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
+
+    &.right
+      i
+        border-radius: 50%
+        color: $app-text-gray
+        background-color: white
+        position: absolute
+        top: calc(50% - 20px)
+        left: 50%
+        font-size: 40px
+    &.left
+      i
+        color: $app-text-gray
+        border-radius: 50%
+        background-color: white
+        position: absolute
+        top: calc(50% - 20px)
+        right: 50%
+        font-size: 40px
