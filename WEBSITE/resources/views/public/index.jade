@@ -1,4 +1,4 @@
-
+- var superSectionSelected="Consumer"
 mixin item(name, link, img)
   li(class="app-home__principal-link")
       a(href=link, class="app-home__principal-link--img-link")
@@ -47,10 +47,10 @@ html(lang="en")
 
 
                             // Controls
-                            a.left.carousel-control(href='#promotion-devices', role='button', data-slide='prev')
+                            a.left.carousel-control(href='#promotion-devices', role='button', data-slide='prev')(v-if="devices.length > 0")
                                 i.material-icons(aria-hidden='true') chevron_left
                                 span.sr-only Previous
-                            a.right.carousel-control(href='#promotion-devices', role='button', data-slide='next')
+                            a.right.carousel-control(href='#promotion-devices', role='button', data-slide='next')(v-if="devices.length > 0")
                                 i.material-icons(aria-hidden='true') chevron_right
                                 span.sr-only Next
 

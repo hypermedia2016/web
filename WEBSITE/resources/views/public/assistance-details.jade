@@ -1,5 +1,6 @@
 - var pageTitle="Assistance details"
 - var mainMenuSelected='Assistance'
+- var superSectionSelected="Consumer"
 
 doctype html
 html(lang="en")
@@ -40,10 +41,10 @@ html(lang="en")
 
 
                             // Controls
-                            a.left.carousel-control(href='#related-devices', role='button', data-slide='prev')
+                            a.left.carousel-control(href='#related-devices', role='button', data-slide='prev')(v-if="devices.length > 0")
                                 i.material-icons(aria-hidden='true') chevron_left
                                 span.sr-only Previous
-                            a.right.carousel-control(href='#related-devices', role='button', data-slide='next')
+                            a.right.carousel-control(href='#related-devices', role='button', data-slide='next')(v-if="devices.length > 0")
                                 i.material-icons(aria-hidden='true') chevron_right
                                 span.sr-only Next
 
