@@ -12,7 +12,8 @@ Vue.component('device', {
             presentationSections: [],
             specs : [],
             services: [],
-            assistance: []
+            assistance: [],
+            toShowImg : 0
         }
 
     },
@@ -152,5 +153,8 @@ Vue.component('device', {
                 _this.error = 'Loading error...';
             });
         },
+        switchImg(id){
+            this.toShowImg = id;
+        }
     }
 });

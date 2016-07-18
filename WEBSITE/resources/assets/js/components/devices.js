@@ -15,8 +15,7 @@ Vue.component('devices', {
             activeFilter: {},
             keepActiveFilter: false,
             searchParsed: queryString.parse(location.search),
-            clicked: false,
-            toShowImg : 0
+            clicked: false
         }
 
     },
@@ -191,9 +190,6 @@ Vue.component('devices', {
             this.activeFilter[name] = value+'';
             history.pushState(null, null, location.origin + location.pathname + '?'+encodeURIComponent(name)+'='+encodeURIComponent(value) + window.location.hash);
             this.searchParsed = queryString.parse(location.search);
-        },
-        switchImg(id){
-            this.toShowImg = id;
         }
 
     },
