@@ -12,7 +12,8 @@ mixin popup(id, title, video)
                         span.material-icons(aria-hidden='true') clear
                     h4.app-modal__pre {{parsedData.brand+' '+parsedData.name}}
                     h3.app-modal__title #{title}
-                .modal-body #{video}
+                .modal-body
+                    iframe(width="560" height="315" src=video frameborder="0" allowfullscreen)
 
 
 doctype html
@@ -63,9 +64,9 @@ html(lang="en")
                                     i.material-icons play_circle_outline
                                 li
                                     span Play the video
-                +popup('video1','Fabio Fazio','aaaa')
-                +popup('video2','Pif','bbb')
-                +popup('video3','Tim Berners Lee','ccc')
+                +popup('video1','Fabio Fazio','https://www.youtube.com/embed/dlyUVXq7Qc0')
+                +popup('video2','Pif','https://www.youtube.com/embed/QkNJTh453cM')
+                +popup('video3','Tim Berners Lee','https://www.youtube.com/embed/-rxy9lI8-7Q')
 
 
 
