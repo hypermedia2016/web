@@ -3,6 +3,18 @@
 - var mainMenuSelected='Testimonials'
 include ../includes/static-breadcrumb.jade
 
+mixin popup(id, title, video)
+    .modal.fade(tabindex='-1', role='dialog',id=id)
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span.material-icons(aria-hidden='true') clear
+                    h4.app-modal__pre {{parsedData.brand+' '+parsedData.name}}
+                    h3.app-modal__title #{title}
+                .modal-body #{video}
+
+
 doctype html
 html(lang="en")
     include ../includes/head.jade
@@ -23,7 +35,7 @@ html(lang="en")
                         .app-testimonials__video-text
                             h3 Fabio Fazio
                             h2 "You can be everywhere with a click. You can explore entire new worlds and live neverending adventures!"
-                            ul.list-unstyled.list-inline
+                            ul(data-toggle="modal" data-target="#video1").list-unstyled.list-inline
                                 li
                                     i.material-icons play_circle_outline
                                 li
@@ -33,7 +45,7 @@ html(lang="en")
                         .app-testimonials__video-text
                             h3 Pif
                             h2 "The web is never the purpose but the medium!"
-                            ul.list-unstyled.list-inline
+                            ul(data-toggle="modal" data-target="#video2").list-unstyled.list-inline.list-unstyled.list-inline
                                 li
                                     i.material-icons play_circle_outline
                                 li
@@ -46,11 +58,15 @@ html(lang="en")
                         .app-testimonials__video-text
                             h3 Tim Berners Lee
                             h2 "The web is the present and will be also the future!"
-                            ul.list-unstyled.list-inline
+                            ul(data-toggle="modal" data-target="#video3").list-unstyled.list-inline.list-unstyled.list-inline
                                 li
                                     i.material-icons play_circle_outline
                                 li
                                     span Play the video
+                +popup('video1','Fabio Fazio','aaaa')
+                +popup('video2','Pif','bbb')
+                +popup('video3','Tim Berners Lee','ccc')
+
 
 
 
