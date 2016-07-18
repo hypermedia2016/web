@@ -1,1 +1,6 @@
 Header always set Access-Control-Allow-Origin "*"
+
+RewriteEngine On
+
+RewriteCond     %{SERVER_PORT} ^80$
+RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
