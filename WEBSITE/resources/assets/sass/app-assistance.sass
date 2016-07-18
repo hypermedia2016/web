@@ -15,20 +15,36 @@
         width: 33.3%
 
 
-        a
-          display: block
-          padding: 15px
-          font-size: 1.2rem
-          color: $app-text-gray
+
+
+    &-container
+      width: 80%
+      max-width: 800px
+      margin: 30px auto
+
+      .row
+        >div
           text-align: center
+          background-color: $app-dark-gray
           border-top: 2px solid white
           border-right: 2px solid white
-          transition: all 50ms linear
 
-          &:hover
-            background-color: white
-            box-shadow: 0px 2px 15px rgba(0,0,0,.2)
-            font-weight: bold
+          a
+
+            display: block
+            font-size: 1.2rem
+            color: $app-text-gray
+            text-align: center
+            margin: 0 -15px
+            padding: 10px
+            height: 66px
+
+            transition: all 50ms linear
+
+            &:hover
+              background-color: white
+              box-shadow: 0px 2px 15px rgba(0,0,0,.2)
+              font-weight: bold
 
   &__list-services
     margin-top: 30px
@@ -55,6 +71,8 @@
           background-color: white
           box-shadow: 0px 2px 15px rgba(0,0,0,.2)
           font-weight: bold
+
+
 
 
   &__content

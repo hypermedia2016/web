@@ -40,15 +40,21 @@ html(lang="en")
                     div.app-assistance__frequent.row("v-show"="home")
                         .col-md-12
                             h4 FREQUENT ASSISTANCE SERVICES
-                            table
+                            .app-assistance__frequent-container
+                                .row
+                                    .col-md-4.col-sm-4.col-xs-12(v-for="(index,frequent) in frequents",v-if="index < 3")
+                                        a("v-bind:href"="'assistance-details.html#'+frequent.id") {{frequent.name}}
+                                .row
+                                    .col-md-4.col-sm-4.col-xs-12(v-for="(index,frequent) in frequents",v-if="index > 2")
+                                        a("v-bind:href"="'assistance-details.html#'+frequent.id") {{frequent.name}}
+                            //table
                                 thead
                                     th
                                     th
                                     th
                                 tbody
                                     tr
-                                        td(v-for="(index,frequent) in frequents",v-if="index < 3")
-                                            a("v-bind:href"="'assistance-details.html#'+frequent.id") {{frequent.name}}
+                                        td
                                     tr
                                         td(v-for="(index,frequent) in frequents",v-if="index > 2")
                                             a("v-bind:href"="'assistance-details.html#'+frequent.id") {{frequent.name}}
