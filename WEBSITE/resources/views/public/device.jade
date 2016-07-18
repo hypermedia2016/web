@@ -16,11 +16,12 @@ html(lang="en")
                 .row
                     .col-md-6.text-right.col-sm-6.col-xs-12
                         .app-device__img-container
-                            img("v-bind:src"="parsedData.img[0]", class="app-device__head-img")
+                            img("v-bind:src"="parsedData.img[0]", class="app-device__head-img")(v-show="toShowImg===0")
+                            img("v-bind:src"="parsedData.img[0]", class="app-device__head-img app-device__head-img--hide")(v-show="toShowImg===1")
                         ul.list-unstyled.list-inline.app-device__head-miniatures.text-center
-                            li
+                            //li("v-bind:click"="switchImg(0)")
                                 img("v-bind:src"="parsedData.img[0]")
-                            li
+                            //li("v-bind:click"="switchImg(1)")
                                 img("v-bind:src"="parsedData.img[1]")
                     .col-md-6.col-sm-6.col-xs-12.app-device__head-text
                         .row
