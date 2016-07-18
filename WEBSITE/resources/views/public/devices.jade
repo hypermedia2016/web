@@ -5,7 +5,8 @@ mixin devices()
     div.col-md-4.col-sm-4.col-xs-12(v-for="device in devicesFiltered")
         a.app-devices__device.text-center("v-bind:href"="'device.html#'+device.id").row
             .col-sm-12.col-md-12.col-xs-6
-                img("v-bind:src"="device.img[0]")
+                .app-devices__device-img-container
+                    img("v-bind:src"="device.img[0]")
             .col-sm-12.col-md-12.col-xs-6
                 h4.app-devices__device-brand {{device.brand}}
                 h4 {{device.name}}
