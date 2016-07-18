@@ -77,10 +77,10 @@ html(lang="en")
 
 
                                 // Controls
-                                a.left.carousel-control(href='#related-devices', role='button', data-slide='prev')(v-if="devices.length > 0")
+                                a.left.carousel-control(href='#related-devices', role='button', data-slide='prev')(v-if="devices.length > 1")
                                     i.material-icons(aria-hidden='true') chevron_left
                                     span.sr-only Previous
-                                a.right.carousel-control(href='#related-devices', role='button', data-slide='next')(v-if="devices.length > 0")
+                                a.right.carousel-control(href='#related-devices', role='button', data-slide='next')(v-if="devices.length > 1")
                                     i.material-icons(aria-hidden='true') chevron_right
                                     span.sr-only Next
 
