@@ -10,8 +10,8 @@ mixin devices()
             .col-sm-12.col-md-12.col-xs-6
                 h4.app-devices__device-brand {{device.brand}}
                 h4 {{device.name}}
-                ul("v-for"="desc in device.list_desc").list-unstyled
-                    li {{desc}}
+                ul.list-unstyled.app-devices__device-features
+                    li("v-for"="desc in device.list_desc") {{desc}}
                 br
                 ul.list-unstyled.list-inline
                     li
