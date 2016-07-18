@@ -48,9 +48,20 @@
     margin: 0 auto
     text-align: center
     display: block
-    img
+
+    &-img-container
       width: 150px
-      height: 170px
+      height: 200px
+      margin: 0 auto
+      position: relative
+
+      img
+        position: absolute
+        max-width: 100%
+        max-height: 100%
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
 
   &__rules, &__faq
     width: 80%

@@ -61,8 +61,8 @@ html(lang="en")
                                         .row
                                             .col-md-4.col-sm-4.col-xs-12(v-for="subdevice in devices[0]")
                                                 a.app-service__carousel("v-bind:href"="'device.html#'+subdevice.id")
-                                                    .app-service__carousel
-                                                    img("v-bind:src"="subdevice.img[0]", alt='...')
+                                                    .app-service__carousel-img-container
+                                                        img("v-bind:src"="subdevice.img[0]", alt='...')
                                                     h4 {{subdevice.brand}}
                                                     h4 {{subdevice.name}}
 
@@ -70,7 +70,8 @@ html(lang="en")
                                         .row
                                             .col-md-4.col-sm-4.col-xs-12(v-for="subdevice in device")
                                                 a.app-service__carousel("v-bind:href"="'device.html#'+subdevice.id")
-                                                    img("v-bind:src"="subdevice.img[0]", alt='...')
+                                                    .app-service__carousel-img-container
+                                                        img("v-bind:src"="subdevice.img[0]", alt='...')
                                                     h4 {{subdevice.brand}}
                                                     h4 {{subdevice.name}}
 
