@@ -14,13 +14,14 @@ html(lang="en")
             .container
                 .row
                     .col-md-6.text-right.col-sm-6.col-xs-12
-                        img("v-bind:src"="parsedData.img[0]", class="app-device__head-img")
+                        .app-device__img-container
+                            img("v-bind:src"="parsedData.img[0]", class="app-device__head-img")
                         ul.list-unstyled.list-inline.app-device__head-miniatures.text-center
                             li
                                 img("v-bind:src"="parsedData.img[0]")
                             li
                                 img("v-bind:src"="parsedData.img[1]")
-                    .col-md-6.col-sm-6.col-xs-12
+                    .col-md-6.col-sm-6.col-xs-12.app-device__head-text
                         .row
                             .col-md-12.col-sm-12.col-xs-6
                                 h4 {{parsedData.brand}}
