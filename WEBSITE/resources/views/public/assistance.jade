@@ -5,8 +5,9 @@ mixin assistance()
     br
     br
     .col-md-8.col-md-offset-2
-        img("v-bind:src"="type.img")
-        h3 {{type.name}}
+        .app-assistance__heading
+            img("v-bind:src"="type.img")
+            h3 {{type.name}}
         div(class="app-assistance__list-services")
             ul.list-unstyled
                 li(v-for="assistanceItem in assistance")
