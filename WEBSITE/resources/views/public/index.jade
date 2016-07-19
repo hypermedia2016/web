@@ -57,7 +57,7 @@ html(lang="en")
                                 span.sr-only Next
 
                             ol.carousel-indicators
-                                li(data-target='#promotion-devices', data-slide-to='{{index}}')(v-for="bullet in promotionsDevice")
+                                li(data-target='#promotion-devices', data-slide-to='{{index}}')(v-for="(index, bullet) in promotionsDevice")
 
 
 
