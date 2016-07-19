@@ -1,4 +1,5 @@
 Header always set Access-Control-Allow-Origin "*"
+Header Content-Type: charset=utf-8
 
 RewriteEngine On
 
