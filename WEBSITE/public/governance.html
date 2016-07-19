@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The group</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li><a href="index.html">Consumer</a></li>
+                  <li><a href="who-we-are.html">Who we are</a></li>
+                  <li class="selected"><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li><a href="investors.html">For investors</a></li>
+                <li><a href="business.html">Business&amp;Markets</a></li>
+                <li class="selected"><a href="governance.html">Governance</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <the-group inline-template v-bind:locations.sync="locations">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-unstyled list-inline app-breadcrumb app-breadcrumb--ligth">
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="index.html"><i class="material-icons app-breadcrumb__separator">home</i></a><i class="material-icons app-breadcrumb__separator">chevron_right</i></li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="the-group.html">The group</a><i class="material-icons app-breadcrumb__separator">chevron_right</i>
+              </li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="governance.html">Governance</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 app-who__page-label text-center">
+            <h1>Governance</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 app-business__section-padded">
+            <div class="app-business__heading-section text-center">
+              <h2>Model</h2>
+              <p>Verizon's corporate governance framework is rooted in our core values of integrity, responsibility and accountability. Our Board of Directors is committed to the highest standards of corporate governance and oversees the management of risks inherent in the operation of the Company's businesses and implementation of its strategic plan. All of our Directors stand for election each year. Board oversight is effected through our four standing committees: Audit, Corporate Governance and Policy, Finance, and Human Resources. Each Committee oversees the management of Company risks that fall within its unique areas of responsibility and has a written charter that defines the specific responsibilities of that Committee.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 app-business__section-padded app-business__section-colored">
+            <h2 class="text-center">Structure</h2><br>
+            <div class="app-business__heading-section text-center"><img src="img/static/structure.jpg" width="100%"></div>
+          </div>
+        </div>
+      </div>
+    </the-group>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

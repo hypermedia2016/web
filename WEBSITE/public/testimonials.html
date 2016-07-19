@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Who we are ! Testimonials</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body id="video-fix-backdrop">
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li><a href="index.html">Consumer</a></li>
+                  <li class="selected"><a href="who-we-are.html">Who we are</a></li>
+                  <li><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li><a href="who-we-are.html">Innovation</a></li>
+                <li class="selected"><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <who-we-are inline-template v-bind:locations.sync="locations">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-unstyled list-inline app-breadcrumb app-breadcrumb--ligth">
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="index.html"><i class="material-icons app-breadcrumb__separator">home</i></a><i class="material-icons app-breadcrumb__separator">chevron_right</i></li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="who-we-are.html">Who we are</a><i class="material-icons app-breadcrumb__separator">chevron_right</i>
+              </li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="testimonials.html">Testimonials</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 app-who__page-label text-center">
+            <h1>Testimonials</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 app-testimonials__video" id="fazio">
+            <div class="app-testimonials__video-text">
+              <h3>Fabio Fazio</h3>
+              <h2>"You can be everywhere with a click. You can explore entire new worlds and live neverending adventures!"</h2>
+              <ul class="list-unstyled list-inline" data-toggle="modal" data-target="#video1">
+                <li><i class="material-icons">play_circle_outline</i></li>
+                <li><span>Play the video</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-xs-12 col-sm-12 app-testimonials__video" id="pif">
+            <div class="app-testimonials__video-text">
+              <h3>Pif</h3>
+              <h2>"The web is never the purpose but the medium!"</h2>
+              <ul class="list-unstyled list-inline list-unstyled list-inline" data-toggle="modal" data-target="#video2">
+                <li><i class="material-icons">play_circle_outline</i></li>
+                <li><span>Play the video</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 app-testimonials__video" id="lee">
+            <div class="app-testimonials__video-text">
+              <h3>Tim Berners Lee</h3>
+              <h2>"The web is the present and will be also the future!"</h2>
+              <ul class="list-unstyled list-inline list-unstyled list-inline" data-toggle="modal" data-target="#video3">
+                <li><i class="material-icons">play_circle_outline</i></li>
+                <li><span>Play the video</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade app-testimonials__video-popup" tabindex="-1" role="dialog" id="video1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="material-icons" aria-hidden="true">clear</span></button>
+              </div>
+              <div class="modal-body">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dlyUVXq7Qc0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade app-testimonials__video-popup" tabindex="-1" role="dialog" id="video2">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="material-icons" aria-hidden="true">clear</span></button>
+              </div>
+              <div class="modal-body">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QkNJTh453cM" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade app-testimonials__video-popup" tabindex="-1" role="dialog" id="video3">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="material-icons" aria-hidden="true">clear</span></button>
+              </div>
+              <div class="modal-body">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-rxy9lI8-7Q" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </who-we-are>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

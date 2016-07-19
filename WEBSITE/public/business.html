@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The group</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li><a href="index.html">Consumer</a></li>
+                  <li><a href="who-we-are.html">Who we are</a></li>
+                  <li class="selected"><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li><a href="investors.html">For investors</a></li>
+                <li class="selected"><a href="business.html">Business&amp;Markets</a></li>
+                <li><a href="governance.html">Governance</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <the-group inline-template v-bind:locations.sync="locations">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-unstyled list-inline app-breadcrumb app-breadcrumb--ligth">
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="index.html"><i class="material-icons app-breadcrumb__separator">home</i></a><i class="material-icons app-breadcrumb__separator">chevron_right</i></li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="the-group.html">The group</a><i class="material-icons app-breadcrumb__separator">chevron_right</i>
+              </li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="business.html">Business &amp; Markets</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 app-who__page-label text-center">
+            <h1>Business & Markets</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 app-business__section-padded app-business__section-colored">
+            <div class="app-business__heading-section text-center">
+              <h2>Competitive scenario</h2>
+              <p>The mobile market, although saturated and mature in its traditional component of voice services, maintains a limited growth in terms of lines, customer-driven multiSIM / multi-device and the non-human lines (to 31 December 2013, mobile lines in Italy numbered around 97 million, up by about 0.5% compared to 2012, with a penetration rate on the population by about 162%).</p>
+              <p>Next to the phenomenon of progressive contraction of the traditional service components, such as voice and messaging that are affected by the growing use of "communication apps," we are witnessing a significant growth of mobile broadband that has been in recent years, and will be again in the future also thanks to the launch of the Ultra Broadband LTE, the main strategic and commercial opportunity for the mobile telecommunications industry.</p>
+            </div>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Trends</h2><br>
+            <div class="row">
+              <div class="col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <div class="row app-business__feature-list">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="app-business__feature"><img src="img/static/ic_local_atm.png">
+                      <p>Mobile payments</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="app-business__feature"><img src="img/static/ic_widgets.png">
+                      <p>Apps</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="app-business__feature"><img src="img/static/ic_watch.png">
+                      <p>Wearables</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="app-business__feature"><img src="img/static/ic_visibility.png">
+                      <p>Augmented reality</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><br><br><br><br>
+        <div class="row">
+          <div class="col-md-12 app-business__section-padded app-business__section-colored text-center">
+            <h2>Market positioning</h2>
+            <div class="app-business__market-content">
+              <table>
+                <thead>
+                  <th>Company</th>
+                  <th>Customers</th>
+                  <th>Market share</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Verizon</td>
+                    <td>50m</td>
+                    <td>20%</td>
+                  </tr>
+                  <tr>
+                    <td>AT&T</td>
+                    <td>40m</td>
+                    <td>17%</td>
+                  </tr>
+                  <tr>
+                    <td>T-mobile</td>
+                    <td>35m</td>
+                    <td>14%</td>
+                  </tr>
+                  <tr>
+                    <td>Sprint</td>
+                    <td>30m</td>
+                    <td>11%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </the-group>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Service details</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li class="selected"><a href="index.html">Consumer</a></li>
+                  <li><a href="who-we-are.html">Who we are</a></li>
+                  <li><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li><a href="devices.html">Devices</a></li>
+                <li class="selected"><a href="services.html">Smart life services</a></li>
+                <li><a href="assistance.html">Assistance</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-unstyled list-inline app-breadcrumb">
+            <li class="app-breadcrumb__item" v-for="(index,location) in locations"><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name === 'HOME'"><i class="material-icons app-breadcrumb__separator">home</i></a><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name !== 'HOME'">{{location.name}}</a><i class="material-icons app-breadcrumb__separator" v-show="index !== locations.length - 1">chevron_right</i></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <service inline-template v-bind:locations.sync="locations">
+      <div class="error">{{ error }}</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12"><img class="app-service__img" v-bind:src="parsedData.img">
+            <div class="app-service__head text-center" v-bind:class="{'app-services__text--centered' : (parsedData.img_tag==='2'), 'app-services__text--right':(parsedData.img_tag==='3')}">
+              <h2>{{parsedData.name}}</h2>
+              <p>{{parsedData.short_description}}</p>
+              <h2 class="red-colored">{{parsedData.price}}&nbsp;&euro;&nbsp;/&nbsp;month</h2>
+              <button class="app-button app-button--big">SUBSCRIBE</button>
+            </div>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <ul class="list-unstyled list-inline app-device__content-nav app-investors__nav" role="tab-list">
+              <li class="active" role="presentation"><a href="#presentation" role="tab" data-toggle="tab">Presentation</a></li>
+              <li role="presentation"><a href="#rules" role="tab" data-toggle="tab">Activation & Rules</a></li>
+              <li role="presentation"><a href="#faq" role="tab" data-toggle="tab">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="tab-content">
+          <div class="row tab-pane active fade in" id="presentation" role="tabpanel">
+            <div class="col-md-12">
+              <div class="app-service__pres-text text-center">
+                <h2>Discover {{parsedData.name}}</h2>
+                <p>{{parsedData.full_description}}</p>
+              </div>
+              <div class="app-service__pres-features">
+                <div class="app-service__pres-features--inner">
+                  <table>
+                    <thead>
+                      <th></th>
+                      <th></th>
+                    </thead>
+                    <tbody class="app-service__features">
+                      <tr class="app-service__feature" v-for="feature in featuresSections">
+                        <td class="text-center"><i class="material-icons">done</i></td>
+                        <td>{{feature.content}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div><br>
+              <div class="carousel slide" id="related-devices" data-ride="carousel" v-if="devices.length &gt; 0">
+                <!-- Wrapper for slides-->
+                <h3 class="text-center">Associable devices</h3>
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4 col-xs-12" v-for="subdevice in devices[0]"><a class="app-service__carousel" v-bind:href="'device.html#'+subdevice.id">
+                          <div class="app-service__carousel-img-container"><img v-bind:src="subdevice.img[0]" alt="..."></div>
+                          <h4>{{subdevice.brand}}</h4>
+                          <h4>{{subdevice.name}}</h4></a></div>
+                    </div>
+                  </div>
+                  <div class="item" v-for="(index,device) in devices" v-if="index!==0">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4 col-xs-12" v-for="subdevice in device"><a class="app-service__carousel" v-bind:href="'device.html#'+subdevice.id">
+                          <div class="app-service__carousel-img-container"><img v-bind:src="subdevice.img[0]" alt="..."></div>
+                          <h4>{{subdevice.brand}}</h4>
+                          <h4>{{subdevice.name}}</h4></a></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Controls--><a class="left carousel-control" href="#related-devices" role="button" data-slide="prev" v-if="devices.length &gt; 1"><i class="material-icons" aria-hidden="true">chevron_left</i><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#related-devices" role="button" data-slide="next" v-if="devices.length &gt; 1"><i class="material-icons" aria-hidden="true">chevron_right</i><span class="sr-only">Next</span></a>
+                <ol class="carousel-indicators">
+                  <li class="active" data-target="#related-devices" data-slide-to="0"></li>
+                  <li data-target="#related-devices" data-slide-to="{{index}}" v-for="(index,bullet) in devices" v-if="index!==0"></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="row tab-pane fade" id="rules" role="tabpanel">
+            <div class="col-md-12">
+              <div class="app-service__rules">
+                <p v-for="rule in ruleSections">{{rule.content}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row tab-pane" id="faq" role="tabpanel">
+            <div class="col-md-12">
+              <div class="app-service__faq">
+                <ul class="list-unstyled">
+                  <li v-for="faq in faqSections">
+                    <h5>{{faq.title}}</h5>
+                    <p>{{faq.content}}</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </service>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

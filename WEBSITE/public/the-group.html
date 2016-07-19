@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The group</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li><a href="index.html">Consumer</a></li>
+                  <li><a href="who-we-are.html">Who we are</a></li>
+                  <li class="selected"><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li><a href="investors.html">For investors</a></li>
+                <li><a href="business.html">Business&amp;Markets</a></li>
+                <li><a href="governance.html">Governance</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <the-group inline-template v-bind:locations.sync="locations">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-unstyled list-inline app-breadcrumb app-breadcrumb--ligth">
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="index.html"><i class="material-icons app-breadcrumb__separator">home</i></a><i class="material-icons app-breadcrumb__separator">chevron_right</i></li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="the-group.html">The group</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 app-group__news">
+            <div class="row">
+              <div class="col-md-2 app-group__news-label col-sm-3 col-xs-12">
+                <h3>News</h3>
+              </div>
+              <div class="col-md-10 col-sm-9 col-xs-12 app-group__news-list">
+                <div class="row">
+                  <div class="col-md-3 col-sm-6" v-for="news_item in news">
+                    <div class="app-group__news-text">
+                      <p>{{news_item.date}}</p>
+                      <p>{{news_item.content}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 app-group__hero">
+            <h2 class="text-center">We are problem-solvers, engineers, technologists and innovators. Every day, we connect millions of people, companies and communities with our powerful technology.</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-center app-group__group-desc">
+              <h2>The group at glance</h2>
+              <p>Verizon is one of the biggest group in the telecommunication market. With more than 20 years of activities in the US and in Europe it innovates and produce value for customers and communities like anyone</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+            <div class="row">
+              <div class="col-md-4 text-center col-sm-4 col-xs-4 app-group__feature-container">
+                <div class="app-group__feature text-center"><img src="img/static/customers.png">
+                  <p>Customers</p>
+                  <p>50 Millions</p>
+                </div>
+              </div>
+              <div class="col-md-4 text-center col-sm-4 col-xs-4 app-group__feature-container">
+                <div class="app-group__feature text-center"><img src="img/static/ic_store_mall_directory.png">
+                  <p>Retail stores</p>
+                  <p>3000</p>
+                </div>
+              </div>
+              <div class="col-md-4 text-center col-sm-4 col-xs-4 app-group__feature-container">
+                <div class="app-group__feature text-center"><img src="img/static/ic_public.png">
+                  <p>Countries</p>
+                  <p>90</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+            <div class="row">
+              <div class="col-md-4 text-center col-sm-4 col-xs-4 app-group__feature-container">
+                <div class="app-group__feature text-center"><img src="img/static/ic_settings_input_antenna.png">
+                  <p>Global network</p>
+                  <p>800,000 miles</p>
+                </div>
+              </div>
+              <div class="col-md-4 text-center col-sm-4 col-xs-4 app-group__feature-container">
+                <div class="app-group__feature text-center"><img src="img/static/ic_local_atm.png">
+                  <p>Revenues</p>
+                  <p>100 mld of $</p>
+                </div>
+              </div>
+              <div class="col-md-4 text-center col-sm-4 col-xs-4 app-group__feature-container">
+                <div class="app-group__feature text-center"><img src="img/static/ic_star.png">
+                  <p>Investments</p>
+                  <p>1 mld of $</p>
+                </div>
+              </div>
+            </div>
+            <!--ul.list-inline.list-unstyled.app-group__features
+            li
+            
+            li
+                div.app-group__feature.text-center
+                    img(src="img/static/ic_local_atm.png")
+                    p Revenues
+                    p 100 mld of $
+            li
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            -->
+          </div>
+        </div>
+      </div>
+    </the-group>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

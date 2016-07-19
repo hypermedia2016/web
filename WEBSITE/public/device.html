@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Device details</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li class="selected"><a href="index.html">Consumer</a></li>
+                  <li><a href="who-we-are.html">Who we are</a></li>
+                  <li><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li class="selected"><a href="devices.html">Devices</a></li>
+                <li><a href="services.html">Smart life services</a></li>
+                <li><a href="assistance.html">Assistance</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-unstyled list-inline app-breadcrumb">
+            <li class="app-breadcrumb__item" v-for="(index,location) in locations"><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name === 'HOME'"><i class="material-icons app-breadcrumb__separator">home</i></a><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name !== 'HOME'">{{location.name}}</a><i class="material-icons app-breadcrumb__separator" v-show="index !== locations.length - 1">chevron_right</i></li>
+          </ul>
+        </div>
+      </div>
+    </nav><br><br>
+    <device inline-template v-bind:locations.sync="locations">
+      <div class="error">{{ error }}</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-right col-sm-6 col-xs-12">
+            <div class="app-device__img-container"><img class="app-device__head-img" v-bind:src="parsedData.img[0]" v-show="toShowImg===0"><img class="app-device__head-img app-device__head-img--hide" v-bind:src="parsedData.img[1]" v-show="toShowImg===1"></div>
+            <ul class="list-unstyled list-inline app-device__head-miniatures text-center">
+              <li v-on:click="switchImg(0)" v-bind:class="{'active': toShowImg===0}"><img v-bind:src="parsedData.img[0]"></li>
+              <li v-on:click="switchImg(1)" v-bind:class="{'active': toShowImg===1}"><img v-bind:src="parsedData.img[1]"></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12 app-device__head-text">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <h4>{{parsedData.brand}}</h4>
+                <h3>{{parsedData.name}}</h3>
+                <p class="app-device__head-desc">{{parsedData.short_description}}</p>
+                <ul class="list-unstyled list-inline hidden-xsmall">
+                  <li>
+                    <h3 class="app-device__head-price">{{parsedData.price}} &euro;</h3>
+                  </li>
+                  <li class="app-device__head-colors">
+                    <ul class="list-unstyled list-inline">
+                      <li v-for="color in parsedData.colors"><span v-bind:style="'background-color:'+color+'; width: 20px; height:20px; display: block; border:1px solid rgba(0,0,0,.2)'">&nbsp;</span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <button class="app-button app-button--big hidden-xs">BUY</button>
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <div class="app-device__head-links">
+                  <h5>Smartlife services</h5>
+                  <p data-toggle="modal" data-target="#smartlife"><i class="material-icons">chevron_right</i>Discover addable smartlife services</p>
+                </div>
+                <div class="app-device__head-links">
+                  <h5>Assistance</h5>
+                  <p data-toggle="modal" data-target="#assistance"><i class="material-icons">chevron_right</i>Get assistance for this device</p>
+                </div>
+                <ul class="list-unstyled list-inline hidden-small" style="margin-top:5px">
+                  <li>
+                    <h3 class="app-device__head-price">{{parsedData.price}} &euro;</h3>
+                  </li>
+                  <li class="app-device__head-colors">
+                    <ul class="list-unstyled list-inline">
+                      <li v-for="color in parsedData.colors"><span v-bind:style="'background-color:'+color+'; width: 20px; height:20px; display: block; border:1px solid rgba(0,0,0,.2)'">&nbsp;</span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <button class="app-button app-button--big hidden-small">BUY</button>
+              </div>
+            </div>
+          </div>
+        </div><br><br><br><br>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <ul class="list-unstyled list-inline app-device__content-nav" role="tab-list">
+              <li class="active" role="presentation"><a href="#presentation" role="tab" data-toggle="tab">Presentation</a></li>
+              <li role="presentation"><a href="#specs" role="tab" data-toggle="tab">Specifications</a></li>
+            </ul>
+          </div>
+        </div><br><br>
+        <div class="tab-content">
+          <div class="row tab-pane active fade in" id="presentation" role="tabpanel">
+            <div class="col-md-12">
+              <div class="row" v-for="(index,section) in presentationSections" v-bind:class="{'app-device__section': true, 'app-device__section--type-one':index===1, 'app-device__section--type-two':index===2}">
+                <div class="col-md-6 col-sm-6 col-xs-12 text-center" v-if="index===0 || index ===2"><img class="app-device__section-img" v-bind:src="section.image"></div>
+                <div class="col-md-6 col-sm-6 col-xs-12" v-bind:class="{'text-right':index===1}">
+                  <div class="app-device__section-text">
+                    <h2>{{section.title}}</h2>
+                    <p>{{section.content}}</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 text-center" v-if="index===1"><img class="app-device__section-img" v-bind:src="section.image"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row tab-pane fade" id="specs" role="tabpanel">
+            <div class="col-md-12">
+              <h2 class="app-device__specs-heading"> Specifications</h2>
+              <table class="table app-device__specs-table">
+                <thead></thead>
+                <tbody>
+                  <tr v-for="spec in specs">
+                    <td>{{spec.title}}</td>
+                    <td>{{spec.content}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" tabindex="-1" role="dialog" id="smartlife">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="material-icons" aria-hidden="true">clear</span></button>
+              <h4 class="app-modal__pre">{{parsedData.brand+' '+parsedData.name}}</h4>
+              <h3 class="app-modal__title">Addable Smartlife Services</h3>
+            </div>
+            <div class="modal-body">
+              <ul class="list-unstyled app-modal__items">
+                <li v-for="service in services"><a class="clearfix" v-bind:href="'service.html#'+service.id"><span>{{service.name}}</span><i class="material-icons">chevron_right</i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" tabindex="-1" role="dialog" id="assistance">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="material-icons" aria-hidden="true">clear</span></button>
+              <h4 class="app-modal__pre">{{parsedData.brand+' '+parsedData.name}}</h4>
+              <h3 class="app-modal__title">Assistance</h3>
+            </div>
+            <div class="modal-body">
+              <ul class="list-unstyled app-modal__items">
+                <li v-for="assistance_item in assistance"><a class="clearfix" v-bind:href="'assistance-details.html#'+assistance_item.id"><span>{{assistance_item.name}}</span><i class="material-icons">chevron_right</i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </device>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

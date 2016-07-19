@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Who we are ! Innovation</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li><a href="index.html">Consumer</a></li>
+                  <li class="selected"><a href="who-we-are.html">Who we are</a></li>
+                  <li><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li class="selected"><a href="who-we-are.html">Innovation</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <who-we-are inline-template v-bind:locations.sync="locations">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-unstyled list-inline app-breadcrumb app-breadcrumb--ligth">
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="index.html"><i class="material-icons app-breadcrumb__separator">home</i></a><i class="material-icons app-breadcrumb__separator">chevron_right</i></li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="who-we-are.html">Who we are</a><i class="material-icons app-breadcrumb__separator">chevron_right</i>
+              </li>
+              <li class="app-breadcrumb__item"><a class="app-breadcrumb__text" href="who-we-are.html">Innovation</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 app-who__page-label text-center">
+            <h1>Innovation</h1>
+          </div>
+        </div><br><br>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="app-who__manifesto text-center">
+              <h1>Manifesto</h1>
+              <p>
+                We design, build and operate global networks, information systems and mobile technologies that connect people, grow businesses and economies, and improve communities.
+                Technology inspires us. We believe that through our powerful technology, we can help transform any industry, leave a positive impact on any issue and create new possibilities for our customers and our world.
+                
+              </p>
+            </div>
+          </div>
+        </div><br><br>
+        <h1 class="text-center">How we innovate</h1><br><br>
+        <div class="row app-device__section app-device__section--type-one">
+          <div class="col-md-6 text-center col-sm-6 col-xs-12"><img class="app-device__section-img" src="img/static/in_1.jpg"></div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="app-device__section-text">
+              <h2>Attention to the customer</h2>
+              <p>
+                Our mission is to make people communicate with each other, is to enrich their lives and their relationships. We accomplish that by an extreme care to the customer since the customer is a precious value that let us innovate and contribute to the wealth of everyone
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row app-device__section">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="app-device__section-text text-right">
+              <h2>Continuos reasearch and investments</h2>
+              <p>
+                We invest in research and development more than anyone else in the telecommunication sector. We think that new and better technology can improve everyone and the value that we bring to the society.
+                
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 text-center col-sm-6 col-xs-12"><img class="app-device__section-img" src="img/static/1441744643213.png"></div>
+        </div>
+        <div class="row app-device__section app-device__section--type-one">
+          <div class="col-md-6 text-center col-sm-6 col-xs-12"><img class="app-device__section-img" src="img/static/in_3.jpg"></div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="app-device__section-text">
+              <h2>Quality of work</h2>
+              <p>
+                We look to tomorrow every day. That’s why we’re committed to engaging the sharpest minds, empowering our team, and making a difference with what we do, what we create and how we impact people’s lives and communities. We equip our employees with valuable training and resources that help them make dreams come to life. There’s limitless creativity and opportunity to drive the next generation of technology.
+                
+                
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </who-we-are>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

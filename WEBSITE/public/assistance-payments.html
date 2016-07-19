@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assistance &amp; support</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li><a href="who-we-are.html">Who we are</a></li>
+                  <li><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li><a href="devices.html">Devices</a></li>
+                <li><a href="services.html">Smart life services</a></li>
+                <li class="selected"><a href="assistance.html">Assistance</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-unstyled list-inline app-breadcrumb">
+            <li class="app-breadcrumb__item" v-for="(index,location) in locations"><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name === 'HOME'"><i class="material-icons app-breadcrumb__separator">home</i></a><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name !== 'HOME'">{{location.name}}</a><i class="material-icons app-breadcrumb__separator" v-show="index !== locations.length - 1">chevron_right</i></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <assistance_settings inline-template v-bind:locations.sync="locations">
+      <div class="container"><br><br>
+        <ul class="list-inline list-unstyled subsection-nav nav nav-tabs">
+          <li v-for="type in types"><a class="row" v-bind:href="type.url" data-toggle="tab">
+              <div class="col-md-12 col-xs-6 col-sm-12"><img v-bind:src="type.img"></div>
+              <div class="col-md-12 col-xs-6 col-sm-12">
+                <p>{{type.name}}</p>
+              </div></a></li>
+        </ul>
+        <div class="error">{{ error }}</div><br><br><br><br>
+        <div class="app-assistance__frequent row" v-show="home">
+          <div class="col-md-12">
+            <h4>FREQUENT ASSISTANCE SERVICES</h4>
+            <table>
+              <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td v-for="(index,frequent) in frequents" v-if="index &lt; 3"><a v-bind:href="'/assistance-details.html#'+frequent.id">{{frequent.name}}</a></td>
+                </tr>
+                <tr>
+                  <td v-for="(index,frequent) in frequents" v-if="index &gt; 2"><a v-bind:href="'/assistance-details.html#'+frequent.id">{{frequent.name}}</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane fade" v-bind:id="escapeName(type.name)" v-for="type in types">
+            <p>{{type.name}}</p>
+            <div class="assistance" v-show="!home">
+              <ul>
+                <li v-for="assistanceItem in assistance"><a v-bind:href="'assistance-details.html#'+assistanceItem.id">{{assistanceItem.name}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </assistance_settings>
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

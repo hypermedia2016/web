@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Smart life services</title>
+    <!--css-->
+    <link href="css/app-less.css" rel="stylesheet">
+    <link href="css/app-sass.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--meta(http-equiv="Content-Security-Policy" content="script-src * 'unsafe-eval'; connect-src * 'unsafe-eval'; object-src 'self'; style-src * 'unsafe-inline'; img-src *")-->
+  </head>
+  <body>
+    <!--head menu-->
+    <nav class="top-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline list-unstyled" id="head-menui">
+                  <li class="selected"><a href="index.html">Consumer</a></li>
+                  <li><a href="who-we-are.html">Who we are</a></li>
+                  <li><a href="the-group.html">The group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--main menu--><br>
+    <nav class="navbar top-middle-nav">
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="index.html"><img src="img/static/app-logo.jpeg" alt="Verizon"></a>
+          <button class="navbar-toggle collapsed app-header_hamburger-menu" data-toggle="collapse" data-target="#indexNavigation"><i class="material-icons">menu</i></button>
+        </div>
+        <div class="collapse navbar-collapse" id="indexNavigation">
+          <ul class="nav navbar-nav">
+                <li><a href="devices.html">Devices</a></li>
+                <li class="selected"><a href="services.html">Smart life services</a></li>
+                <li><a href="assistance.html">Assistance</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-unstyled list-inline app-breadcrumb">
+            <li class="app-breadcrumb__item" v-for="(index,location) in locations"><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name === 'HOME'"><i class="material-icons app-breadcrumb__separator">home</i></a><a class="app-breadcrumb__text" v-bind:href="location.url" v-if:="location.name !== 'HOME'">{{location.name}}</a><i class="material-icons app-breadcrumb__separator" v-show="index !== locations.length - 1">chevron_right</i></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <services inline-template v-bind:locations.sync="locations">
+      <div class="container"><br><br>
+        <ul class="list-inline list-unstyled subsection-nav subsection-nav--three nav nav-tabs">
+          <li v-for="type in types"><a class="row" v-bind:href="type.url" data-toggle="tab">
+              <div class="col-md-12 col-xs-6 col-sm-12"><img v-bind:src="type.img"></div>
+              <div class="col-md-12 col-xs-6 col-sm-12">
+                <p>{{type.name}}</p>
+              </div></a></li>
+        </ul><br><br>
+        <div class="error">{{ error }}</div>
+        <div class="tab-content">
+          <div class="tab-pane fade" v-bind:id="escapeName(type.name)" v-for="type in types">
+            <div class="row services" v-for="service in services">
+              <div class="col-md-12" style="position:relative"><img v-bind:src="service.img" width="100%"/>
+                <div class="app-services__text text-center" v-bind:class="{'app-services__text--centered' : (service.img_tag==='2'), 'app-services__text--right':(service.img_tag==='3')}">
+                  <h2>{{service.name}}</h2>
+                  <p>{{service.short_description}}</p><a class="app-button app-button--big" v-bind:href="'service.html#'+service.id">Discover</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </services>
+    <!--copyright-->
+    <!--.container(style="margin-top: 50px;")
+    .row
+        .col-md-12
+            ul(class="list-inline list-unstyled")
+                li Copyright hypermedia &copy; 2016!
+                li
+                    span(style="color:blue; cursor: pointer;") Credits
+                li
+                    span(style="color:blue; cursor: pointer;") Terms
+                li
+                    span(style="color:blue; cursor: pointer;") Privacy
+    
+    
+    -->
+    <!-- javascript--><br><br>
+    <script src="js/app.js"></script>
+  </body>
+</html>

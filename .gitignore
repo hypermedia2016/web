@@ -126,5 +126,5 @@ _ide_helper.php
 
 
 ###  PUBLIC ###
-/WEBSITE/public/js
-/WEBSITE/public/css
+#/WEBSITE/public/js
+#/WEBSITE/public/css
