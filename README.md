@@ -77,17 +77,5 @@ All libraries are npm libraries
 * It is projected to be used with apache, since we use `.httaccess`
 
 ## TODO
-- [ ] In the realease version we will add the compiled files
 - [ ] "The .pdf with the P-IDM schema (the same P-IDM schema of the design project)"
-- [ ] "Obviously the APK should also be uploaded inside the github repository."
-- [ ] config.php
-- [ ] installation guide
-- [ ] sql
-- [ ] check vue bootstrap
-- [ ] apache config
-- [ ] npm install
-- [ ] complete schema
-- [ ] guide to populate
 - [ ] compiled files
-- [ ] concat of js, just to show them
-- [ ] Explain structure of files
