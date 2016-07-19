@@ -4,14 +4,12 @@
 include ../includes/static-breadcrumb.jade
 
 mixin popup(id, title, video)
-    .modal.fade(tabindex='-1', role='dialog',id=id)
+    .modal.fade(tabindex='-1', role='dialog',id=id).app-testimonials__video-popup
         .modal-dialog
             .modal-content
                 .modal-header
                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                         span.material-icons(aria-hidden='true') clear
-                    h4.app-modal__pre {{parsedData.brand+' '+parsedData.name}}
-                    h3.app-modal__title #{title}
                 .modal-body
                     iframe(width="560" height="315" src=video frameborder="0" allowfullscreen)
 
@@ -19,7 +17,7 @@ mixin popup(id, title, video)
 doctype html
 html(lang="en")
     include ../includes/head.jade
-    body
+    body#video-fix-backdrop
         include ../includes/header_who_we_are.jade
 
         who-we-are(inline-template "v-bind:locations.sync"="locations")
