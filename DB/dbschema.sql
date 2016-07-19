@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 18, 2016 at 11:34 AM
+-- Generation Time: Jul 19, 2016 at 12:37 PM
 -- Server version: 5.5.49-0ubuntu0.14.04.1
 -- PHP Version: 5.6.14
 
@@ -301,7 +301,8 @@ CREATE TABLE `promotions_device` (
 --
 
 INSERT INTO `promotions_device` (`id`, `device_id`, `title`, `description`, `img`) VALUES
-  (1, 1, 'There\'s nothing like an iphone', 'Enjoy the best mobile experience at a great price', 'iphone_group.png');
+  (1, 5, 'There\'s nothing like an iphone', 'Enjoy the best mobile experience at a great price', 'iphone_group.png'),
+  (2, 1, 'Galaxy S7, more than a smartphone', 'Enjoy the most powerful android phone ever at a great price', 'home-1.png');
 
 -- --------------------------------------------------------
 
@@ -519,7 +520,7 @@ ALTER TABLE `os`
 -- AUTO_INCREMENT for table `promotions_device`
 --
 ALTER TABLE `promotions_device`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `promotions_service`
 --
