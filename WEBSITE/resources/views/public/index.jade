@@ -32,29 +32,17 @@ html(lang="en")
                         #promotion-devices.carousel.slide(data-ride='carousel')
                             // Wrapper for slides
                             .carousel-inner(role='listbox')
-                                .item.active
+                                .item(v-for="(index,device) in promotionsDevice")
                                     .row
                                         .col-md-6.col-sm-6.col-xs-12
                                             div.carousel__img-container
-                                                img("v-bind:src"="promotionsDevice[0].img", alt='...')
-
-                                        .col-md-6.col-sm-6.col-xs-12
-                                            div.carousel__text-container.carousel__text-container--home
-                                                h2 {{promotionsDevice[0].title}}
-                                                p {{promotionsDevice[0].description}}
-                                                a("v-bind:href"="'device.html#'+promotionsDevice[0].id")
-                                                    button.app-button.app-button--big Check it out
-                                .item(v-for="(index,device) in promotionsDevice")(v-if="index!==0")
-                                    .row
-                                        .col-md-6.col-sm-6.col-xs-12
-                                            div.carousel__img-container
-                                                img("v-bind:src"="device.img", alt='...')
+                                                img("v-bind:src"="device.img", "v-bind:alt"="device.title")
 
                                         .col-md-6.col-sm-6.col-xs-12
                                             div.carousel__text-container.carousel__text-container--home
                                                 h2 {{device.title}}
                                                 p {{device.description}}
-                                                a("v-bind:href"="'device.html#'+device.id")
+                                                a("v-bind:href"="'device.html#'+device.device_id")
                                                     button.app-button.app-button--big Check it out
 
 

@@ -47,6 +47,11 @@ Vue.component('index', {
                     });
                     _this.promotionsDevice = tmp;
                     _this.error = '';
+                    //data loaded and displayed
+                    _this.$nextTick(function () {
+                        //load default
+                        $($('.carousel-inner .item')[0]).addClass('active');
+                    });
                 }
             }, function (response) {
                 _this.error = 'Loading error...';
