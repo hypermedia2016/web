@@ -1,6 +1,10 @@
-# web
+# Hypermedia project
+* Claudio Cardinale
+* Giorgio Pea
 
-## How to configure
+## How to use
+
+### How to configure
 1. Create a mysql database and an user with write acces to it
 2. Import `DB/dbschema.sql`
 3. Set server address on
@@ -8,18 +12,25 @@
     * `WEBSITE/resources/assets/js/app.js`
 4. Create `config.php` file using example on `config` directory
 
-## How to compile
+### How to compile
 1. type `npm install` 
 1. type `gulp`
 
-## How to test locally
+**Note:** all actions must be executed in the `WEBSITE` directory
+
+### How to test locally
 type `gulp serve`
 
 **Note:** all actions must be executed in the `WEBSITE` directory
 
+### How to use with apache
+* Set `WEBSITE/public` as the root directory
+* Give the permissions to php to execute files in `WEBSITE` (so not only `WEBSITE/public`)
+
 ## External reosurces
+
 ### Frameworks
-* [Vuje](http://vuejs.org/)
+* [Vujs](http://vuejs.org/)
 * [pug (ex jade)](http://jade-lang.com/)
 * [sass](http://sass-lang.com/)
 * [less](http://lesscss.org/)
@@ -29,6 +40,7 @@ type `gulp serve`
 
 ### Libraries
 All libraries are npm libraries
+
  * babel-preset-es2015
  * babel-preset-react
  * gulp-print
@@ -41,9 +53,10 @@ All libraries are npm libraries
  * vue-resource
 
 ## Notes
-* In the realease version we will add the compiled files
+* It is projected to be used with apache, since we use `.httaccess`
 
 ## TODO
+- [ ] In the realease version we will add the compiled files
 - [ ] "The .pdf with the P-IDM schema (the same P-IDM schema of the design project)"
 - [ ] "Obviously the APK should also be uploaded inside the github repository."
 - [ ] config.php
