@@ -29,6 +29,25 @@ type `gulp serve`
 * Set `WEBSITE/public` as the root directory
 * Give the permissions to php to execute files in `WEBSITE` (so not only `WEBSITE/public`)
 
+## Files structure
+* `DB/db.sql` mysql export with schema and data
+* `WEBSITE/public/`
+    * 'Compiled' html files
+    * `js/app.js` our js and libraries joined together in one js file
+    * `img` all images slitted in `dynamic` and `static`
+    * `css/app-less.css` css 'compiled' by *less*, it contains only libraries (like bootstrap)
+    * `css/app-sass.css` css 'compiled' by *sass*, it contains only our css
+    * `files` files downloadable in the site
+    * `api` php backend for db
+* `WEBSITE/config/config.php` mysql parameters configuration, example configuration on `WEBSITE/config/config.example.php`
+* `WEBSITE/resources`
+    * `assets`
+        * `js` it contains *ES6* source files written by us, without any library. They are compiled together, with libraries, into `app.js`.
+        * `less` it contains less files, used only to import css libraries. They are compiled together, with libraries, into `app-less.css`.
+        * `sass` it contains sass files written by us, without any libraries. They are compiled together into `app-sass.css`.
+    * `php` it contains useful php files imported by *API* and other useful scripts like `fakeData.php`
+    * `views` it contains pug (ex jade) templates used to generate HTML, it is divided in include and public directories. Only public directory files are converted as single HTML pages. they are compiled into `public` directory as `html` files 
+
 ## External reosurces
 
 ### Frameworks
