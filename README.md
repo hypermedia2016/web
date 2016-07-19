@@ -71,3 +71,4 @@ All libraries are npm libraries
 - [ ] guide to populate
 - [ ] compiled files
 - [ ] concat of js, just to show them
+- [ ] Explain structure of files
