@@ -51,6 +51,7 @@ Vue.component('index', {
                     _this.$nextTick(function () {
                         //load default
                         $($('.carousel-inner .item')[0]).addClass('active');
+                        $($('ol.carousel-indicators li')[0]).addClass('active');
                     });
                 }
             }, function (response) {
