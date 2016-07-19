@@ -40,8 +40,8 @@ type `gulp serve`
     * `files` files downloadable in the site
     * `api` php backend for db
 * `WEBSITE/config/config.php` mysql parameters configuration, example configuration on `WEBSITE/config/config.example.php`
-* `WEBSITE/resources`
-    * `assets`
+* `WEBSITE/resources/`
+    * `assets/`
         * `js` it contains *ES6* source files written by us, without any library. They are compiled together, with libraries, into `app.js`.
         * `less` it contains less files, used only to import css libraries. They are compiled together, with libraries, into `app-less.css`.
         * `sass` it contains sass files written by us, without any libraries. They are compiled together into `app-sass.css`.
