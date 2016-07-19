@@ -75,7 +75,3 @@ All libraries are npm libraries
 
 ## Notes
 * It is projected to be used with apache, since we use `.httaccess`
-
-## TODO
-- [ ] "The .pdf with the P-IDM schema (the same P-IDM schema of the design project)"
-- [ ] compiled files
